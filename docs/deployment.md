@@ -2,11 +2,13 @@
 
 ## Render: one web service
 
-The repository root contains a Render Blueprint and a multi-stage Dockerfile. The frontend is compiled to static files during the image build, then copied into the final Python image. FastAPI serves both the site and `/api` on Render's `PORT`.
+The repository root contains a native-Python Render Blueprint. Its build script installs the Python package, compiles the frontend to static files, and copies those files into the FastAPI application. FastAPI serves both the site and `/api` on Render's `PORT`.
 
 Create a Render Blueprint from the repository and apply `render.yaml`. The compiled stat board does not require PostgreSQL or Redis. Its SQLite setting only supports the secondary database-backed endpoints and is ephemeral on the free service.
 
 The health check is `/api/health`; API documentation remains available at `/docs`.
+
+For a manually created Python service, set the build command to `bash render-build.sh` and the start command to `uvicorn app.main:app --host 0.0.0.0 --port $PORT`. Render's generic `gunicorn your_application.wsgi` placeholder is for WSGI applications and does not apply to FastAPI.
 
 ## Extended ingestion infrastructure
 

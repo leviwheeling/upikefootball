@@ -26,9 +26,14 @@ Open <http://localhost:3000>. The development dashboard calls the API at <http:/
 
 ## One-service Render deployment
 
-The root `render.yaml` and `Dockerfile` deploy the entire application as one Render web service. The build exports the Next.js dashboard, copies it into the Python image, and FastAPI serves the dashboard and `/api` from the same origin.
+The root `render.yaml` deploys the entire application as one native Python web service. `render-build.sh` installs the Python package, exports the Next.js dashboard, and copies it into FastAPI's static directory. FastAPI then serves the dashboard and `/api` from the same origin.
 
 In Render, create a **Blueprint**, connect this repository, and apply `render.yaml`. No separate frontend service, Redis instance, or database is required for the compiled stat board.
+
+For an existing manually created Python service, use:
+
+- Build Command: `bash render-build.sh`
+- Start Command: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
 
 ## Useful commands
 
