@@ -1,0 +1,16 @@
+from collections.abc import Generator
+
+import pytest
+from sqlalchemy import create_engine
+from sqlalchemy.orm import Session
+
+from app.database import Base
+
+
+@pytest.fixture
+def db(tmp_path: pytest.TempPathFactory) -> Generator[Session, None, None]:
+    engine = create_engine(f"sqlite:///{tmp_path}/test.db")
+    Base.metadata.create_all(engine)
+    with Session(engine) as session:
+        yield session
+    Base.metadata.drop_all(engine)

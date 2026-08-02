@@ -1,0 +1,4 @@
+# Preserve downloaded source evidence byte-for-byte without treating source-site
+# whitespace as repository formatting errors.
+backend/tests/fixtures/source/** -whitespace
+discovery/raw/** -whitespace

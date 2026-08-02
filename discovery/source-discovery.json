@@ -1,0 +1,53 @@
+{
+  "generated_at": "2026-08-02T05:48:14Z",
+  "sources": [
+    {
+      "source": "upike",
+      "requested_url": "https://upikebears.com/sports/football/stats/2025",
+      "status": "ok",
+      "http_status": 200,
+      "canonical_url": "https://upikebears.com/sports/football/stats/2025",
+      "title": "2025 Football Cumulative Statistics - UPIKE Athletics",
+      "season": 2025,
+      "team_identity": "University of Pikeville",
+      "source_systems": ["SIDEARM Sports"],
+      "table_count": 31,
+      "table_headers_sample": [["Statistic", "PIKEVILLE (KY)", "Opponents OPP"], ["#", "Player", "GP", "ATT", "Gain", "Loss", "Net", "AVG", "TD", "Long", "AVG/G", "Bio Link"], ["Date", "Opponent", "Result", "Score", "Record", "Duration", "Attendance"]],
+      "embedded_json_blocks": 0,
+      "player_link_count": 60,
+      "game_link_count": 10,
+      "box_score_link_count": 10,
+      "play_by_play_link_count": 0,
+      "roster_links_present": true,
+      "pagination_present": false,
+      "downloadable_files": ["https://upikebears.com/sports/football/stats/2025/pdf"],
+      "source_indicators": ["schedule-cumestats", "assets.sidearmsports.com", "sidearm-table"]
+    },
+    {
+      "source": "aac",
+      "requested_url": "https://aac.prestosports.com/sports/fball/2025-26",
+      "status": "blocked",
+      "http_status": 403,
+      "canonical_url": "https://aac.prestosports.com/sports/fball/2025-26",
+      "season": 2025,
+      "team_identity": "Pikeville (KY)",
+      "source_systems": ["PrestoSports", "Cloudflare"],
+      "robots_crawl_delay_seconds": 10,
+      "indexed_capabilities": ["releases", "team statistics", "box score XML"],
+      "notes": ["Cloudflare challenge observed; retrieval stopped without bypass"]
+    },
+    {
+      "source": "naia",
+      "requested_url": "https://naiastats.prestosports.com/sports/fball/2025-26/conf/Appalachian/standings?jsRendering=true",
+      "status": "blocked",
+      "http_status": 403,
+      "canonical_url": "https://naiastats.prestosports.com/sports/fball/2025-26/conf/Appalachian/standings?jsRendering=true",
+      "season": 2025,
+      "team_identity": "Pikeville (KY)",
+      "source_systems": ["PrestoSports", "Cloudflare"],
+      "robots_crawl_delay_seconds": 10,
+      "indexed_capabilities": ["standings", "leaders", "players", "schedule", "box scores", "play-by-play", "drive summaries"],
+      "notes": ["Cloudflare challenge observed; retrieval stopped without bypass"]
+    }
+  ]
+}

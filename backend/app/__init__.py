@@ -1,0 +1,1 @@
+"""UPIKE Football Intelligence backend."""
