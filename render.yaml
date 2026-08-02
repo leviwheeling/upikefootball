@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: upike-football
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: DATABASE_URL
+        value: sqlite:////tmp/upike_intel.sqlite3

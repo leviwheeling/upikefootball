@@ -1,22 +1,34 @@
 # UPIKE Football Intelligence
 
-UPIKE Football Intelligence is a provenance-first historical football data platform for University of Pikeville football. This repository contains the Phase 1 foundation: a real-source discovery workflow, typed source adapters, a fixture-verified SIDEARM parser, an idempotent PostgreSQL importer, documented REST endpoints, a responsive Next.js dashboard, migrations, background-job plumbing, and tests.
+UPIKE Football Intelligence is a source-linked football stat board for the University of Pikeville. The Python FastAPI application serves both the API and the statically exported Next.js dashboard from one process.
 
 No values are fabricated. Source-specific values and raw documents are retained; future reconciliation selects canonical values without deleting disagreements.
 
-## Quick start
+## Local development
 
-Requirements: Docker Desktop and Docker Compose.
+Run the API:
 
 ```bash
-cp .env.example .env
-docker compose up --build -d postgres redis
-docker compose run --rm backend alembic upgrade head
-docker compose run --rm backend python -m app.cli seed-fixture
-docker compose up --build backend frontend worker
+cd backend
+uv sync --extra dev
+uv run uvicorn app.main:app --reload --port 8000
 ```
 
-Open the dashboard at <http://localhost:3000> and API docs at <http://localhost:8000/docs>.
+Run the dashboard in a second terminal:
+
+```bash
+cd frontend
+npm ci
+npm run dev
+```
+
+Open <http://localhost:3000>. The development dashboard calls the API at <http://localhost:8000>.
+
+## One-service Render deployment
+
+The root `render.yaml` and `Dockerfile` deploy the entire application as one Render web service. The build exports the Next.js dashboard, copies it into the Python image, and FastAPI serves the dashboard and `/api` from the same origin.
+
+In Render, create a **Blueprint**, connect this repository, and apply `render.yaml`. No separate frontend service, Redis instance, or database is required for the compiled stat board.
 
 ## Useful commands
 
@@ -30,8 +42,8 @@ make validate-data
 
 The discovery command is intentionally slow. AAC and NAIA publish a 10-second crawl delay in `robots.txt`; the client applies the strictest configured delay, caches responses, backs off on transient failures, and does not attempt to bypass Cloudflare challenges.
 
-## Current phase and limitations
+## Data
 
-This is the requested initial deliverable, not the completed multi-phase historical database. UPIKE's 2025 cumulative-statistics page is the first verified parser. AAC and NAIA URLs are documented from live discovery, but automated retrieval currently receives a Cloudflare challenge, so those adapters stop and report a blocked source instead of bypassing it. Detailed game books, play-by-play, full reconciliation tooling, and modeling remain subsequent phases.
+The compiled board includes four schedules, 2024 and 2025 team/game statistics, 2025 player category tables, and source-verified player appearances. Source URLs and supplied reference documents are retained in the repository.
 
 See [Architecture](docs/architecture.md), [Source inventory](docs/source-inventory.md), [database design](docs/database.md), and [scraper guide](docs/scraping.md).

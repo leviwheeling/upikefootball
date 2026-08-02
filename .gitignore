@@ -12,5 +12,7 @@ backend/data/raw/*
 !backend/data/raw/.gitkeep
 frontend/node_modules/
 frontend/.next/
+frontend/out/
 frontend/coverage/
+backend/static/
 *.tsbuildinfo
