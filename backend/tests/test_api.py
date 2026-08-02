@@ -27,3 +27,11 @@ def test_seasons_endpoint_is_paginated(db: Session) -> None:
 def test_page_size_is_validated() -> None:
     response = TestClient(app).get("/api/games?page_size=1000")
     assert response.status_code == 422
+
+
+def test_local_loopback_origin_is_allowed() -> None:
+    response = TestClient(app).get(
+        "/api/health", headers={"Origin": "http://127.0.0.1:3000"}
+    )
+    assert response.status_code == 200
+    assert response.headers["access-control-allow-origin"] == "http://127.0.0.1:3000"

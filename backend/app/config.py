@@ -12,7 +12,10 @@ class Settings(BaseSettings):
     environment: str = "development"
     database_url: str = "postgresql+psycopg://upike:change-me@postgres:5432/upike_intel"
     redis_url: str = "redis://redis:6379/0"
-    api_cors_origins: list[str] = ["http://localhost:3000"]
+    api_cors_origins: list[str] = [
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+    ]
     scraper_user_agent: str = (
         "UPIKEFootballIntel/0.1 (research; contact: your-email@example.com)"
     )
