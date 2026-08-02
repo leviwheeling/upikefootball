@@ -37,3 +37,64 @@ class ParsedSeason:
     source_sha256: str | None = None
     storage_path: str | None = None
     parser_version: str | None = None
+
+
+@dataclass(frozen=True)
+class ParsedStanding:
+    conference: str
+    team_name: str
+    conference_wins: int
+    conference_losses: int
+    overall_wins: int
+    overall_losses: int
+    streak: str
+
+
+@dataclass(frozen=True)
+class ParsedLeaderEntry:
+    category: str
+    metric: str
+    player_name: str
+    games_played: int
+    value_text: str
+    value_numeric: float
+
+
+@dataclass(frozen=True)
+class ParsedDrive:
+    sequence: int
+    team: str
+    quarter: int
+    start_clock: str
+    possession_duration: str
+    start_spot: str
+    plays: int
+    yards: int
+    result: str
+
+
+@dataclass(frozen=True)
+class ParsedGamebook:
+    source_game_id: str
+    played_at: datetime
+    opponent: str
+    upike_score: int
+    opponent_score: int
+    location: str
+    stadium: str
+    attendance: int | None
+    team_stats: dict[str, object]
+    drives: list[ParsedDrive]
+
+
+@dataclass(frozen=True)
+class ParsedPrestoIntel:
+    year: int
+    label: str
+    retrieved_at: datetime
+    standings_url: str
+    leaders_url: str
+    gamebook_url: str
+    standings: list[ParsedStanding]
+    leaders: list[ParsedLeaderEntry]
+    gamebook: ParsedGamebook

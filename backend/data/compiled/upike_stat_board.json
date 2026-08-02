@@ -1,0 +1,3692 @@
+{
+  "team": "Pikeville (KY)",
+  "conference": "Appalachian Athletic Conference",
+  "default_season": "2025",
+  "seasons": {
+    "2023": {
+      "label": "2023-24",
+      "record": "7-3",
+      "conference_record": "5-1",
+      "region_record": "5-2",
+      "home": "4-1",
+      "away": "3-2",
+      "neutral": "0-0",
+      "streak": "W4",
+      "schedule": [
+        {
+          "date": "Aug 26",
+          "opponent": "at Campbellsville (KY)",
+          "result": "W, 28-27",
+          "status": "Final",
+          "notes": ""
+        },
+        {
+          "date": "Sep 2",
+          "opponent": "Cumberlands (KY)",
+          "result": "L, 27-20",
+          "status": "Final",
+          "notes": ""
+        },
+        {
+          "date": "Sep 9",
+          "opponent": "at Georgetown",
+          "result": "L, 35-14",
+          "status": "Final",
+          "notes": "Toyota Stadium - Georgetown, KY"
+        },
+        {
+          "date": "Sep 16",
+          "opponent": "Faulkner (AL)",
+          "result": "W, 24-20",
+          "status": "Final",
+          "notes": ""
+        },
+        {
+          "date": "Sep 30",
+          "opponent": "Union (KY)",
+          "result": "W, 52-10",
+          "status": "Final",
+          "notes": "Conference; Regional"
+        },
+        {
+          "date": "Oct 7",
+          "opponent": "at Reinhardt (GA)",
+          "result": "L, 41-35",
+          "status": "Final - 2OT",
+          "notes": "Conference; Regional"
+        },
+        {
+          "date": "Oct 14",
+          "opponent": "Kentucky Christian",
+          "result": "W, 49-0",
+          "status": "Final",
+          "notes": "Conference; Regional"
+        },
+        {
+          "date": "Oct 21",
+          "opponent": "at Bluefield (VA)",
+          "result": "W, 51-42",
+          "status": "Final",
+          "notes": "Conference; Regional"
+        },
+        {
+          "date": "Oct 28",
+          "opponent": "Point",
+          "result": "W, 42-31",
+          "status": "Final",
+          "notes": "Pikeville, Ky.; Conference; Regional"
+        },
+        {
+          "date": "Nov 4",
+          "opponent": "at St. Andrews (NC)",
+          "result": "W, 68-0",
+          "status": "Final",
+          "notes": "Senior Day; Conference"
+        }
+      ]
+    },
+    "2024": {
+      "label": "2024-25",
+      "record": "6-6",
+      "conference_record": "5-1",
+      "region_record": "3-4",
+      "home": "3-2",
+      "away": "3-4",
+      "neutral": "0-0",
+      "streak": "L1",
+      "national_rank": "68",
+      "aac_rank": "3",
+      "headline": {
+        "Yds/Game": "500.1",
+        "Rush/Game": "162.3",
+        "Pass/Game": "337.8",
+        "Pts/Game": "41.5",
+        "Yds Allowed/Game": "421.3",
+        "Rush Allowed/Game": "153.0",
+        "Pass Allowed/Game": "268.3",
+        "Pts Allowed/Game": "33.0"
+      },
+      "team_stats": [
+        {
+          "metric": "Games",
+          "overall": "12",
+          "overall_rank": "1st",
+          "conference": "6",
+          "conference_rank": "3rd",
+          "opponent": "12"
+        },
+        {
+          "metric": "Scoring",
+          "overall": "498",
+          "overall_rank": "1st",
+          "conference": "334",
+          "conference_rank": "1st",
+          "opponent": "396"
+        },
+        {
+          "metric": "Points per game",
+          "overall": "41.5",
+          "overall_rank": "1st",
+          "conference": "55.7",
+          "conference_rank": "1st",
+          "opponent": "33.0"
+        },
+        {
+          "metric": "Total offense",
+          "overall": "6001",
+          "overall_rank": "1st",
+          "conference": "3413",
+          "conference_rank": "1st",
+          "opponent": "5055"
+        },
+        {
+          "metric": "Yards per game",
+          "overall": "500.1",
+          "overall_rank": "1st",
+          "conference": "568.8",
+          "conference_rank": "1st",
+          "opponent": "421.3"
+        },
+        {
+          "metric": "Passing yards",
+          "overall": "4054",
+          "overall_rank": "1st",
+          "conference": "2121",
+          "conference_rank": "1st",
+          "opponent": "3219"
+        },
+        {
+          "metric": "Comp-Att-Int",
+          "overall": "373-564-17",
+          "overall_rank": "1st",
+          "conference": "202-281-8",
+          "conference_rank": "1st",
+          "opponent": "245-415-16"
+        },
+        {
+          "metric": "Passing yards per game",
+          "overall": "337.8",
+          "overall_rank": "1st",
+          "conference": "353.5",
+          "conference_rank": "1st",
+          "opponent": "268.3"
+        },
+        {
+          "metric": "Passing yards per attempt",
+          "overall": "7.2",
+          "overall_rank": "1st",
+          "conference": "7.5",
+          "conference_rank": "2nd",
+          "opponent": "7.8"
+        },
+        {
+          "metric": "Passing yards per completion",
+          "overall": "10.9",
+          "overall_rank": "6th",
+          "conference": "10.5",
+          "conference_rank": "6th",
+          "opponent": "13.1"
+        },
+        {
+          "metric": "Passing touchdowns",
+          "overall": "40",
+          "overall_rank": "1st",
+          "conference": "24",
+          "conference_rank": "1st",
+          "opponent": "36"
+        },
+        {
+          "metric": "Rushing yards",
+          "overall": "1947",
+          "overall_rank": "2nd",
+          "conference": "1292",
+          "conference_rank": "2nd",
+          "opponent": "1836"
+        },
+        {
+          "metric": "Rushing attempts",
+          "overall": "363",
+          "overall_rank": "3rd",
+          "conference": "218",
+          "conference_rank": "4th",
+          "opponent": "397"
+        },
+        {
+          "metric": "Rushing yards per game",
+          "overall": "162.3",
+          "overall_rank": "2nd",
+          "conference": "215.3",
+          "conference_rank": "2nd",
+          "opponent": "153.0"
+        },
+        {
+          "metric": "Yards per rush",
+          "overall": "5.4",
+          "overall_rank": "2nd",
+          "conference": "5.9",
+          "conference_rank": "2nd",
+          "opponent": "4.6"
+        },
+        {
+          "metric": "Rushing touchdowns",
+          "overall": "30",
+          "overall_rank": "1st",
+          "conference": "22",
+          "conference_rank": "1st",
+          "opponent": "17"
+        },
+        {
+          "metric": "1st downs",
+          "overall": "349",
+          "overall_rank": "1st",
+          "conference": "194",
+          "conference_rank": "1st",
+          "opponent": "270"
+        },
+        {
+          "metric": "Rushing 1st downs",
+          "overall": "126",
+          "overall_rank": "1st",
+          "conference": "84",
+          "conference_rank": "2nd",
+          "opponent": "107"
+        },
+        {
+          "metric": "Passing 1st downs",
+          "overall": "199",
+          "overall_rank": "1st",
+          "conference": "98",
+          "conference_rank": "1st",
+          "opponent": "141"
+        },
+        {
+          "metric": "Penalty 1st downs",
+          "overall": "24",
+          "overall_rank": "2nd",
+          "conference": "12",
+          "conference_rank": "4th",
+          "opponent": "22"
+        },
+        {
+          "metric": "1st downs per game",
+          "overall": "29.1",
+          "overall_rank": "1st",
+          "conference": "32.3",
+          "conference_rank": "1st",
+          "opponent": "-"
+        },
+        {
+          "metric": "3rd-down conversions",
+          "overall": "84-170",
+          "overall_rank": "1st",
+          "conference": "43-85",
+          "conference_rank": "2nd",
+          "opponent": "74-155"
+        },
+        {
+          "metric": "3rd down %",
+          "overall": "49%",
+          "overall_rank": "1st",
+          "conference": "51%",
+          "conference_rank": "1st",
+          "opponent": "48%"
+        },
+        {
+          "metric": "4th-down conversions",
+          "overall": "21-39",
+          "overall_rank": "1st",
+          "conference": "14-22",
+          "conference_rank": "1st",
+          "opponent": "5-23"
+        },
+        {
+          "metric": "4th down %",
+          "overall": "54%",
+          "overall_rank": "2nd",
+          "conference": "64%",
+          "conference_rank": "1st",
+          "opponent": "22%"
+        },
+        {
+          "metric": "Kick returns (No.-Yards)",
+          "overall": "49-882",
+          "overall_rank": "3rd",
+          "conference": "23-430",
+          "conference_rank": "4th",
+          "opponent": "71-1042"
+        },
+        {
+          "metric": "Kick return average",
+          "overall": "18.0",
+          "overall_rank": "4th",
+          "conference": "18.7",
+          "conference_rank": "2nd",
+          "opponent": "14.7"
+        },
+        {
+          "metric": "Punt returns (No.-Yards)",
+          "overall": "11-66",
+          "overall_rank": "5th",
+          "conference": "11-66",
+          "conference_rank": "4th",
+          "opponent": "10-80"
+        },
+        {
+          "metric": "Punt return average",
+          "overall": "6.0",
+          "overall_rank": "6th",
+          "conference": "6.0",
+          "conference_rank": "5th",
+          "opponent": "8.0"
+        },
+        {
+          "metric": "Field goals",
+          "overall": "1-3",
+          "overall_rank": "5th",
+          "conference": "1-1",
+          "conference_rank": "5th",
+          "opponent": "7-12"
+        },
+        {
+          "metric": "Field goal %",
+          "overall": "33.3%",
+          "overall_rank": "5th",
+          "conference": "100.0%",
+          "conference_rank": "2nd",
+          "opponent": "58.3%"
+        },
+        {
+          "metric": "PATs",
+          "overall": "57-64",
+          "overall_rank": "1st",
+          "conference": "39-44",
+          "conference_rank": "1st",
+          "opponent": "47-49"
+        },
+        {
+          "metric": "PAT %",
+          "overall": "89.1%",
+          "overall_rank": "4th",
+          "conference": "88.6%",
+          "conference_rank": "4th",
+          "opponent": "95.9%"
+        },
+        {
+          "metric": "Punts (No.-Yards)",
+          "overall": "33-1275",
+          "overall_rank": "6th",
+          "conference": "11-413",
+          "conference_rank": "7th",
+          "opponent": "40-1472"
+        },
+        {
+          "metric": "Average per punt",
+          "overall": "38.6",
+          "overall_rank": "1st",
+          "conference": "37.5",
+          "conference_rank": "2nd",
+          "opponent": "36.8"
+        },
+        {
+          "metric": "Red zone scores",
+          "overall": "56-65",
+          "overall_rank": "1st",
+          "conference": "34-38",
+          "conference_rank": "1st",
+          "opponent": "34-41"
+        },
+        {
+          "metric": "Red zone %",
+          "overall": "86%",
+          "overall_rank": "1st",
+          "conference": "89%",
+          "conference_rank": "1st",
+          "opponent": "83%"
+        },
+        {
+          "metric": "Red zone touchdowns",
+          "overall": "55-65",
+          "overall_rank": "1st",
+          "conference": "33-38",
+          "conference_rank": "1st",
+          "opponent": "29-41"
+        },
+        {
+          "metric": "Red zone touchdown %",
+          "overall": "85%",
+          "overall_rank": "1st",
+          "conference": "87%",
+          "conference_rank": "1st",
+          "opponent": "71%"
+        },
+        {
+          "metric": "Fumbles-lost",
+          "overall": "16-6",
+          "overall_rank": "6th",
+          "conference": "10-4",
+          "conference_rank": "5th",
+          "opponent": "13-7"
+        },
+        {
+          "metric": "Fumbles recovered",
+          "overall": "7",
+          "overall_rank": "7th",
+          "conference": "3",
+          "conference_rank": "7th",
+          "opponent": "6"
+        },
+        {
+          "metric": "Defensive INTs",
+          "overall": "16",
+          "overall_rank": "1st",
+          "conference": "11",
+          "conference_rank": "1st",
+          "opponent": "-"
+        },
+        {
+          "metric": "Interception returns (No.-Yds)",
+          "overall": "16-125",
+          "overall_rank": "2nd",
+          "conference": "11-111",
+          "conference_rank": "2nd",
+          "opponent": "17-166"
+        },
+        {
+          "metric": "Interception return average",
+          "overall": "7.8",
+          "overall_rank": "6th",
+          "conference": "10.1",
+          "conference_rank": "4th",
+          "opponent": "9.8"
+        },
+        {
+          "metric": "Defensive TDs",
+          "overall": "0",
+          "overall_rank": "5th",
+          "conference": "0",
+          "conference_rank": "5th",
+          "opponent": "-"
+        },
+        {
+          "metric": "Tackles",
+          "overall": "784",
+          "overall_rank": "1st",
+          "conference": "363",
+          "conference_rank": "6th",
+          "opponent": "-"
+        },
+        {
+          "metric": "Sacks",
+          "overall": "28",
+          "overall_rank": "4th",
+          "conference": "23",
+          "conference_rank": "2nd",
+          "opponent": "-"
+        },
+        {
+          "metric": "Penalties",
+          "overall": "111",
+          "overall_rank": "7th",
+          "conference": "66",
+          "conference_rank": "7th",
+          "opponent": "94"
+        },
+        {
+          "metric": "Penalty yards",
+          "overall": "1094",
+          "overall_rank": "7th",
+          "conference": "671",
+          "conference_rank": "7th",
+          "opponent": "840"
+        },
+        {
+          "metric": "Time of possession per game",
+          "overall": "30:15",
+          "overall_rank": "3rd",
+          "conference": "32:30",
+          "conference_rank": "3rd",
+          "opponent": "29:15"
+        },
+        {
+          "metric": "Home Attendance",
+          "overall": "5,777",
+          "overall_rank": "1st",
+          "conference": "3,108",
+          "conference_rank": "1st",
+          "opponent": "6,385"
+        },
+        {
+          "metric": "Home Attendance average",
+          "overall": "1,156",
+          "overall_rank": "1st",
+          "conference": "1,036",
+          "conference_rank": "1st",
+          "opponent": "-"
+        }
+      ],
+      "game_log": [
+        {
+          "date": "Aug 29",
+          "opponent": "Campbellsville (KY)",
+          "score": "L, 34-33",
+          "yds": "465",
+          "pass": "441",
+          "c_a": "34-55",
+          "comp_pct": "62%",
+          "rush": "24",
+          "rush_att": "15",
+          "yards_per_rush": "1.6",
+          "int": "1",
+          "fum": "2",
+          "tackles": "54.0",
+          "sacks": "1",
+          "penalty_yards": "94",
+          "possession": "28:19"
+        },
+        {
+          "date": "Sep 7",
+          "opponent": "Georgetown (Ky.)",
+          "score": "L, 23-20",
+          "yds": "388",
+          "pass": "319",
+          "c_a": "34-47",
+          "comp_pct": "72%",
+          "rush": "69",
+          "rush_att": "18",
+          "yards_per_rush": "3.8",
+          "int": "-",
+          "fum": "1",
+          "tackles": "54.0",
+          "sacks": "1",
+          "penalty_yards": "99",
+          "possession": "26:10"
+        },
+        {
+          "date": "Sep 14",
+          "opponent": "at Cumberlands (Ky.)",
+          "score": "L, 52-20",
+          "yds": "340",
+          "pass": "240",
+          "c_a": "24-48",
+          "comp_pct": "50%",
+          "rush": "100",
+          "rush_att": "24",
+          "yards_per_rush": "4.2",
+          "int": "-",
+          "fum": "1",
+          "tackles": "82.0",
+          "sacks": "2",
+          "penalty_yards": "38",
+          "possession": "24:12"
+        },
+        {
+          "date": "Sep 21",
+          "opponent": "at Faulkner (AL)",
+          "score": "L, 35-28",
+          "yds": "409",
+          "pass": "337",
+          "c_a": "26-50",
+          "comp_pct": "52%",
+          "rush": "72",
+          "rush_att": "23",
+          "yards_per_rush": "3.1",
+          "int": "1",
+          "fum": "1",
+          "tackles": "67.0",
+          "sacks": "1",
+          "penalty_yards": "99",
+          "possession": "27:31"
+        },
+        {
+          "date": "Oct 5",
+          "opponent": "Reinhardt (Ga.)",
+          "score": "W, 47-21",
+          "yds": "557",
+          "pass": "299",
+          "c_a": "35-51",
+          "comp_pct": "69%",
+          "rush": "258",
+          "rush_att": "36",
+          "yards_per_rush": "7.2",
+          "int": "2",
+          "fum": "1",
+          "tackles": "59.0",
+          "sacks": "3",
+          "penalty_yards": "75",
+          "possession": "32:54"
+        },
+        {
+          "date": "Oct 12",
+          "opponent": "at Kentucky Christian",
+          "score": "W, 66-34",
+          "yds": "626",
+          "pass": "448",
+          "c_a": "38-56",
+          "comp_pct": "68%",
+          "rush": "178",
+          "rush_att": "39",
+          "yards_per_rush": "4.6",
+          "int": "3",
+          "fum": "3",
+          "tackles": "74.0",
+          "sacks": "3",
+          "penalty_yards": "85",
+          "possession": "31:59"
+        },
+        {
+          "date": "Oct 19",
+          "opponent": "at Union Commonwealth",
+          "score": "W, 62-35",
+          "yds": "502",
+          "pass": "320",
+          "c_a": "33-50",
+          "comp_pct": "66%",
+          "rush": "182",
+          "rush_att": "36",
+          "yards_per_rush": "5.1",
+          "int": "-",
+          "fum": "1",
+          "tackles": "65.0",
+          "sacks": "4",
+          "penalty_yards": "88",
+          "possession": "33:47"
+        },
+        {
+          "date": "Oct 26",
+          "opponent": "Bluefield (VA)",
+          "score": "W, 48-34",
+          "yds": "604",
+          "pass": "160",
+          "c_a": "24-33",
+          "comp_pct": "73%",
+          "rush": "444",
+          "rush_att": "51",
+          "yards_per_rush": "8.7",
+          "int": "2",
+          "fum": "-",
+          "tackles": "70.0",
+          "sacks": "3",
+          "penalty_yards": "100",
+          "possession": "30:54"
+        },
+        {
+          "date": "Nov 2",
+          "opponent": "at Point",
+          "score": "L, 23-21",
+          "yds": "387",
+          "pass": "248",
+          "c_a": "31-44",
+          "comp_pct": "70%",
+          "rush": "139",
+          "rush_att": "41",
+          "yards_per_rush": "3.4",
+          "int": "-",
+          "fum": "1",
+          "tackles": "38.0",
+          "sacks": "4",
+          "penalty_yards": "100",
+          "possession": "37:41"
+        },
+        {
+          "date": "Nov 16",
+          "opponent": "St. Andrews (NC)",
+          "score": "W, 90-14",
+          "yds": "737",
+          "pass": "646",
+          "c_a": "41-47",
+          "comp_pct": "87%",
+          "rush": "91",
+          "rush_att": "15",
+          "yards_per_rush": "6.1",
+          "int": "4",
+          "fum": "1",
+          "tackles": "57.0",
+          "sacks": "6",
+          "penalty_yards": "223",
+          "possession": "27:48"
+        },
+        {
+          "date": "Nov 23",
+          "opponent": "at Baker",
+          "score": "W, 42-35",
+          "yds": "552",
+          "pass": "310",
+          "c_a": "24-35",
+          "comp_pct": "69%",
+          "rush": "242",
+          "rush_att": "37",
+          "yards_per_rush": "6.5",
+          "int": "3",
+          "fum": "-",
+          "tackles": "108.0",
+          "sacks": "-",
+          "penalty_yards": "58",
+          "possession": "30:08"
+        },
+        {
+          "date": "Nov 30",
+          "opponent": "at Keiser (Fla.)",
+          "score": "L, 56-21",
+          "yds": "434",
+          "pass": "286",
+          "c_a": "29-48",
+          "comp_pct": "60%",
+          "rush": "148",
+          "rush_att": "28",
+          "yards_per_rush": "5.3",
+          "int": "-",
+          "fum": "1",
+          "tackles": "56.0",
+          "sacks": "-",
+          "penalty_yards": "35",
+          "possession": "31:37"
+        }
+      ],
+      "schedule": [
+        {
+          "date": "Aug 29",
+          "opponent": "Campbellsville (KY)",
+          "result": "L, 34-33",
+          "status": "Final",
+          "notes": ""
+        },
+        {
+          "date": "Sep 7",
+          "opponent": "Georgetown",
+          "result": "L, 23-20",
+          "status": "Final",
+          "notes": "Pikeville, KY; Regional"
+        },
+        {
+          "date": "Sep 14",
+          "opponent": "at Cumberlands (KY)",
+          "result": "L, 52-20",
+          "status": "Final",
+          "notes": "Regional"
+        },
+        {
+          "date": "Sep 21",
+          "opponent": "at Faulkner (AL)",
+          "result": "L, 35-28",
+          "status": "Final",
+          "notes": "Regional"
+        },
+        {
+          "date": "Oct 5",
+          "opponent": "Reinhardt (GA)",
+          "result": "W, 47-21",
+          "status": "Final",
+          "notes": "Conference; Regional"
+        },
+        {
+          "date": "Oct 12",
+          "opponent": "at Kentucky Christian",
+          "result": "W, 66-34",
+          "status": "Final",
+          "notes": "Conference; Regional"
+        },
+        {
+          "date": "Oct 19",
+          "opponent": "at Union Commonwealth",
+          "result": "W, 62-35",
+          "status": "Final",
+          "notes": "Barbourville, Ky.; Conference; Regional"
+        },
+        {
+          "date": "Oct 26",
+          "opponent": "Bluefield (VA)",
+          "result": "W, 48-34",
+          "status": "Final",
+          "notes": "Conference"
+        },
+        {
+          "date": "Nov 2",
+          "opponent": "at Point",
+          "result": "L, 23-21",
+          "status": "Final",
+          "notes": "Valley, Ala.; Homecoming; Conference; Regional"
+        },
+        {
+          "date": "Nov 16",
+          "opponent": "St. Andrews (NC)",
+          "result": "W, 90-14",
+          "status": "Final",
+          "notes": "Conference"
+        },
+        {
+          "date": "Nov 23",
+          "opponent": "at Baker (KS)",
+          "result": "W, 42-35",
+          "status": "Final",
+          "notes": "NAIA FCS First Round; Baldwin City, Kan."
+        },
+        {
+          "date": "Nov 30",
+          "opponent": "at Keiser",
+          "result": "L, 56-21",
+          "status": "Final",
+          "notes": "Postseason"
+        }
+      ]
+    },
+    "2025": {
+      "label": "2025-26",
+      "record": "4-6",
+      "conference_record": "4-2",
+      "region_record": "3-4",
+      "home": "4-1",
+      "away": "0-5",
+      "neutral": "0-0",
+      "streak": "L1",
+      "national_rank": "65",
+      "aac_rank": "3",
+      "headline": {
+        "Yds/Game": "462.8",
+        "Rush/Game": "98.2",
+        "Pass/Game": "364.6",
+        "Pts/Game": "36.5",
+        "Yds Allowed/Game": "384.2",
+        "Rush Allowed/Game": "127.7",
+        "Pass Allowed/Game": "256.5",
+        "Pts Allowed/Game": "29.7"
+      },
+      "team_stats": [
+        {
+          "metric": "Games",
+          "overall": "10",
+          "overall_rank": "2nd",
+          "conference": "6",
+          "conference_rank": "3rd",
+          "opponent": "10"
+        },
+        {
+          "metric": "Scoring",
+          "overall": "365",
+          "overall_rank": "2nd",
+          "conference": "267",
+          "conference_rank": "2nd",
+          "opponent": "297"
+        },
+        {
+          "metric": "Points per game",
+          "overall": "36.5",
+          "overall_rank": "2nd",
+          "conference": "44.5",
+          "conference_rank": "2nd",
+          "opponent": "29.7"
+        },
+        {
+          "metric": "Total offense",
+          "overall": "4628",
+          "overall_rank": "2nd",
+          "conference": "2803",
+          "conference_rank": "2nd",
+          "opponent": "3842"
+        },
+        {
+          "metric": "Yards per game",
+          "overall": "462.8",
+          "overall_rank": "1st",
+          "conference": "467.2",
+          "conference_rank": "2nd",
+          "opponent": "384.2"
+        },
+        {
+          "metric": "Passing yards",
+          "overall": "3646",
+          "overall_rank": "1st",
+          "conference": "2158",
+          "conference_rank": "1st",
+          "opponent": "2565"
+        },
+        {
+          "metric": "Comp-Att-Int",
+          "overall": "337-486-9",
+          "overall_rank": "1st",
+          "conference": "190-278-7",
+          "conference_rank": "1st",
+          "opponent": "162-314-7"
+        },
+        {
+          "metric": "Passing yards per game",
+          "overall": "364.6",
+          "overall_rank": "1st",
+          "conference": "359.7",
+          "conference_rank": "1st",
+          "opponent": "256.5"
+        },
+        {
+          "metric": "Passing yards per attempt",
+          "overall": "7.5",
+          "overall_rank": "2nd",
+          "conference": "7.8",
+          "conference_rank": "4th",
+          "opponent": "8.2"
+        },
+        {
+          "metric": "Passing yards per completion",
+          "overall": "10.8",
+          "overall_rank": "5th",
+          "conference": "11.4",
+          "conference_rank": "5th",
+          "opponent": "15.8"
+        },
+        {
+          "metric": "Passing touchdowns",
+          "overall": "26",
+          "overall_rank": "2nd",
+          "conference": "22",
+          "conference_rank": "1st",
+          "opponent": "21"
+        },
+        {
+          "metric": "Rushing yards",
+          "overall": "982",
+          "overall_rank": "5th",
+          "conference": "645",
+          "conference_rank": "5th",
+          "opponent": "1277"
+        },
+        {
+          "metric": "Rushing attempts",
+          "overall": "294",
+          "overall_rank": "6th",
+          "conference": "177",
+          "conference_rank": "6th",
+          "opponent": "333"
+        },
+        {
+          "metric": "Rushing yards per game",
+          "overall": "98.2",
+          "overall_rank": "5th",
+          "conference": "107.5",
+          "conference_rank": "5th",
+          "opponent": "127.7"
+        },
+        {
+          "metric": "Yards per rush",
+          "overall": "3.3",
+          "overall_rank": "5th",
+          "conference": "3.6",
+          "conference_rank": "3rd",
+          "opponent": "3.8"
+        },
+        {
+          "metric": "Rushing touchdowns",
+          "overall": "17",
+          "overall_rank": "3rd",
+          "conference": "11",
+          "conference_rank": "2nd",
+          "opponent": "15"
+        },
+        {
+          "metric": "1st downs",
+          "overall": "277",
+          "overall_rank": "1st",
+          "conference": "170",
+          "conference_rank": "1st",
+          "opponent": "199"
+        },
+        {
+          "metric": "Rushing 1st downs",
+          "overall": "77",
+          "overall_rank": "4th",
+          "conference": "52",
+          "conference_rank": "3rd",
+          "opponent": "79"
+        },
+        {
+          "metric": "Passing 1st downs",
+          "overall": "172",
+          "overall_rank": "1st",
+          "conference": "105",
+          "conference_rank": "1st",
+          "opponent": "101"
+        },
+        {
+          "metric": "Penalty 1st downs",
+          "overall": "28",
+          "overall_rank": "1st",
+          "conference": "13",
+          "conference_rank": "2nd",
+          "opponent": "19"
+        },
+        {
+          "metric": "1st downs per game",
+          "overall": "27.7",
+          "overall_rank": "1st",
+          "conference": "28.3",
+          "conference_rank": "1st",
+          "opponent": "-"
+        },
+        {
+          "metric": "3rd-down conversions",
+          "overall": "64-150",
+          "overall_rank": "1st",
+          "conference": "34-80",
+          "conference_rank": "4th",
+          "opponent": "54-134"
+        },
+        {
+          "metric": "3rd down %",
+          "overall": "43%",
+          "overall_rank": "2nd",
+          "conference": "43%",
+          "conference_rank": "5th",
+          "opponent": "40%"
+        },
+        {
+          "metric": "4th-down conversions",
+          "overall": "20-30",
+          "overall_rank": "1st",
+          "conference": "15-20",
+          "conference_rank": "1st",
+          "opponent": "8-28"
+        },
+        {
+          "metric": "4th down %",
+          "overall": "67%",
+          "overall_rank": "1st",
+          "conference": "75%",
+          "conference_rank": "1st",
+          "opponent": "29%"
+        },
+        {
+          "metric": "Kick returns (No.-Yards)",
+          "overall": "42-873",
+          "overall_rank": "6th",
+          "conference": "26-599",
+          "conference_rank": "2nd",
+          "opponent": "56-1219"
+        },
+        {
+          "metric": "Kick return average",
+          "overall": "20.8",
+          "overall_rank": "4th",
+          "conference": "23.0",
+          "conference_rank": "2nd",
+          "opponent": "21.8"
+        },
+        {
+          "metric": "Punt returns (No.-Yards)",
+          "overall": "15-88",
+          "overall_rank": "3rd",
+          "conference": "10-60",
+          "conference_rank": "2nd",
+          "opponent": "10-65"
+        },
+        {
+          "metric": "Punt return average",
+          "overall": "5.9",
+          "overall_rank": "5th",
+          "conference": "6.0",
+          "conference_rank": "3rd",
+          "opponent": "6.5"
+        },
+        {
+          "metric": "Field goals",
+          "overall": "11-15",
+          "overall_rank": "2nd",
+          "conference": "4-7",
+          "conference_rank": "3rd",
+          "opponent": "7-13"
+        },
+        {
+          "metric": "Field goal %",
+          "overall": "73.3%",
+          "overall_rank": "2nd",
+          "conference": "57.1%",
+          "conference_rank": "3rd",
+          "opponent": "53.8%"
+        },
+        {
+          "metric": "PATs",
+          "overall": "46-46",
+          "overall_rank": "2nd",
+          "conference": "35-35",
+          "conference_rank": "2nd",
+          "opponent": "34-38"
+        },
+        {
+          "metric": "PAT %",
+          "overall": "100.0%",
+          "overall_rank": "1st",
+          "conference": "100.0%",
+          "conference_rank": "1st",
+          "opponent": "89.5%"
+        },
+        {
+          "metric": "Punts (No.-Yards)",
+          "overall": "32-1304",
+          "overall_rank": "3rd",
+          "conference": "13-587",
+          "conference_rank": "6th",
+          "opponent": "37-1340"
+        },
+        {
+          "metric": "Average per punt",
+          "overall": "40.8",
+          "overall_rank": "1st",
+          "conference": "45.2",
+          "conference_rank": "1st",
+          "opponent": "36.2"
+        },
+        {
+          "metric": "Red zone scores",
+          "overall": "44-53",
+          "overall_rank": "2nd",
+          "conference": "28-34",
+          "conference_rank": "1st",
+          "opponent": "28-37"
+        },
+        {
+          "metric": "Red zone %",
+          "overall": "83%",
+          "overall_rank": "2nd",
+          "conference": "82%",
+          "conference_rank": "2nd",
+          "opponent": "76%"
+        },
+        {
+          "metric": "Red zone touchdowns",
+          "overall": "34-53",
+          "overall_rank": "1st",
+          "conference": "25-34",
+          "conference_rank": "1st",
+          "opponent": "24-37"
+        },
+        {
+          "metric": "Red zone touchdown %",
+          "overall": "64%",
+          "overall_rank": "2nd",
+          "conference": "74%",
+          "conference_rank": "1st",
+          "opponent": "65%"
+        },
+        {
+          "metric": "Fumbles-lost",
+          "overall": "15-12",
+          "overall_rank": "2nd",
+          "conference": "10-8",
+          "conference_rank": "3rd",
+          "opponent": "8-6"
+        },
+        {
+          "metric": "Fumbles recovered",
+          "overall": "6",
+          "overall_rank": "4th",
+          "conference": "6",
+          "conference_rank": "2nd",
+          "opponent": "12"
+        },
+        {
+          "metric": "Defensive INTs",
+          "overall": "7",
+          "overall_rank": "5th",
+          "conference": "4",
+          "conference_rank": "6th",
+          "opponent": "-"
+        },
+        {
+          "metric": "Interception returns (No.-Yds)",
+          "overall": "7-22",
+          "overall_rank": "7th",
+          "conference": "4-0",
+          "conference_rank": "7th",
+          "opponent": "9-151"
+        },
+        {
+          "metric": "Interception return average",
+          "overall": "3.1",
+          "overall_rank": "7th",
+          "conference": "0.0",
+          "conference_rank": "7th",
+          "opponent": "16.8"
+        },
+        {
+          "metric": "Defensive TDs",
+          "overall": "2",
+          "overall_rank": "2nd",
+          "conference": "2",
+          "conference_rank": "2nd",
+          "opponent": "-"
+        },
+        {
+          "metric": "Tackles",
+          "overall": "564",
+          "overall_rank": "5th",
+          "conference": "360",
+          "conference_rank": "6th",
+          "opponent": "-"
+        },
+        {
+          "metric": "Sacks",
+          "overall": "16",
+          "overall_rank": "5th",
+          "conference": "13",
+          "conference_rank": "3rd",
+          "opponent": "-"
+        },
+        {
+          "metric": "Penalties",
+          "overall": "93",
+          "overall_rank": "6th",
+          "conference": "58",
+          "conference_rank": "6th",
+          "opponent": "94"
+        },
+        {
+          "metric": "Penalty yards",
+          "overall": "852",
+          "overall_rank": "7th",
+          "conference": "548",
+          "conference_rank": "7th",
+          "opponent": "839"
+        },
+        {
+          "metric": "Time of possession per game",
+          "overall": "30:40",
+          "overall_rank": "5th",
+          "conference": "28:25",
+          "conference_rank": "5th",
+          "opponent": "29:20"
+        },
+        {
+          "metric": "Home Attendance",
+          "overall": "7,048",
+          "overall_rank": "1st",
+          "conference": "5,348",
+          "conference_rank": "1st",
+          "opponent": "16,926"
+        },
+        {
+          "metric": "Home Attendance average",
+          "overall": "1,410",
+          "overall_rank": "1st",
+          "conference": "1,337",
+          "conference_rank": "1st",
+          "opponent": "-"
+        }
+      ],
+      "game_log": [
+        {
+          "date": "Aug 30",
+          "opponent": "at Georgetown (Ky.)",
+          "score": "L, 34-17",
+          "yds": "493",
+          "pass": "407",
+          "c_a": "39-58",
+          "comp_pct": "67%",
+          "rush": "86",
+          "rush_att": "29",
+          "yards_per_rush": "3.0",
+          "int": "1",
+          "fum": "-",
+          "tackles": "49.0",
+          "sacks": "1",
+          "penalty_yards": "68",
+          "possession": "32:37",
+          "game_id": "20250830_dizi",
+          "source_url": "https://naiastats.prestosports.com/sports/fball/2025-26/boxscores/20250830_dizi.xml"
+        },
+        {
+          "date": "Sep 13",
+          "opponent": "at Campbellsville (KY)",
+          "score": "L, 37-34",
+          "yds": "503",
+          "pass": "437",
+          "c_a": "37-53",
+          "comp_pct": "70%",
+          "rush": "66",
+          "rush_att": "27",
+          "yards_per_rush": "2.4",
+          "int": "-",
+          "fum": "-",
+          "tackles": "45.0",
+          "sacks": "-",
+          "penalty_yards": "39",
+          "possession": "33:47",
+          "game_id": "20250913_kqps",
+          "source_url": "https://naiastats.prestosports.com/sports/fball/2025-26/boxscores/20250913_kqps.xml"
+        },
+        {
+          "date": "Sep 20",
+          "opponent": "Cumberland (Tenn.)",
+          "score": "L, 21-17",
+          "yds": "312",
+          "pass": "271",
+          "c_a": "31-41",
+          "comp_pct": "76%",
+          "rush": "41",
+          "rush_att": "36",
+          "yards_per_rush": "1.1",
+          "int": "-",
+          "fum": "-",
+          "tackles": "52.0",
+          "sacks": "2",
+          "penalty_yards": "107",
+          "possession": "35:53",
+          "game_id": "20250920_xzbh",
+          "source_url": "https://naiastats.prestosports.com/sports/fball/2025-26/boxscores/20250920_xzbh.xml"
+        },
+        {
+          "date": "Sep 27",
+          "opponent": "at Maryville (Tenn.)",
+          "score": "L, 34-30",
+          "yds": "517",
+          "pass": "373",
+          "c_a": "40-56",
+          "comp_pct": "71%",
+          "rush": "144",
+          "rush_att": "25",
+          "yards_per_rush": "5.8",
+          "int": "2",
+          "fum": "0",
+          "tackles": "58.0",
+          "sacks": "0",
+          "penalty_yards": "90",
+          "possession": "34:00",
+          "game_id": "20250927_uiom",
+          "source_url": "https://naiastats.prestosports.com/sports/fball/2025-26/boxscores/20250927_uiom.xml"
+        },
+        {
+          "date": "Oct 11",
+          "opponent": "Rio Grande",
+          "score": "W, 44-0",
+          "yds": "650",
+          "pass": "444",
+          "c_a": "38-52",
+          "comp_pct": "73%",
+          "rush": "206",
+          "rush_att": "41",
+          "yards_per_rush": "5.0",
+          "int": "2",
+          "fum": "-",
+          "tackles": "36.0",
+          "sacks": "1",
+          "penalty_yards": "159",
+          "possession": "38:53",
+          "game_id": "20251011_j14v",
+          "source_url": "https://naiastats.prestosports.com/sports/fball/2025-26/boxscores/20251011_j14v.xml"
+        },
+        {
+          "date": "Oct 18",
+          "opponent": "Point",
+          "score": "W, 62-10",
+          "yds": "544",
+          "pass": "493",
+          "c_a": "33-42",
+          "comp_pct": "79%",
+          "rush": "51",
+          "rush_att": "23",
+          "yards_per_rush": "2.2",
+          "int": "-",
+          "fum": "2",
+          "tackles": "62.0",
+          "sacks": "7",
+          "penalty_yards": "78",
+          "possession": "23:05",
+          "game_id": "20251018_1r1b",
+          "source_url": "https://naiastats.prestosports.com/sports/fball/2025-26/boxscores/20251018_1r1b.xml"
+        },
+        {
+          "date": "Oct 25",
+          "opponent": "at Bluefield (VA)",
+          "score": "L, 43-40",
+          "yds": "418",
+          "pass": "263",
+          "c_a": "17-31",
+          "comp_pct": "55%",
+          "rush": "155",
+          "rush_att": "27",
+          "yards_per_rush": "5.7",
+          "int": "-",
+          "fum": "-",
+          "tackles": "95.0",
+          "sacks": "-",
+          "penalty_yards": "88",
+          "possession": "20:27",
+          "game_id": "20251025_nhhj",
+          "source_url": "https://naiastats.prestosports.com/sports/fball/2025-26/boxscores/20251025_nhhj.xml"
+        },
+        {
+          "date": "Nov 1",
+          "opponent": "Union Commonwealth",
+          "score": "W, 49-14",
+          "yds": "503",
+          "pass": "477",
+          "c_a": "47-63",
+          "comp_pct": "75%",
+          "rush": "26",
+          "rush_att": "22",
+          "yards_per_rush": "1.2",
+          "int": "1",
+          "fum": "-",
+          "tackles": "42.0",
+          "sacks": "-",
+          "penalty_yards": "63",
+          "possession": "32:29",
+          "game_id": "20251101_rdne",
+          "source_url": "https://naiastats.prestosports.com/sports/fball/2025-26/boxscores/20251101_rdne.xml"
+        },
+        {
+          "date": "Nov 8",
+          "opponent": "Kentucky Christian",
+          "score": "W, 51-42",
+          "yds": "338",
+          "pass": "216",
+          "c_a": "30-46",
+          "comp_pct": "65%",
+          "rush": "122",
+          "rush_att": "35",
+          "yards_per_rush": "3.5",
+          "int": "1",
+          "fum": "1",
+          "tackles": "63.0",
+          "sacks": "5",
+          "penalty_yards": "78",
+          "possession": "30:41",
+          "game_id": "20251108_iabb",
+          "source_url": "https://naiastats.prestosports.com/sports/fball/2025-26/boxscores/20251108_iabb.xml"
+        },
+        {
+          "date": "Nov 15",
+          "opponent": "at Reinhardt (Ga.)",
+          "score": "L, 62-21",
+          "yds": "350",
+          "pass": "265",
+          "c_a": "25-44",
+          "comp_pct": "57%",
+          "rush": "85",
+          "rush_att": "29",
+          "yards_per_rush": "2.9",
+          "int": "-",
+          "fum": "2",
+          "tackles": "62.0",
+          "sacks": "-",
+          "penalty_yards": "82",
+          "possession": "24:53",
+          "game_id": "20251115_cb1j",
+          "source_url": "https://naiastats.prestosports.com/sports/fball/2025-26/boxscores/20251115_cb1j.xml"
+        }
+      ],
+      "schedule": [
+        {
+          "date": "Aug 30",
+          "opponent": "at Georgetown",
+          "result": "L, 34-17",
+          "status": "Final",
+          "notes": "Toyota Stadium - Georgetown, KY; Regional"
+        },
+        {
+          "date": "Sep 13",
+          "opponent": "at Campbellsville (KY)",
+          "result": "L, 37-34",
+          "status": "Final",
+          "notes": "Regional"
+        },
+        {
+          "date": "Sep 20",
+          "opponent": "Cumberland (TN)",
+          "result": "L, 21-17",
+          "status": "Final",
+          "notes": "Regional"
+        },
+        {
+          "date": "Sep 27",
+          "opponent": "at Maryville (Tenn.)",
+          "result": "L, 34-30",
+          "status": "Final",
+          "notes": ""
+        },
+        {
+          "date": "Oct 11",
+          "opponent": "Rio Grande",
+          "result": "W, 44-0",
+          "status": "Final",
+          "notes": "Conference"
+        },
+        {
+          "date": "Oct 18",
+          "opponent": "Point",
+          "result": "W, 62-10",
+          "status": "Final",
+          "notes": "Conference; Regional"
+        },
+        {
+          "date": "Oct 25",
+          "opponent": "at Bluefield (VA)",
+          "result": "L, 43-40",
+          "status": "Final",
+          "notes": "Conference; Regional"
+        },
+        {
+          "date": "Nov 1",
+          "opponent": "Union Commonwealth",
+          "result": "W, 49-14",
+          "status": "Final",
+          "notes": "Conference; Regional"
+        },
+        {
+          "date": "Nov 8",
+          "opponent": "Kentucky Christian",
+          "result": "W, 51-42",
+          "status": "Final",
+          "notes": "Conference; Regional"
+        },
+        {
+          "date": "Nov 15",
+          "opponent": "at Reinhardt (GA)",
+          "result": "L, 62-21",
+          "status": "Final",
+          "notes": "Conference"
+        }
+      ],
+      "players": {
+        "Passing": {
+          "columns": [
+            "GP",
+            "CMP-ATT-INT",
+            "PCT",
+            "YDS",
+            "TD",
+            "LONG",
+            "AVG/G"
+          ],
+          "rows": [
+            {
+              "jersey": "1",
+              "player": "Xavier Malone",
+              "GP": "10",
+              "CMP-ATT-INT": "318-461-8",
+              "PCT": "69.0%",
+              "YDS": "3492",
+              "TD": "24",
+              "LONG": "73",
+              "AVG/G": "349.2"
+            },
+            {
+              "jersey": "8",
+              "player": "Peter Zamora",
+              "GP": "2",
+              "CMP-ATT-INT": "12-14-0",
+              "PCT": "85.7%",
+              "YDS": "106",
+              "TD": "2",
+              "LONG": "16",
+              "AVG/G": "53.0"
+            },
+            {
+              "jersey": "13",
+              "player": "Alex Hatton",
+              "GP": "10",
+              "CMP-ATT-INT": "7-11-1",
+              "PCT": "63.6%",
+              "YDS": "48",
+              "TD": "0",
+              "LONG": "15",
+              "AVG/G": "4.8"
+            }
+          ]
+        },
+        "Rushing": {
+          "columns": [
+            "GP",
+            "ATT",
+            "GAIN",
+            "LOSS",
+            "NET",
+            "AVG",
+            "TD",
+            "LONG",
+            "AVG/G"
+          ],
+          "rows": [
+            {
+              "jersey": "5",
+              "player": "Amon Williams",
+              "GP": "9",
+              "ATT": "168",
+              "GAIN": "773",
+              "LOSS": "20",
+              "NET": "753",
+              "AVG": "4.5",
+              "TD": "10",
+              "LONG": "44",
+              "AVG/G": "83.7"
+            },
+            {
+              "jersey": "23",
+              "player": "Jayden Pepper",
+              "GP": "9",
+              "ATT": "55",
+              "GAIN": "275",
+              "LOSS": "11",
+              "NET": "264",
+              "AVG": "4.8",
+              "TD": "4",
+              "LONG": "21",
+              "AVG/G": "29.3"
+            },
+            {
+              "jersey": "33",
+              "player": "Porter Rode",
+              "GP": "4",
+              "ATT": "5",
+              "GAIN": "21",
+              "LOSS": "5",
+              "NET": "16",
+              "AVG": "3.2",
+              "TD": "0",
+              "LONG": "10",
+              "AVG/G": "4.0"
+            },
+            {
+              "jersey": "25",
+              "player": "Sa'Kuan Foster",
+              "GP": "4",
+              "ATT": "3",
+              "GAIN": "6",
+              "LOSS": "1",
+              "NET": "5",
+              "AVG": "1.7",
+              "TD": "0",
+              "LONG": "4",
+              "AVG/G": "1.3"
+            },
+            {
+              "jersey": "13",
+              "player": "Alex Hatton",
+              "GP": "10",
+              "ATT": "3",
+              "GAIN": "3",
+              "LOSS": "6",
+              "NET": "-3",
+              "AVG": "-1.0",
+              "TD": "0",
+              "LONG": "3",
+              "AVG/G": "-0.3"
+            },
+            {
+              "jersey": "8",
+              "player": "Peter Zamora",
+              "GP": "2",
+              "ATT": "1",
+              "GAIN": "0",
+              "LOSS": "5",
+              "NET": "-5",
+              "AVG": "-5.0",
+              "TD": "0",
+              "LONG": "0",
+              "AVG/G": "-2.5"
+            },
+            {
+              "jersey": "41",
+              "player": "Jonathan Besharatpour",
+              "GP": "5",
+              "ATT": "1",
+              "GAIN": "0",
+              "LOSS": "7",
+              "NET": "-7",
+              "AVG": "-7.0",
+              "TD": "0",
+              "LONG": "0",
+              "AVG/G": "-1.4"
+            },
+            {
+              "jersey": "2",
+              "player": "Jordan Williams",
+              "GP": "10",
+              "ATT": "1",
+              "GAIN": "0",
+              "LOSS": "9",
+              "NET": "-9",
+              "AVG": "-9.0",
+              "TD": "0",
+              "LONG": "0",
+              "AVG/G": "-0.9"
+            },
+            {
+              "jersey": "1",
+              "player": "Xavier Malone",
+              "GP": "10",
+              "ATT": "57",
+              "GAIN": "146",
+              "LOSS": "178",
+              "NET": "-32",
+              "AVG": "-0.6",
+              "TD": "3",
+              "LONG": "30",
+              "AVG/G": "-3.2"
+            }
+          ]
+        },
+        "Receiving": {
+          "columns": [
+            "GP",
+            "REC",
+            "REC/G",
+            "YDS",
+            "Y/G",
+            "AVG",
+            "TD",
+            "LG"
+          ],
+          "rows": [
+            {
+              "jersey": "2",
+              "player": "Jordan Williams",
+              "GP": "10",
+              "REC": "98",
+              "REC/G": "9.8",
+              "YDS": "944",
+              "Y/G": "94.4",
+              "AVG": "9.6",
+              "TD": "5",
+              "LG": "60"
+            },
+            {
+              "jersey": "9",
+              "player": "Brandon Newton",
+              "GP": "10",
+              "REC": "47",
+              "REC/G": "4.7",
+              "YDS": "726",
+              "Y/G": "72.6",
+              "AVG": "15.4",
+              "TD": "8",
+              "LG": "73"
+            },
+            {
+              "jersey": "87",
+              "player": "Grant Scott",
+              "GP": "10",
+              "REC": "34",
+              "REC/G": "3.4",
+              "YDS": "478",
+              "Y/G": "47.8",
+              "AVG": "14.1",
+              "TD": "3",
+              "LG": "34"
+            },
+            {
+              "jersey": "5",
+              "player": "Amon Williams",
+              "GP": "9",
+              "REC": "56",
+              "REC/G": "6.2",
+              "YDS": "348",
+              "Y/G": "38.7",
+              "AVG": "6.2",
+              "TD": "1",
+              "LG": "68"
+            },
+            {
+              "jersey": "14",
+              "player": "Cobe Stribling",
+              "GP": "10",
+              "REC": "22",
+              "REC/G": "2.2",
+              "YDS": "344",
+              "Y/G": "34.4",
+              "AVG": "15.6",
+              "TD": "4",
+              "LG": "44"
+            },
+            {
+              "jersey": "3",
+              "player": "Deajuan McDougle",
+              "GP": "3",
+              "REC": "13",
+              "REC/G": "4.3",
+              "YDS": "177",
+              "Y/G": "59.0",
+              "AVG": "13.6",
+              "TD": "0",
+              "LG": "44"
+            },
+            {
+              "jersey": "89",
+              "player": "Miguel Hernandez",
+              "GP": "6",
+              "REC": "16",
+              "REC/G": "2.7",
+              "YDS": "174",
+              "Y/G": "29.0",
+              "AVG": "10.9",
+              "TD": "0",
+              "LG": "36"
+            },
+            {
+              "jersey": "23",
+              "player": "Jayden Pepper",
+              "GP": "9",
+              "REC": "20",
+              "REC/G": "2.2",
+              "YDS": "145",
+              "Y/G": "16.1",
+              "AVG": "7.3",
+              "TD": "1",
+              "LG": "16"
+            },
+            {
+              "jersey": "18",
+              "player": "Ty Perkins",
+              "GP": "2",
+              "REC": "10",
+              "REC/G": "5.0",
+              "YDS": "135",
+              "Y/G": "67.5",
+              "AVG": "13.5",
+              "TD": "3",
+              "LG": "34"
+            },
+            {
+              "jersey": "30",
+              "player": "Isaiah Esquibel",
+              "GP": "8",
+              "REC": "9",
+              "REC/G": "1.1",
+              "YDS": "51",
+              "Y/G": "6.4",
+              "AVG": "5.7",
+              "TD": "0",
+              "LG": "13"
+            },
+            {
+              "jersey": "83",
+              "player": "Demarcus Calhoun",
+              "GP": "8",
+              "REC": "4",
+              "REC/G": "0.5",
+              "YDS": "39",
+              "Y/G": "4.9",
+              "AVG": "9.8",
+              "TD": "1",
+              "LG": "16"
+            },
+            {
+              "jersey": "28",
+              "player": "Hayden Russell",
+              "GP": "7",
+              "REC": "3",
+              "REC/G": "0.4",
+              "YDS": "37",
+              "Y/G": "5.3",
+              "AVG": "12.3",
+              "TD": "0",
+              "LG": "21"
+            },
+            {
+              "jersey": "33",
+              "player": "Porter Rode",
+              "GP": "4",
+              "REC": "2",
+              "REC/G": "0.5",
+              "YDS": "18",
+              "Y/G": "4.5",
+              "AVG": "9.0",
+              "TD": "0",
+              "LG": "11"
+            },
+            {
+              "jersey": "85",
+              "player": "Connor Goodman",
+              "GP": "5",
+              "REC": "1",
+              "REC/G": "0.2",
+              "YDS": "15",
+              "Y/G": "3.0",
+              "AVG": "15.0",
+              "TD": "0",
+              "LG": "15"
+            },
+            {
+              "jersey": "80",
+              "player": "Alex Lindsey",
+              "GP": "4",
+              "REC": "1",
+              "REC/G": "0.3",
+              "YDS": "10",
+              "Y/G": "2.5",
+              "AVG": "10.0",
+              "TD": "0",
+              "LG": "10"
+            },
+            {
+              "jersey": "19",
+              "player": "Maurice Davis",
+              "GP": "10",
+              "REC": "1",
+              "REC/G": "0.1",
+              "YDS": "5",
+              "Y/G": "0.5",
+              "AVG": "5.0",
+              "TD": "0",
+              "LG": "5"
+            }
+          ]
+        },
+        "Punting": {
+          "columns": [
+            "GP",
+            "YDS",
+            "AVG",
+            "LONG",
+            "TB",
+            "FC",
+            "I20",
+            "BLK"
+          ],
+          "rows": [
+            {
+              "jersey": "1",
+              "player": "Xavier Malone",
+              "GP": "10",
+              "YDS": "84",
+              "AVG": "42.0",
+              "LONG": "45",
+              "TB": "0",
+              "FC": "0",
+              "I20": "2",
+              "BLK": "0"
+            },
+            {
+              "jersey": "13",
+              "player": "Alex Hatton",
+              "GP": "10",
+              "YDS": "1184",
+              "AVG": "40.8",
+              "LONG": "65",
+              "TB": "1",
+              "FC": "5",
+              "I20": "13",
+              "BLK": "1"
+            },
+            {
+              "jersey": "41",
+              "player": "Jonathan Besharatpour",
+              "GP": "5",
+              "YDS": "36",
+              "AVG": "36.0",
+              "LONG": "36",
+              "TB": "0",
+              "FC": "1",
+              "I20": "0",
+              "BLK": "0"
+            }
+          ]
+        },
+        "Kicking": {
+          "columns": [
+            "GP",
+            "FGM",
+            "FGA",
+            "PCT",
+            "LONG",
+            "XPM",
+            "XPA",
+            "XP PCT",
+            "PTS"
+          ],
+          "rows": [
+            {
+              "jersey": "45",
+              "player": "Levi Wheeling",
+              "GP": "1",
+              "FGM": "-",
+              "FGA": "-",
+              "PCT": "-",
+              "LONG": "-",
+              "XPM": "1",
+              "XPA": "1",
+              "XP PCT": "100%",
+              "PTS": "1"
+            },
+            {
+              "jersey": "86",
+              "player": "Isaac Smith",
+              "GP": "9",
+              "FGM": "10",
+              "FGA": "14",
+              "PCT": "71%",
+              "LONG": "43",
+              "XPM": "43",
+              "XPA": "43",
+              "XP PCT": "100%",
+              "PTS": "73"
+            }
+          ]
+        },
+        "Returns": {
+          "columns": [
+            "KR",
+            "KR YDS",
+            "KR AVG",
+            "KR TD",
+            "KR LONG",
+            "PR",
+            "PR YDS",
+            "PR AVG",
+            "PR TD",
+            "PR LONG"
+          ],
+          "rows": [
+            {
+              "jersey": "0",
+              "player": "Marshawn Boyden",
+              "KR": "-",
+              "KR YDS": "-",
+              "KR AVG": "-",
+              "KR TD": "-",
+              "KR LONG": "-",
+              "PR": "1",
+              "PR YDS": "0",
+              "PR AVG": "0.0",
+              "PR TD": "0",
+              "PR LONG": "0"
+            },
+            {
+              "jersey": "21",
+              "player": "Quincy Clark",
+              "KR": "1",
+              "KR YDS": "14",
+              "KR AVG": "14.0",
+              "KR TD": "0",
+              "KR LONG": "14",
+              "PR": "-",
+              "PR YDS": "-",
+              "PR AVG": "-",
+              "PR TD": "-",
+              "PR LONG": "-"
+            },
+            {
+              "jersey": "24",
+              "player": "Marcus Nunes",
+              "KR": "1",
+              "KR YDS": "15",
+              "KR AVG": "15.0",
+              "KR TD": "0",
+              "KR LONG": "15",
+              "PR": "-",
+              "PR YDS": "-",
+              "PR AVG": "-",
+              "PR TD": "-",
+              "PR LONG": "-"
+            },
+            {
+              "jersey": "4",
+              "player": "Dige Savage",
+              "KR": "-",
+              "KR YDS": "-",
+              "KR AVG": "-",
+              "KR TD": "-",
+              "KR LONG": "-",
+              "PR": "1",
+              "PR YDS": "3",
+              "PR AVG": "3.0",
+              "PR TD": "0",
+              "PR LONG": "3"
+            },
+            {
+              "jersey": "87",
+              "player": "Grant Scott",
+              "KR": "1",
+              "KR YDS": "19",
+              "KR AVG": "19.0",
+              "KR TD": "0",
+              "KR LONG": "19",
+              "PR": "-",
+              "PR YDS": "-",
+              "PR AVG": "-",
+              "PR TD": "-",
+              "PR LONG": "-"
+            },
+            {
+              "jersey": "39",
+              "player": "Guillermo Valadez",
+              "KR": "1",
+              "KR YDS": "13",
+              "KR AVG": "13.0",
+              "KR TD": "0",
+              "KR LONG": "13",
+              "PR": "-",
+              "PR YDS": "-",
+              "PR AVG": "-",
+              "PR TD": "-",
+              "PR LONG": "-"
+            },
+            {
+              "jersey": "25",
+              "player": "Sa'Kuan Foster",
+              "KR": "2",
+              "KR YDS": "49",
+              "KR AVG": "24.5",
+              "KR TD": "0",
+              "KR LONG": "26",
+              "PR": "-",
+              "PR YDS": "-",
+              "PR AVG": "-",
+              "PR TD": "-",
+              "PR LONG": "-"
+            },
+            {
+              "jersey": "26",
+              "player": "Dallas Kelly",
+              "KR": "2",
+              "KR YDS": "55",
+              "KR AVG": "27.5",
+              "KR TD": "0",
+              "KR LONG": "51",
+              "PR": "-",
+              "PR YDS": "-",
+              "PR AVG": "-",
+              "PR TD": "-",
+              "PR LONG": "-"
+            },
+            {
+              "jersey": "84",
+              "player": "Ethan Garn",
+              "KR": "3",
+              "KR YDS": "75",
+              "KR AVG": "25.0",
+              "KR TD": "0",
+              "KR LONG": "30",
+              "PR": "-",
+              "PR YDS": "-",
+              "PR AVG": "-",
+              "PR TD": "-",
+              "PR LONG": "-"
+            },
+            {
+              "jersey": "3",
+              "player": "Deajuan McDougle",
+              "KR": "1",
+              "KR YDS": "22",
+              "KR AVG": "22.0",
+              "KR TD": "0",
+              "KR LONG": "22",
+              "PR": "2",
+              "PR YDS": "-3",
+              "PR AVG": "-1.5",
+              "PR TD": "0",
+              "PR LONG": "1"
+            },
+            {
+              "jersey": "14",
+              "player": "Cobe Stribling",
+              "KR": "5",
+              "KR YDS": "85",
+              "KR AVG": "17.0",
+              "KR TD": "0",
+              "KR LONG": "21",
+              "PR": "-",
+              "PR YDS": "-",
+              "PR AVG": "-",
+              "PR TD": "-",
+              "PR LONG": "-"
+            },
+            {
+              "jersey": "83",
+              "player": "Demarcus Calhoun",
+              "KR": "9",
+              "KR YDS": "95",
+              "KR AVG": "10.6",
+              "KR TD": "0",
+              "KR LONG": "22",
+              "PR": "-",
+              "PR YDS": "-",
+              "PR AVG": "-",
+              "PR TD": "-",
+              "PR LONG": "-"
+            },
+            {
+              "jersey": "30",
+              "player": "Isaiah Esquibel",
+              "KR": "-",
+              "KR YDS": "-",
+              "KR AVG": "-",
+              "KR TD": "-",
+              "KR LONG": "-",
+              "PR": "11",
+              "PR YDS": "88",
+              "PR AVG": "8.0",
+              "PR TD": "0",
+              "PR LONG": "20"
+            },
+            {
+              "jersey": "19",
+              "player": "Maurice Davis",
+              "KR": "16",
+              "KR YDS": "431",
+              "KR AVG": "26.9",
+              "KR TD": "1",
+              "KR LONG": "99",
+              "PR": "-",
+              "PR YDS": "-",
+              "PR AVG": "-",
+              "PR TD": "-",
+              "PR LONG": "-"
+            }
+          ]
+        },
+        "Scoring": {
+          "columns": [
+            "PTS",
+            "PTS/G",
+            "RUSH",
+            "REC",
+            "KR",
+            "PR",
+            "INT",
+            "FUM",
+            "XPM",
+            "FGM",
+            "2PT"
+          ],
+          "rows": [
+            {
+              "jersey": "86",
+              "player": "Isaac Smith",
+              "PTS": "73",
+              "PTS/G": "8.1",
+              "RUSH": "-",
+              "REC": "-",
+              "KR": "-",
+              "PR": "-",
+              "INT": "-",
+              "FUM": "-",
+              "XPM": "43",
+              "FGM": "10",
+              "2PT": "0"
+            },
+            {
+              "jersey": "5",
+              "player": "Amon Williams",
+              "PTS": "66",
+              "PTS/G": "7.3",
+              "RUSH": "10",
+              "REC": "1",
+              "KR": "-",
+              "PR": "-",
+              "INT": "-",
+              "FUM": "-",
+              "XPM": "-",
+              "FGM": "-",
+              "2PT": "0"
+            },
+            {
+              "jersey": "9",
+              "player": "Brandon Newton",
+              "PTS": "48",
+              "PTS/G": "4.8",
+              "RUSH": "-",
+              "REC": "8",
+              "KR": "-",
+              "PR": "-",
+              "INT": "-",
+              "FUM": "-",
+              "XPM": "-",
+              "FGM": "-",
+              "2PT": "-"
+            },
+            {
+              "jersey": "23",
+              "player": "Jayden Pepper",
+              "PTS": "30",
+              "PTS/G": "3.3",
+              "RUSH": "4",
+              "REC": "1",
+              "KR": "-",
+              "PR": "-",
+              "INT": "-",
+              "FUM": "-",
+              "XPM": "-",
+              "FGM": "-",
+              "2PT": "-"
+            },
+            {
+              "jersey": "2",
+              "player": "Jordan Williams",
+              "PTS": "30",
+              "PTS/G": "3.0",
+              "RUSH": "0",
+              "REC": "5",
+              "KR": "-",
+              "PR": "-",
+              "INT": "-",
+              "FUM": "-",
+              "XPM": "-",
+              "FGM": "-",
+              "2PT": "0"
+            },
+            {
+              "jersey": "14",
+              "player": "Cobe Stribling",
+              "PTS": "24",
+              "PTS/G": "2.4",
+              "RUSH": "-",
+              "REC": "4",
+              "KR": "0",
+              "PR": "-",
+              "INT": "-",
+              "FUM": "-",
+              "XPM": "-",
+              "FGM": "-",
+              "2PT": "-"
+            },
+            {
+              "jersey": "1",
+              "player": "Xavier Malone",
+              "PTS": "18",
+              "PTS/G": "1.8",
+              "RUSH": "3",
+              "REC": "-",
+              "KR": "-",
+              "PR": "-",
+              "INT": "-",
+              "FUM": "-",
+              "XPM": "-",
+              "FGM": "-",
+              "2PT": "-"
+            },
+            {
+              "jersey": "18",
+              "player": "Ty Perkins",
+              "PTS": "18",
+              "PTS/G": "9.0",
+              "RUSH": "-",
+              "REC": "3",
+              "KR": "-",
+              "PR": "-",
+              "INT": "-",
+              "FUM": "-",
+              "XPM": "-",
+              "FGM": "-",
+              "2PT": "-"
+            },
+            {
+              "jersey": "87",
+              "player": "Grant Scott",
+              "PTS": "18",
+              "PTS/G": "1.8",
+              "RUSH": "-",
+              "REC": "3",
+              "KR": "0",
+              "PR": "-",
+              "INT": "-",
+              "FUM": "-",
+              "XPM": "-",
+              "FGM": "-",
+              "2PT": "-"
+            },
+            {
+              "jersey": "83",
+              "player": "Demarcus Calhoun",
+              "PTS": "6",
+              "PTS/G": "0.8",
+              "RUSH": "-",
+              "REC": "1",
+              "KR": "0",
+              "PR": "-",
+              "INT": "-",
+              "FUM": "-",
+              "XPM": "-",
+              "FGM": "-",
+              "2PT": "-"
+            },
+            {
+              "jersey": "19",
+              "player": "Maurice Davis",
+              "PTS": "6",
+              "PTS/G": "0.6",
+              "RUSH": "-",
+              "REC": "0",
+              "KR": "1",
+              "PR": "-",
+              "INT": "-",
+              "FUM": "-",
+              "XPM": "-",
+              "FGM": "-",
+              "2PT": "-"
+            },
+            {
+              "jersey": "6",
+              "player": "Levi Evans",
+              "PTS": "6",
+              "PTS/G": "0.6",
+              "RUSH": "-",
+              "REC": "-",
+              "KR": "-",
+              "PR": "-",
+              "INT": "-",
+              "FUM": "1",
+              "XPM": "-",
+              "FGM": "-",
+              "2PT": "-"
+            },
+            {
+              "jersey": "48",
+              "player": "Ahmad Fisher",
+              "PTS": "6",
+              "PTS/G": "0.8",
+              "RUSH": "-",
+              "REC": "-",
+              "KR": "-",
+              "PR": "-",
+              "INT": "-",
+              "FUM": "1",
+              "XPM": "-",
+              "FGM": "-",
+              "2PT": "-"
+            },
+            {
+              "jersey": "45",
+              "player": "Levi Wheeling",
+              "PTS": "1",
+              "PTS/G": "1.0",
+              "RUSH": "-",
+              "REC": "-",
+              "KR": "-",
+              "PR": "-",
+              "INT": "-",
+              "FUM": "-",
+              "XPM": "1",
+              "FGM": "-",
+              "2PT": "0"
+            }
+          ]
+        },
+        "Defensive Statistics": {
+          "columns": [
+            "GP",
+            "SOLO",
+            "AST",
+            "TOTAL",
+            "TFL-YDS",
+            "SCK-YDS",
+            "INT-YDS",
+            "BU",
+            "FF",
+            "FR-YDS",
+            "BLK"
+          ],
+          "rows": [
+            {
+              "jersey": "15",
+              "player": "Najmir Bellegarde",
+              "GP": "10",
+              "SOLO": "45",
+              "AST": "20",
+              "TOTAL": "65.0",
+              "TFL-YDS": "11.0-44",
+              "SCK-YDS": "2.5-25",
+              "INT-YDS": "1-0",
+              "BU": "3",
+              "FF": "3",
+              "FR-YDS": "1-0",
+              "BLK": "0"
+            },
+            {
+              "jersey": "6",
+              "player": "Levi Evans",
+              "GP": "10",
+              "SOLO": "44",
+              "AST": "25",
+              "TOTAL": "69.0",
+              "TFL-YDS": "16.0-41",
+              "SCK-YDS": "3.5-12",
+              "INT-YDS": "0-0",
+              "BU": "4",
+              "FF": "0",
+              "FR-YDS": "1-42",
+              "BLK": "4"
+            },
+            {
+              "jersey": "4",
+              "player": "Dige Savage",
+              "GP": "10",
+              "SOLO": "33",
+              "AST": "10",
+              "TOTAL": "43.0",
+              "TFL-YDS": "3.5-11",
+              "SCK-YDS": "0.0-0",
+              "INT-YDS": "3-0",
+              "BU": "8",
+              "FF": "0",
+              "FR-YDS": "0-0",
+              "BLK": "0"
+            },
+            {
+              "jersey": "17",
+              "player": "Brett Coleman",
+              "GP": "9",
+              "SOLO": "30",
+              "AST": "13",
+              "TOTAL": "43.0",
+              "TFL-YDS": "3.5-6",
+              "SCK-YDS": "0.0-0",
+              "INT-YDS": "0-0",
+              "BU": "1",
+              "FF": "0",
+              "FR-YDS": "1-0",
+              "BLK": "1"
+            },
+            {
+              "jersey": "34",
+              "player": "D'Vyne Cowan-Bazley",
+              "GP": "8",
+              "SOLO": "23",
+              "AST": "3",
+              "TOTAL": "26.0",
+              "TFL-YDS": "1.0-1",
+              "SCK-YDS": "0.0-0",
+              "INT-YDS": "0-0",
+              "BU": "6",
+              "FF": "0",
+              "FR-YDS": "0-0",
+              "BLK": "0"
+            },
+            {
+              "jersey": "29",
+              "player": "Tommy Turner",
+              "GP": "10",
+              "SOLO": "22",
+              "AST": "10",
+              "TOTAL": "32.0",
+              "TFL-YDS": "2.5-6",
+              "SCK-YDS": "0.0-0",
+              "INT-YDS": "0-0",
+              "BU": "0",
+              "FF": "0",
+              "FR-YDS": "0-0",
+              "BLK": "0"
+            },
+            {
+              "jersey": "21",
+              "player": "Quincy Clark",
+              "GP": "9",
+              "SOLO": "20",
+              "AST": "9",
+              "TOTAL": "29.0",
+              "TFL-YDS": "0.0-0",
+              "SCK-YDS": "0.0-0",
+              "INT-YDS": "1-0",
+              "BU": "3",
+              "FF": "0",
+              "FR-YDS": "0-0",
+              "BLK": "0"
+            },
+            {
+              "jersey": "7",
+              "player": "Trevor Carter",
+              "GP": "10",
+              "SOLO": "19",
+              "AST": "10",
+              "TOTAL": "29.0",
+              "TFL-YDS": "0.5-2",
+              "SCK-YDS": "0.0-0",
+              "INT-YDS": "0-0",
+              "BU": "1",
+              "FF": "1",
+              "FR-YDS": "0-0",
+              "BLK": "0"
+            },
+            {
+              "jersey": "10",
+              "player": "Jeff Flowers",
+              "GP": "9",
+              "SOLO": "18",
+              "AST": "6",
+              "TOTAL": "24.0",
+              "TFL-YDS": "8.5-47",
+              "SCK-YDS": "4.5-33",
+              "INT-YDS": "0-0",
+              "BU": "2",
+              "FF": "1",
+              "FR-YDS": "0-0",
+              "BLK": "0"
+            },
+            {
+              "jersey": "0",
+              "player": "Marshawn Boyden",
+              "GP": "9",
+              "SOLO": "17",
+              "AST": "5",
+              "TOTAL": "22.0",
+              "TFL-YDS": "0.0-0",
+              "SCK-YDS": "0.0-0",
+              "INT-YDS": "1-22",
+              "BU": "3",
+              "FF": "0",
+              "FR-YDS": "0-0",
+              "BLK": "0"
+            },
+            {
+              "jersey": "11",
+              "player": "LaCharles Woodruff",
+              "GP": "6",
+              "SOLO": "16",
+              "AST": "3",
+              "TOTAL": "19.0",
+              "TFL-YDS": "0.0-0",
+              "SCK-YDS": "0.0-0",
+              "INT-YDS": "1-0",
+              "BU": "3",
+              "FF": "0",
+              "FR-YDS": "0-0",
+              "BLK": "0"
+            },
+            {
+              "jersey": "57",
+              "player": "Landon Rowe",
+              "GP": "9",
+              "SOLO": "14",
+              "AST": "6",
+              "TOTAL": "20.0",
+              "TFL-YDS": "2.0-16",
+              "SCK-YDS": "2.0-16",
+              "INT-YDS": "0-0",
+              "BU": "0",
+              "FF": "0",
+              "FR-YDS": "1-0",
+              "BLK": "1"
+            },
+            {
+              "jersey": "12",
+              "player": "Damion Watts",
+              "GP": "9",
+              "SOLO": "14",
+              "AST": "4",
+              "TOTAL": "18.0",
+              "TFL-YDS": "0.5-0",
+              "SCK-YDS": "0.0-0",
+              "INT-YDS": "0-0",
+              "BU": "6",
+              "FF": "0",
+              "FR-YDS": "0-0",
+              "BLK": "0"
+            },
+            {
+              "jersey": "55",
+              "player": "Ahmante Altman",
+              "GP": "10",
+              "SOLO": "12",
+              "AST": "13",
+              "TOTAL": "25.0",
+              "TFL-YDS": "3.5-22",
+              "SCK-YDS": "1.5-17",
+              "INT-YDS": "0-0",
+              "BU": "1",
+              "FF": "0",
+              "FR-YDS": "0-0",
+              "BLK": "0"
+            },
+            {
+              "jersey": "40",
+              "player": "Dylan Ferguson",
+              "GP": "7",
+              "SOLO": "8",
+              "AST": "4",
+              "TOTAL": "12.0",
+              "TFL-YDS": "1.0-1",
+              "SCK-YDS": "--",
+              "INT-YDS": "--",
+              "BU": "-",
+              "FF": "-",
+              "FR-YDS": "--",
+              "BLK": "-"
+            },
+            {
+              "jersey": "85",
+              "player": "Connor Goodman",
+              "GP": "5",
+              "SOLO": "7",
+              "AST": "0",
+              "TOTAL": "7.0",
+              "TFL-YDS": "1.0-16",
+              "SCK-YDS": "--",
+              "INT-YDS": "--",
+              "BU": "-",
+              "FF": "-",
+              "FR-YDS": "--",
+              "BLK": "-"
+            },
+            {
+              "jersey": "24",
+              "player": "Marcus Nunes",
+              "GP": "10",
+              "SOLO": "7",
+              "AST": "2",
+              "TOTAL": "9.0",
+              "TFL-YDS": "0.5-1",
+              "SCK-YDS": "0.5-1",
+              "INT-YDS": "--",
+              "BU": "-",
+              "FF": "-",
+              "FR-YDS": "--",
+              "BLK": "-"
+            },
+            {
+              "jersey": "26",
+              "player": "Dallas Kelly",
+              "GP": "7",
+              "SOLO": "6",
+              "AST": "2",
+              "TOTAL": "8.0",
+              "TFL-YDS": "0.0-0",
+              "SCK-YDS": "0.0-0",
+              "INT-YDS": "0-0",
+              "BU": "1",
+              "FF": "0",
+              "FR-YDS": "0-0",
+              "BLK": "0"
+            },
+            {
+              "jersey": "22",
+              "player": "Xavier Dahn",
+              "GP": "7",
+              "SOLO": "5",
+              "AST": "5",
+              "TOTAL": "10.0",
+              "TFL-YDS": "1.0-5",
+              "SCK-YDS": "0.5-3",
+              "INT-YDS": "0-0",
+              "BU": "0",
+              "FF": "0",
+              "FR-YDS": "0-0",
+              "BLK": "0"
+            },
+            {
+              "jersey": "20",
+              "player": "Caleb Anderson",
+              "GP": "4",
+              "SOLO": "4",
+              "AST": "8",
+              "TOTAL": "12.0",
+              "TFL-YDS": "1.0-2",
+              "SCK-YDS": "--",
+              "INT-YDS": "--",
+              "BU": "-",
+              "FF": "-",
+              "FR-YDS": "--",
+              "BLK": "-"
+            },
+            {
+              "jersey": "43",
+              "player": "Kylan Ware",
+              "GP": "1",
+              "SOLO": "4",
+              "AST": "0",
+              "TOTAL": "4.0",
+              "TFL-YDS": "0.0-",
+              "SCK-YDS": "--",
+              "INT-YDS": "--",
+              "BU": "1",
+              "FF": "-",
+              "FR-YDS": "--",
+              "BLK": "-"
+            },
+            {
+              "jersey": "48",
+              "player": "Ahmad Fisher",
+              "GP": "8",
+              "SOLO": "3",
+              "AST": "4",
+              "TOTAL": "7.0",
+              "TFL-YDS": "2.0-6",
+              "SCK-YDS": "1.0-4",
+              "INT-YDS": "0-0",
+              "BU": "0",
+              "FF": "0",
+              "FR-YDS": "1-34",
+              "BLK": "0"
+            },
+            {
+              "jersey": "95",
+              "player": "Jalen Flowers",
+              "GP": "7",
+              "SOLO": "3",
+              "AST": "2",
+              "TOTAL": "5.0",
+              "TFL-YDS": "0.5-2",
+              "SCK-YDS": "--",
+              "INT-YDS": "--",
+              "BU": "1",
+              "FF": "-",
+              "FR-YDS": "--",
+              "BLK": "-"
+            },
+            {
+              "jersey": "28",
+              "player": "Hayden Russell",
+              "GP": "7",
+              "SOLO": "3",
+              "AST": "1",
+              "TOTAL": "4.0",
+              "TFL-YDS": "0.0-",
+              "SCK-YDS": "--",
+              "INT-YDS": "--",
+              "BU": "-",
+              "FF": "-",
+              "FR-YDS": "--",
+              "BLK": "-"
+            },
+            {
+              "jersey": "84",
+              "player": "Ethan Garn",
+              "GP": "6",
+              "SOLO": "2",
+              "AST": "0",
+              "TOTAL": "2.0",
+              "TFL-YDS": "0.0-",
+              "SCK-YDS": "--",
+              "INT-YDS": "--",
+              "BU": "-",
+              "FF": "-",
+              "FR-YDS": "--",
+              "BLK": "-"
+            },
+            {
+              "jersey": "49",
+              "player": "Zach Morris",
+              "GP": "5",
+              "SOLO": "2",
+              "AST": "0",
+              "TOTAL": "2.0",
+              "TFL-YDS": "0.0-",
+              "SCK-YDS": "--",
+              "INT-YDS": "--",
+              "BU": "-",
+              "FF": "-",
+              "FR-YDS": "--",
+              "BLK": "-"
+            },
+            {
+              "jersey": "23",
+              "player": "Jayden Pepper",
+              "GP": "9",
+              "SOLO": "2",
+              "AST": "0",
+              "TOTAL": "2.0",
+              "TFL-YDS": "0.0-",
+              "SCK-YDS": "--",
+              "INT-YDS": "--",
+              "BU": "-",
+              "FF": "-",
+              "FR-YDS": "--",
+              "BLK": "-"
+            },
+            {
+              "jersey": "33",
+              "player": "Porter Rode",
+              "GP": "4",
+              "SOLO": "2",
+              "AST": "0",
+              "TOTAL": "2.0",
+              "TFL-YDS": "0.0-",
+              "SCK-YDS": "--",
+              "INT-YDS": "--",
+              "BU": "-",
+              "FF": "-",
+              "FR-YDS": "--",
+              "BLK": "-"
+            },
+            {
+              "jersey": "32",
+              "player": "Elijah Roseburgh",
+              "GP": "2",
+              "SOLO": "2",
+              "AST": "0",
+              "TOTAL": "2.0",
+              "TFL-YDS": "0.0-",
+              "SCK-YDS": "--",
+              "INT-YDS": "--",
+              "BU": "1",
+              "FF": "-",
+              "FR-YDS": "1-0",
+              "BLK": "-"
+            },
+            {
+              "jersey": "41",
+              "player": "Jonathan Besharatpour",
+              "GP": "5",
+              "SOLO": "1",
+              "AST": "0",
+              "TOTAL": "1.0",
+              "TFL-YDS": "0.0-",
+              "SCK-YDS": "--",
+              "INT-YDS": "--",
+              "BU": "-",
+              "FF": "-",
+              "FR-YDS": "--",
+              "BLK": "-"
+            },
+            {
+              "jersey": "59",
+              "player": "Quentin Cremeans",
+              "GP": "1",
+              "SOLO": "1",
+              "AST": "0",
+              "TOTAL": "1.0",
+              "TFL-YDS": "0.0-",
+              "SCK-YDS": "--",
+              "INT-YDS": "--",
+              "BU": "-",
+              "FF": "-",
+              "FR-YDS": "--",
+              "BLK": "-"
+            },
+            {
+              "jersey": "89",
+              "player": "Miguel Hernandez",
+              "GP": "6",
+              "SOLO": "1",
+              "AST": "0",
+              "TOTAL": "1.0",
+              "TFL-YDS": "0.0-",
+              "SCK-YDS": "--",
+              "INT-YDS": "--",
+              "BU": "-",
+              "FF": "-",
+              "FR-YDS": "--",
+              "BLK": "-"
+            },
+            {
+              "jersey": "80",
+              "player": "Alex Lindsey",
+              "GP": "4",
+              "SOLO": "1",
+              "AST": "1",
+              "TOTAL": "2.0",
+              "TFL-YDS": "0.5-2",
+              "SCK-YDS": "--",
+              "INT-YDS": "--",
+              "BU": "-",
+              "FF": "-",
+              "FR-YDS": "--",
+              "BLK": "1"
+            },
+            {
+              "jersey": "42",
+              "player": "Gabe Marshall",
+              "GP": "1",
+              "SOLO": "1",
+              "AST": "0",
+              "TOTAL": "1.0",
+              "TFL-YDS": "0.0-",
+              "SCK-YDS": "--",
+              "INT-YDS": "--",
+              "BU": "-",
+              "FF": "-",
+              "FR-YDS": "--",
+              "BLK": "-"
+            },
+            {
+              "jersey": "35",
+              "player": "Ian McCarty",
+              "GP": "2",
+              "SOLO": "1",
+              "AST": "0",
+              "TOTAL": "1.0",
+              "TFL-YDS": "0.0-",
+              "SCK-YDS": "--",
+              "INT-YDS": "--",
+              "BU": "-",
+              "FF": "-",
+              "FR-YDS": "--",
+              "BLK": "-"
+            },
+            {
+              "jersey": "9",
+              "player": "Brandon Newton",
+              "GP": "10",
+              "SOLO": "1",
+              "AST": "0",
+              "TOTAL": "1.0",
+              "TFL-YDS": "0.0-",
+              "SCK-YDS": "--",
+              "INT-YDS": "--",
+              "BU": "-",
+              "FF": "-",
+              "FR-YDS": "--",
+              "BLK": "-"
+            },
+            {
+              "jersey": "14",
+              "player": "Cobe Stribling",
+              "GP": "10",
+              "SOLO": "1",
+              "AST": "0",
+              "TOTAL": "1.0",
+              "TFL-YDS": "0.0-",
+              "SCK-YDS": "--",
+              "INT-YDS": "--",
+              "BU": "-",
+              "FF": "-",
+              "FR-YDS": "--",
+              "BLK": "-"
+            },
+            {
+              "jersey": "51",
+              "player": "Adam Wooten",
+              "GP": "1",
+              "SOLO": "1",
+              "AST": "0",
+              "TOTAL": "1.0",
+              "TFL-YDS": "0.0-",
+              "SCK-YDS": "--",
+              "INT-YDS": "--",
+              "BU": "-",
+              "FF": "-",
+              "FR-YDS": "--",
+              "BLK": "-"
+            },
+            {
+              "jersey": "86",
+              "player": "Isaac Smith",
+              "GP": "9",
+              "SOLO": "0",
+              "AST": "1",
+              "TOTAL": "1.0",
+              "TFL-YDS": "0.0-0",
+              "SCK-YDS": "0.0-0",
+              "INT-YDS": "0-0",
+              "BU": "0",
+              "FF": "0",
+              "FR-YDS": "0-0",
+              "BLK": "0"
+            },
+            {
+              "jersey": "46",
+              "player": "Andre Thompson",
+              "GP": "3",
+              "SOLO": "0",
+              "AST": "1",
+              "TOTAL": "1.0",
+              "TFL-YDS": "0.0-0",
+              "SCK-YDS": "0.0-0",
+              "INT-YDS": "0-0",
+              "BU": "0",
+              "FF": "0",
+              "FR-YDS": "0-0",
+              "BLK": "0"
+            },
+            {
+              "jersey": "5",
+              "player": "Amon Williams",
+              "GP": "9",
+              "SOLO": "0",
+              "AST": "0",
+              "TOTAL": "0.0",
+              "TFL-YDS": "0.0-0",
+              "SCK-YDS": "0.0-0",
+              "INT-YDS": "0-0",
+              "BU": "0",
+              "FF": "0",
+              "FR-YDS": "0-0",
+              "BLK": "0"
+            },
+            {
+              "jersey": "2",
+              "player": "Jordan Williams",
+              "GP": "10",
+              "SOLO": "0",
+              "AST": "0",
+              "TOTAL": "0.0",
+              "TFL-YDS": "0.0-0",
+              "SCK-YDS": "0.0-0",
+              "INT-YDS": "0-0",
+              "BU": "0",
+              "FF": "0",
+              "FR-YDS": "0-0",
+              "BLK": "0"
+            }
+          ]
+        }
+      },
+      "appearances": {
+        "Adam Wooten": [
+          "20251011_j14v"
+        ],
+        "Ahmad Fisher": [
+          "20250830_dizi",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne",
+          "20251108_iabb"
+        ],
+        "Ahmante Altman": [
+          "20250830_dizi",
+          "20250913_kqps",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne",
+          "20251108_iabb",
+          "20251115_cb1j"
+        ],
+        "Alex Hatton": [
+          "20250830_dizi",
+          "20250913_kqps",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne",
+          "20251108_iabb",
+          "20251115_cb1j"
+        ],
+        "Alex Lindsey": [
+          "20250920_xzbh",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251108_iabb"
+        ],
+        "Amon Williams": [
+          "20250830_dizi",
+          "20250913_kqps",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251108_iabb",
+          "20251115_cb1j"
+        ],
+        "Andre Thompson": [
+          "20250927_uiom",
+          "20251115_cb1j"
+        ],
+        "Brandon Newton": [
+          "20250830_dizi",
+          "20250913_kqps",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne",
+          "20251108_iabb",
+          "20251115_cb1j"
+        ],
+        "Brett Coleman": [
+          "20250830_dizi",
+          "20250913_kqps",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne",
+          "20251115_cb1j"
+        ],
+        "Caleb Anderson": [
+          "20250830_dizi",
+          "20250913_kqps",
+          "20250920_xzbh",
+          "20251018_1r1b"
+        ],
+        "Cobe Stribling": [
+          "20250830_dizi",
+          "20250913_kqps",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne",
+          "20251108_iabb",
+          "20251115_cb1j"
+        ],
+        "Connor Goodman": [
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne",
+          "20251108_iabb"
+        ],
+        "D'Vyne Cowan-Bazley": [
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne",
+          "20251108_iabb",
+          "20251115_cb1j"
+        ],
+        "Dallas Kelly": [
+          "20250830_dizi",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne",
+          "20251108_iabb"
+        ],
+        "Damion Watts": [
+          "20250830_dizi",
+          "20250913_kqps",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251108_iabb",
+          "20251115_cb1j"
+        ],
+        "Deajuan McDougle": [
+          "20250830_dizi",
+          "20250913_kqps",
+          "20250927_uiom"
+        ],
+        "Demarcus Calhoun": [
+          "20250913_kqps",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne",
+          "20251108_iabb"
+        ],
+        "Dige Savage": [
+          "20250830_dizi",
+          "20250913_kqps",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne",
+          "20251108_iabb",
+          "20251115_cb1j"
+        ],
+        "Dylan Ferguson": [
+          "20250830_dizi",
+          "20250913_kqps",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj"
+        ],
+        "Elijah Roseburgh": [
+          "20251018_1r1b",
+          "20251115_cb1j"
+        ],
+        "Ethan Garn": [
+          "20250830_dizi",
+          "20250913_kqps",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne",
+          "20251108_iabb"
+        ],
+        "Gabe Marshall": [
+          "20250830_dizi",
+          "20251018_1r1b"
+        ],
+        "Grant Scott": [
+          "20250830_dizi",
+          "20250913_kqps",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne",
+          "20251108_iabb",
+          "20251115_cb1j"
+        ],
+        "Guillermo Valadez": [
+          "20250927_uiom"
+        ],
+        "Hayden Russell": [
+          "20250830_dizi",
+          "20250913_kqps",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251108_iabb",
+          "20251115_cb1j"
+        ],
+        "Ian McCarty": [
+          "20251018_1r1b",
+          "20251025_nhhj"
+        ],
+        "Isaac Smith": [
+          "20250913_kqps",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne",
+          "20251108_iabb",
+          "20251115_cb1j"
+        ],
+        "Isaiah Esquibel": [
+          "20250830_dizi",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne",
+          "20251108_iabb"
+        ],
+        "Jalen Flowers": [
+          "20250830_dizi",
+          "20250913_kqps",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251108_iabb",
+          "20251115_cb1j"
+        ],
+        "Jayden Pepper": [
+          "20250830_dizi",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne",
+          "20251108_iabb",
+          "20251115_cb1j"
+        ],
+        "Jeff Flowers": [
+          "20250830_dizi",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne",
+          "20251108_iabb",
+          "20251115_cb1j"
+        ],
+        "Jonathan Besharatpour": [
+          "20250830_dizi",
+          "20250913_kqps",
+          "20250927_uiom",
+          "20251018_1r1b",
+          "20251025_nhhj"
+        ],
+        "Jordan Williams": [
+          "20250830_dizi",
+          "20250913_kqps",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne",
+          "20251108_iabb",
+          "20251115_cb1j"
+        ],
+        "Kylan Ware": [
+          "20251108_iabb"
+        ],
+        "LaCharles Woodruff": [
+          "20250913_kqps",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251115_cb1j"
+        ],
+        "Landon Rowe": [
+          "20250830_dizi",
+          "20250913_kqps",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251108_iabb",
+          "20251115_cb1j"
+        ],
+        "Levi Evans": [
+          "20250830_dizi",
+          "20250913_kqps",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne",
+          "20251108_iabb",
+          "20251115_cb1j"
+        ],
+        "Levi Wheeling": [
+          "20251018_1r1b"
+        ],
+        "Marcus Nunes": [
+          "20250830_dizi",
+          "20250913_kqps",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne",
+          "20251108_iabb",
+          "20251115_cb1j"
+        ],
+        "Marshawn Boyden": [
+          "20250830_dizi",
+          "20250913_kqps",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne",
+          "20251108_iabb"
+        ],
+        "Maurice Davis": [
+          "20250830_dizi",
+          "20250913_kqps",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne",
+          "20251108_iabb",
+          "20251115_cb1j"
+        ],
+        "Miguel Hernandez": [
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne",
+          "20251108_iabb",
+          "20251115_cb1j"
+        ],
+        "Najmir Bellegarde": [
+          "20250830_dizi",
+          "20250913_kqps",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne",
+          "20251108_iabb",
+          "20251115_cb1j"
+        ],
+        "Peter Zamora": [
+          "20251011_j14v",
+          "20251018_1r1b"
+        ],
+        "Porter Rode": [
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne"
+        ],
+        "Quentin Cremeans": [
+          "20250830_dizi",
+          "20251018_1r1b"
+        ],
+        "Quincy Clark": [
+          "20250830_dizi",
+          "20250913_kqps",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne",
+          "20251108_iabb",
+          "20251115_cb1j"
+        ],
+        "Sa'Kuan Foster": [
+          "20251011_j14v",
+          "20251101_rdne",
+          "20251108_iabb",
+          "20251115_cb1j"
+        ],
+        "Tommy Turner": [
+          "20250830_dizi",
+          "20250913_kqps",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne",
+          "20251108_iabb",
+          "20251115_cb1j"
+        ],
+        "Trevor Carter": [
+          "20250830_dizi",
+          "20250913_kqps",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne",
+          "20251108_iabb",
+          "20251115_cb1j"
+        ],
+        "Ty Perkins": [
+          "20251108_iabb",
+          "20251115_cb1j"
+        ],
+        "Xavier Dahn": [
+          "20250830_dizi",
+          "20250913_kqps",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251025_nhhj",
+          "20251101_rdne"
+        ],
+        "Xavier Malone": [
+          "20250830_dizi",
+          "20250913_kqps",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251011_j14v",
+          "20251018_1r1b",
+          "20251025_nhhj",
+          "20251101_rdne",
+          "20251108_iabb",
+          "20251115_cb1j"
+        ],
+        "Zach Morris": [
+          "20250830_dizi",
+          "20250920_xzbh",
+          "20250927_uiom",
+          "20251025_nhhj",
+          "20251108_iabb"
+        ]
+      }
+    },
+    "2026": {
+      "label": "2026-27",
+      "record": "0-0",
+      "conference_record": "0-0",
+      "home": "0-0",
+      "away": "0-0",
+      "neutral": "0-0",
+      "streak": "-",
+      "schedule": [
+        {
+          "date": "Aug 27",
+          "opponent": "at Arkansas Baptist",
+          "result": "",
+          "status": "8:00 PM EDT",
+          "notes": "Next Event"
+        },
+        {
+          "date": "Sep 5",
+          "opponent": "Campbellsville (KY)",
+          "result": "",
+          "status": "6:00 PM EDT",
+          "notes": ""
+        },
+        {
+          "date": "Sep 12",
+          "opponent": "Andrew College",
+          "result": "",
+          "status": "3:00 PM EDT",
+          "notes": ""
+        },
+        {
+          "date": "Sep 19",
+          "opponent": "at Cumberland (TN)",
+          "result": "",
+          "status": "7:00 PM EDT",
+          "notes": ""
+        },
+        {
+          "date": "Sep 26",
+          "opponent": "Bethel (TN)",
+          "result": "",
+          "status": "3:00 PM EDT",
+          "notes": ""
+        },
+        {
+          "date": "Oct 10",
+          "opponent": "at Rio Grande",
+          "result": "",
+          "status": "3:30 PM EDT",
+          "notes": "Conference"
+        },
+        {
+          "date": "Oct 17",
+          "opponent": "at Point",
+          "result": "",
+          "status": "1:30 PM EDT",
+          "notes": "Valley, Ala. - Ram Stadium; Conference"
+        },
+        {
+          "date": "Oct 24",
+          "opponent": "Bluefield (VA)",
+          "result": "",
+          "status": "6:00 PM EDT",
+          "notes": "Conference"
+        },
+        {
+          "date": "Oct 31",
+          "opponent": "at Union Commonwealth",
+          "result": "",
+          "status": "3:00 PM EDT",
+          "notes": "Barbourville, Ky.; Williamson Stadium; Conference"
+        },
+        {
+          "date": "Nov 7",
+          "opponent": "at Kentucky Christian",
+          "result": "",
+          "status": "1:30 PM EST",
+          "notes": "Conference"
+        },
+        {
+          "date": "Nov 14",
+          "opponent": "Reinhardt (GA)",
+          "result": "",
+          "status": "1:00 PM EST",
+          "notes": "Pikeville, Kentucky; Conference"
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "label": "2025 NAIA team statistics",
+      "path": "INFO/2025-26 Football Statistics - Pikeville (KY) - 2025-26 - NAIA Stats - Print Version.pdf"
+    },
+    {
+      "label": "2023-24 AAC schedule",
+      "path": "INFO/2023-24 AAC Football Schedule - Appalachian Athletic Conference - Print Version.pdf"
+    },
+    {
+      "label": "2024-25 AAC schedule",
+      "path": "INFO/2024-25 AAC Football Schedule - Appalachian Athletic Conference - Print Version.pdf"
+    },
+    {
+      "label": "2025-26 AAC schedule",
+      "path": "INFO/2025-26 AAC Football Schedule - Appalachian Athletic Conference - Print Version.pdf"
+    },
+    {
+      "label": "2026-27 AAC schedule",
+      "path": "INFO/2026-27 AAC Football Schedule - Appalachian Athletic Conference - Print Version.pdf"
+    },
+    {
+      "label": "NAIA team profile",
+      "url": "https://naiastats.prestosports.com/sports/fball/2025-26/conf/Appalachian/teams/pikevilleky?jsRendering=true"
+    }
+  ]
+}

@@ -11,13 +11,23 @@ from sqlalchemy import func, select
 from app.config import get_settings
 from app.database import SessionLocal
 from app.logging import configure_logging
-from app.models import Game, Player, Season, SourceDocument
+from app.models import (
+    ConferenceStanding,
+    Game,
+    Gamebook,
+    GameDrive,
+    LeaderEntry,
+    Player,
+    Season,
+    SourceDocument,
+)
 from app.scraping.adapters import AACAdapter, NAIAAdapter, UPIKEAthleticsAdapter
 from app.scraping.base import SourceBlockedError
 from app.scraping.client import PoliteHttpClient
 from app.scraping.discovery import discover_sources, write_reports
+from app.scraping.parsers.presto_browser_v1 import parse_presto_browser_fixture
 from app.scraping.parsers.upike_stats_v1 import PARSER_VERSION, parse_upike_cumulative_stats
-from app.services.importer import import_parsed_season
+from app.services.importer import import_parsed_season, import_presto_intel
 
 configure_logging()
 cli = typer.Typer(no_args_is_help=True, help="UPIKE Football Intelligence operations")
@@ -95,8 +105,11 @@ def scrape_all(
 @cli.command("seed-fixture")
 def seed_fixture(
     fixture: Annotated[Path, typer.Option()] = Path("tests/fixtures/source/upike_2025_stats.html"),
+    presto_fixture: Annotated[Path, typer.Option()] = Path(
+        "tests/fixtures/source/presto_2025_browser.json"
+    ),
 ) -> None:
-    """Import the saved real UPIKE fixture through the production parser/importer."""
+    """Import saved real UPIKE and browser-observed PrestoSports fixtures."""
     content = fixture.read_bytes()
     digest = hashlib.sha256(content).hexdigest()
     url = "https://upikebears.com/sports/football/stats/2025"
@@ -122,10 +135,13 @@ def seed_fixture(
             )
             db.add(document)
             db.flush()
-        result = import_parsed_season(
-            db, parsed, source="upike", source_document_id=document.id
+        result = import_parsed_season(db, parsed, source="upike", source_document_id=document.id)
+        presto_content = presto_fixture.read_bytes()
+        presto = parse_presto_browser_fixture(presto_content)
+        presto_result = import_presto_intel(
+            db, presto, content=presto_content, storage_path=str(presto_fixture)
         )
-    typer.echo(json.dumps(result, indent=2))
+    typer.echo(json.dumps({**result, **presto_result}, indent=2))
 
 
 @cli.command()
@@ -141,15 +157,22 @@ def calculate() -> None:
 @cli.command()
 def validate() -> None:
     with SessionLocal() as db:
-        bad_scores = db.scalar(
-            select(func.count()).select_from(Game).where(
-                (Game.upike_score < 0) | (Game.opponent_score < 0)
+        bad_scores = (
+            db.scalar(
+                select(func.count())
+                .select_from(Game)
+                .where((Game.upike_score < 0) | (Game.opponent_score < 0))
             )
-        ) or 0
+            or 0
+        )
         counts = {
             "seasons": db.scalar(select(func.count()).select_from(Season)) or 0,
             "games": db.scalar(select(func.count()).select_from(Game)) or 0,
             "players": db.scalar(select(func.count()).select_from(Player)) or 0,
+            "standings": db.scalar(select(func.count()).select_from(ConferenceStanding)) or 0,
+            "leader_entries": db.scalar(select(func.count()).select_from(LeaderEntry)) or 0,
+            "gamebooks": db.scalar(select(func.count()).select_from(Gamebook)) or 0,
+            "drives": db.scalar(select(func.count()).select_from(GameDrive)) or 0,
             "invalid_negative_scores": bad_scores,
         }
     typer.echo(json.dumps(counts, indent=2))
