@@ -10,9 +10,11 @@ backend/.coverage
 backend/htmlcov/
 backend/data/raw/*
 !backend/data/raw/.gitkeep
+!backend/data/raw/upike_gamebook_plays_2025.json
 frontend/node_modules/
 frontend/.next/
 frontend/out/
 frontend/coverage/
 backend/static/
 *.tsbuildinfo
+tmp/

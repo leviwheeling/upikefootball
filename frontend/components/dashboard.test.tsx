@@ -30,7 +30,7 @@ beforeEach(() => {
           home: "4-1", away: "0-5", neutral: "0-0", streak: "L1",
           national_rank: "65", aac_rank: "3",
           headline: { "Yds/Game": "462.8", "Pts/Game": "36.5" },
-          team_stats: [{ metric: "Scoring", overall: "365", overall_rank: "2nd", conference: "267", conference_rank: "2nd", opponent: "297" }],
+          team_stats: [{ metric: "Scoring", overall: "365", aac_overall_rank: "2nd", conference: "267", aac_conference_rank: "2nd", opponent: "297" }],
           game_log: [{
             date: "Aug 30", opponent: "at Georgetown (Ky.)", score: "L, 34-17",
             game_id: "20250830_dizi", source_url: "https://naiastats.prestosports.com/gamebook",
@@ -77,5 +77,8 @@ test("renders the data-first stat board", async () => {
   expect(await screen.findByText("Pikeville (KY)", { exact: false })).toBeInTheDocument();
   expect(screen.getByText("462.8")).toBeInTheDocument();
   expect(screen.getByText("Team Statistics")).toBeInTheDocument();
+  expect(screen.getByText("AAC Overall Rank")).toBeInTheDocument();
+  expect(screen.getByText("AAC Conference Rank")).toBeInTheDocument();
+  expect(screen.queryByText("NAIA Rank")).not.toBeInTheDocument();
   expect(screen.queryByText(/Every truth/)).not.toBeInTheDocument();
 });

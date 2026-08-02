@@ -38,6 +38,9 @@ def test_stat_board_contains_all_compiled_seasons_and_player_tables() -> None:
     payload = response.json()
     assert set(payload["seasons"]) == {"2023", "2024", "2025", "2026"}
     assert len(payload["seasons"]["2025"]["team_stats"]) == 52
+    assert payload["seasons"]["2025"]["team_stats"][1]["aac_overall_rank"] == "2nd"
+    assert payload["seasons"]["2025"]["team_stats"][1]["aac_conference_rank"] == "2nd"
+    assert "overall_rank" not in payload["seasons"]["2025"]["team_stats"][1]
     assert len(payload["seasons"]["2025"]["game_log"]) == 10
     assert (
         sum(len(category["rows"]) for category in payload["seasons"]["2025"]["players"].values())
@@ -59,6 +62,25 @@ def test_stat_board_contains_all_compiled_seasons_and_player_tables() -> None:
     assert payload["player_profiles"]["Grant Scott"]["career"]["receiving_yards"] == 823
     assert payload["player_profiles"]["Xavier Malone"]["seasons"][0]["source_url"] == (
         "https://upikebears.com/sports/football/stats/2022"
+    )
+
+
+def test_play_analytics_has_full_snap_and_game_coverage() -> None:
+    response = TestClient(app).get("/api/play-analytics")
+
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["season"] == "2025"
+    assert payload["coverage"]["tagged_rows"] == 866
+    assert payload["coverage"]["linked_pct"] >= 97
+    assert len(payload["games"]) == 10
+    assert len(payload["snaps"]) == 866
+    assert len(payload["players"]) == 54
+    assert payload["games"][0]["point_margin"] == -17
+    assert payload["games"][-1]["point_margin"] == -41
+    assert any(
+        row["description"] and row["passer"] == "Xavier Malone"
+        for row in payload["snaps"]
     )
 
 

@@ -6,8 +6,9 @@ import { useQuery } from "@tanstack/react-query";
 import { Bar, CartesianGrid, ComposedChart, Line, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { api, type PlayerCategory, type PlayerProfile, type StatBoardSeason } from "@/lib/api";
 import { cn } from "@/lib/utils";
+import { PlayAnalyticsPanel } from "@/components/play-analytics";
 
-type BoardView = "team" | "games" | "players" | "schedule";
+type BoardView = "team" | "games" | "players" | "plays" | "schedule";
 
 const recordFields = [
   ["Overall", "record"], ["AAC", "conference_record"], ["Region", "region_record"],
@@ -48,7 +49,7 @@ export function Dashboard() {
     setSelectedPlayer(null);
     const next = board!.seasons[key];
     if (!next.team_stats?.length) setView("schedule");
-    else if (view === "players" && !next.players) setView("team");
+    else if ((view === "players" && !next.players) || (view === "plays" && key !== "2025")) setView("team");
   }
 
   return (
@@ -89,6 +90,7 @@ export function Dashboard() {
           {season.team_stats?.length ? <ViewButton active={view === "team"} onClick={() => setView("team")}>Team Stats <Count>{season.team_stats.length}</Count></ViewButton> : null}
           {season.game_log?.length ? <ViewButton active={view === "games"} onClick={() => setView("games")}>Game Log <Count>{season.game_log.length}</Count></ViewButton> : null}
           {season.players ? <ViewButton active={view === "players"} onClick={() => setView("players")}>Players <Count>{playerCount}</Count></ViewButton> : null}
+          {seasonKey === "2025" ? <ViewButton active={view === "plays"} onClick={() => setView("plays")}>Play Analytics <Count>866</Count></ViewButton> : null}
           <ViewButton active={view === "schedule"} onClick={() => setView("schedule")}>Schedule <Count>{season.schedule.length}</Count></ViewButton>
         </nav>
 
@@ -96,6 +98,7 @@ export function Dashboard() {
           {view === "team" && season.team_stats && <TeamStatsTable season={season} />}
           {view === "games" && season.game_log && <GameLogTable season={season} />}
           {view === "players" && season.players && <PlayersTable categories={season.players} selected={playerCategory} onSelect={setPlayerCategory} onPlayerSelect={setSelectedPlayer} />}
+          {view === "plays" && seasonKey === "2025" && <PlayAnalyticsPanel onPlayerSelect={setSelectedPlayer} />}
           {view === "schedule" && <ScheduleTable season={season} />}
         </section>
       </div>
@@ -107,7 +110,7 @@ export function Dashboard() {
 
 function TeamStatsTable({ season }: { season: StatBoardSeason }) {
   return <DataPanel title="Team Statistics" subtitle={`${season.label} / Overall, conference, and opponent`}>
-    <table className="stat-table min-w-[850px]"><thead><tr><th>Metric</th><th>Overall</th><th>NAIA Rank</th><th>Conference</th><th>AAC Rank</th><th>Opponent</th></tr></thead><tbody>{season.team_stats!.map((row) => <tr key={row.metric}><td className="metric-name">{row.metric}</td><td>{row.overall}</td><td><RankValue value={row.overall_rank} /></td><td>{row.conference}</td><td><RankValue value={row.conference_rank} /></td><td className="text-slate-500">{row.opponent}</td></tr>)}</tbody></table>
+    <table className="stat-table min-w-[850px]"><thead><tr><th>Metric</th><th>Overall</th><th>AAC Overall Rank</th><th>Conference</th><th>AAC Conference Rank</th><th>Opponent</th></tr></thead><tbody>{season.team_stats!.map((row) => <tr key={row.metric}><td className="metric-name">{row.metric}</td><td>{row.overall}</td><td><RankValue value={row.aac_overall_rank} /></td><td>{row.conference}</td><td><RankValue value={row.aac_conference_rank} /></td><td className="text-slate-500">{row.opponent}</td></tr>)}</tbody></table>
   </DataPanel>;
 }
 

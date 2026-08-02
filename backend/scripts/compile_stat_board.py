@@ -18,7 +18,14 @@ PLAYER_PDF = (
     / "INFO/2025-26 Football Statistics - Pikeville (KY) - 2025-26 - NAIA Stats - Print Version.pdf"
 )
 
-STAT_HEADERS = ["metric", "overall", "overall_rank", "conference", "conference_rank", "opponent"]
+STAT_HEADERS = [
+    "metric",
+    "overall",
+    "aac_overall_rank",
+    "conference",
+    "aac_conference_rank",
+    "opponent",
+]
 
 TEAM_STATS_2025 = """
 Games|10|2nd|6|3rd|10

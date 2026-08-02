@@ -26,6 +26,9 @@ from app.schemas import (
 router = APIRouter(prefix="/api")
 DBSession = Annotated[Session, Depends(get_db)]
 STAT_BOARD_PATH = Path(__file__).resolve().parents[2] / "data/compiled/upike_stat_board.json"
+PLAY_ANALYTICS_PATH = (
+    Path(__file__).resolve().parents[2] / "data/compiled/upike_play_analytics_2025.json"
+)
 
 
 @router.get("/health", response_model=HealthRead, tags=["system"])
@@ -37,6 +40,12 @@ def health() -> HealthRead:
 def stat_board() -> dict[str, object]:
     """Return the compiled AAC/NAIA stat board from the supplied source documents."""
     return cast(dict[str, object], json.loads(STAT_BOARD_PATH.read_text()))
+
+
+@router.get("/play-analytics", tags=["intelligence"])
+def play_analytics() -> dict[str, object]:
+    """Return source-linked 2025 play, game, situation and player analytics."""
+    return cast(dict[str, object], json.loads(PLAY_ANALYTICS_PATH.read_text()))
 
 
 @router.get("/seasons", response_model=SeasonPage, tags=["seasons"])

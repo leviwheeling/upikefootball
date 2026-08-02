@@ -172,6 +172,93 @@ body {
 .drawer-game-row strong { overflow: hidden; color: #e2e8f0; text-overflow: ellipsis; white-space: nowrap; }
 .drawer-game-row:hover { background: rgba(255, 255, 255, .035); }
 
+.analytics-panel {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 9px;
+  background: #090e17;
+}
+.football-field {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, .34);
+  border-radius: 5px;
+  background-color: #113f2b;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255,255,255,.035) 0, rgba(255,255,255,.035) 18px, transparent 18px, transparent 36px),
+    linear-gradient(90deg, rgba(0,0,0,.2), transparent 12%, transparent 88%, rgba(0,0,0,.2));
+}
+.football-field::before,
+.football-field::after {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  width: 4%;
+  background: rgba(255, 106, 50, .24);
+  content: "";
+}
+.football-field::before { left: 0; }
+.football-field::after { right: 0; }
+.yard-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, .28);
+}
+.yard-line::after {
+  position: absolute;
+  top: 50%;
+  left: -4px;
+  width: 8px;
+  height: 1px;
+  background: rgba(255, 255, 255, .5);
+  content: "";
+}
+.yard-line span {
+  position: absolute;
+  top: 9px;
+  left: 4px;
+  color: rgba(255,255,255,.44);
+  font-size: 9px;
+  font-weight: 900;
+  transform: rotate(90deg);
+}
+.end-zone {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  color: rgba(255, 255, 255, .65);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .12em;
+  writing-mode: vertical-rl;
+  transform: translateY(-50%);
+}
+.end-zone.left { left: 1.3%; }
+.end-zone.right { right: 1.3%; }
+.field-marker {
+  position: absolute;
+  z-index: 3;
+  width: 8px;
+  height: 8px;
+  margin: -4px;
+  border: 1px solid rgba(255,255,255,.7);
+  border-radius: 50%;
+  box-shadow: 0 1px 6px rgba(0,0,0,.45);
+  transition: transform 120ms ease, z-index 120ms ease;
+}
+.field-marker:hover, .field-marker:focus-visible { z-index: 10; outline: 2px solid #fff; outline-offset: 2px; transform: scale(1.9); }
+.field-marker.success, .legend-dot.success { background: #34d399; }
+.field-marker.failed, .legend-dot.failed { background: #fb7185; }
+.field-marker.explosive, .legend-dot.explosive { background: #ff9d47; }
+.field-marker.touchdown { width: 11px; height: 11px; margin: -5px; background: #fbbf24; }
+.field-marker.turnover, .legend-dot.turnover { background: #e11d48; }
+.field-marker.ungraded { background: #64748b; }
+.legend-dot { width: 7px; height: 7px; border-radius: 999px; }
+
 @keyframes player-drawer-in { from { opacity: 0; transform: translateX(28px); } to { opacity: 1; transform: translateX(0); } }
 
 @media (max-width: 640px) {
