@@ -12,6 +12,18 @@ beforeEach(() => {
       conference: "Appalachian Athletic Conference",
       default_season: "2025",
       sources: [],
+      player_profiles: {
+        "Xavier Malone": {
+          seasons: [
+            { season: "2024", label: "2024-25", games: 2, categories: { Passing: { GP: "2", YDS: "400", TD: "3" } }, metrics: { passing_yards: 400 }, source_url: "https://upikebears.com/sports/football/stats/2024" },
+            { season: "2025", label: "2025-26", games: 1, categories: { Passing: { GP: "1", YDS: "3492", TD: "24" } }, metrics: { passing_yards: 3492 }, source_url: "https://naiastats.prestosports.com/team" },
+          ],
+          career: { games: 3, passing_yards: 3892, completions: 300, pass_attempts: 450, passing_touchdowns: 27, pass_interceptions: 8 },
+          primary_metric: { key: "passing_yards", label: "Passing Yards", short: "Pass Yds" },
+          honors: [{ label: "NAIA Offensive Player of the Week", url: "https://www.naia.org/player-of-the-week" }],
+          scope: "Verified UPIKE cumulative statistics only.",
+        },
+      },
       seasons: {
         "2025": {
           label: "2025-26", record: "4-6", conference_record: "4-2", region_record: "3-4",
@@ -46,7 +58,13 @@ test("opens a source-linked player profile with stats and verified games", async
   fireEvent.click(screen.getByRole("button", { name: "Open Xavier Malone profile" }));
 
   expect(screen.getByRole("dialog", { name: "Xavier Malone" })).toBeInTheDocument();
-  expect(screen.getByText("2 categories")).toBeInTheDocument();
+  expect(screen.getByText("Verified UPIKE Career Totals")).toBeInTheDocument();
+  expect(screen.getByText("2 seasons / 3 games")).toBeInTheDocument();
+  expect(screen.getByText("3,892")).toBeInTheDocument();
+  expect(screen.getByText("Career Trend")).toBeInTheDocument();
+  expect(screen.getByText("Analysis")).toBeInTheDocument();
+  expect(screen.getByText("Season History")).toBeInTheDocument();
+  expect(screen.getByRole("link", { name: /NAIA Offensive Player/ })).toHaveAttribute("href", "https://www.naia.org/player-of-the-week");
   expect(screen.getByText("1 verified appearance")).toBeInTheDocument();
   expect(screen.getByRole("link", { name: /at Georgetown/ })).toHaveAttribute("href", "https://naiastats.prestosports.com/gamebook");
   fireEvent.click(screen.getByRole("button", { name: "Close player profile" }));

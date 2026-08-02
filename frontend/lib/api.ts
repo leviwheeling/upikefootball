@@ -71,6 +71,21 @@ export type TeamStatRow = {
 };
 export type PlayerStatRow = { jersey: string; player: string } & Record<string, string>;
 export type PlayerCategory = { columns: string[]; rows: PlayerStatRow[] };
+export type PlayerHistorySeason = {
+  season: string;
+  label: string;
+  games: number;
+  categories: Record<string, Record<string, string>>;
+  metrics: Record<string, number>;
+  source_url: string;
+};
+export type PlayerProfile = {
+  seasons: PlayerHistorySeason[];
+  career: Record<string, number> & { games: number };
+  primary_metric: { key: string; label: string; short: string };
+  honors: Array<{ label: string; url: string }>;
+  scope: string;
+};
 export type GameLogRow = Record<string, string> & {
   date: string;
   opponent: string;
@@ -102,6 +117,7 @@ export type StatBoard = {
   conference: string;
   default_season: string;
   seasons: Record<string, StatBoardSeason>;
+  player_profiles?: Record<string, PlayerProfile>;
   sources: Array<{ label: string; path?: string; url?: string }>;
 };
 export type Page<T> = { data: T[]; meta: PageMeta };

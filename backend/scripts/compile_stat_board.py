@@ -12,6 +12,7 @@ import pdfplumber
 
 ROOT = Path(__file__).resolve().parents[2]
 OUTPUT = ROOT / "backend/data/compiled/upike_stat_board.json"
+PLAYER_HISTORY = ROOT / "backend/data/compiled/upike_player_history.json"
 PLAYER_PDF = (
     ROOT
     / "INFO/2025-26 Football Statistics - Pikeville (KY) - 2025-26 - NAIA Stats - Print Version.pdf"
@@ -327,6 +328,68 @@ PLAYER_FIELDS = {
     ],
 }
 
+ALL_AAC_URL = "https://upikebears.com/news/2025/11/25/football-13-bears-named-all-aac.aspx"
+ALL_COMMONWEALTH_URL = (
+    "https://upikebears.com/news/2025/5/21/football-five-bears-named-to-all-commonwealth-team.aspx"
+)
+NAIA_POW_URL = (
+    "https://www.naia.org/news/football/pikeville-qb-xavier-malone-continues-record-season-"
+    "earning-offensive-player-of-the-week-after-school-record-43-completions/"
+)
+GRANT_ALL_AMERICA_URL = (
+    "https://www.naia.org/news/football/afca-naia-announce-2025-football-all-americans/"
+)
+SCHOLAR_URL = (
+    "https://upikebears.com/news/2025/11/19/football-naia-honors-fall-daktronics-scholar-athletes.aspx"
+)
+
+HONORS = {
+    "Xavier Malone": [
+        {"label": "2025 NAIA Offensive Player of the Week", "url": NAIA_POW_URL},
+        {"label": "2025 All-AAC Second Team", "url": ALL_AAC_URL},
+        {"label": "2025 Kentucky Collegiate All-Commonwealth Team", "url": ALL_COMMONWEALTH_URL},
+    ],
+    "Grant Scott": [
+        {"label": "2025 AFCA/NAIA Third-Team All-America", "url": GRANT_ALL_AMERICA_URL},
+        {"label": "2025 All-AAC First Team", "url": ALL_AAC_URL},
+        {"label": "2025 NAIA Scholar-Athlete", "url": SCHOLAR_URL},
+    ],
+    "Amon Williams": [{"label": "2025 All-AAC First Team — RB and all-purpose", "url": ALL_AAC_URL}],
+    "Jordan Williams": [
+        {"label": "2025 All-AAC First Team", "url": ALL_AAC_URL},
+        {"label": "2025 Kentucky Collegiate All-Commonwealth Team", "url": ALL_COMMONWEALTH_URL},
+    ],
+    "Najmir Bellegarde": [{"label": "2025 All-AAC First Team", "url": ALL_AAC_URL}],
+    "Levi Evans": [{"label": "2025 All-AAC First Team", "url": ALL_AAC_URL}],
+    "Alex Hatton": [{"label": "2025 All-AAC First Team", "url": ALL_AAC_URL}],
+    "Brandon Newton": [
+        {"label": "2025 All-AAC Second Team", "url": ALL_AAC_URL},
+        {"label": "2025 Kentucky Collegiate All-Commonwealth Team", "url": ALL_COMMONWEALTH_URL},
+    ],
+    "Isaac Smith": [{"label": "2025 All-AAC Second Team", "url": ALL_AAC_URL}],
+    "Landon Rowe": [{"label": "2025 All-AAC Second Team", "url": ALL_AAC_URL}],
+    "Jeff Flowers": [{"label": "2025 All-AAC Second Team", "url": ALL_AAC_URL}],
+    "Dige Savage": [
+        {"label": "2025 AAC Champions of Character Team", "url": ALL_AAC_URL},
+        {"label": "2025 NAIA Scholar-Athlete", "url": SCHOLAR_URL},
+    ],
+    "Brett Coleman": [
+        {"label": "2025 Kentucky Collegiate All-Commonwealth Team", "url": ALL_COMMONWEALTH_URL}
+    ],
+    **{
+        name: [{"label": "2025 NAIA Scholar-Athlete", "url": SCHOLAR_URL}]
+        for name in (
+            "Ian McCarty",
+            "Levi Wheeling",
+            "Jalen Flowers",
+            "Jayden Pepper",
+            "Tommy Turner",
+            "Trevor Carter",
+            "Zach Morris",
+        )
+    },
+}
+
 
 def parse_pipe_table(text: str, headers: list[str]) -> list[dict[str, str]]:
     rows = []
@@ -386,7 +449,197 @@ def parse_players() -> dict[str, dict[str, object]]:
     return categories
 
 
+def number(value: object) -> float:
+    match = re.search(r"-?\d+(?:\.\d+)?", str(value or ""))
+    return float(match.group()) if match else 0.0
+
+
+def integer(value: object) -> int:
+    return int(round(number(value)))
+
+
+def pair(value: object) -> tuple[int, int]:
+    match = re.search(r"(-?\d+)\s*-\s*(-?\d+)", str(value or ""))
+    return (int(match.group(1)), int(match.group(2))) if match else (0, 0)
+
+
+def category_stats(categories: dict[str, dict[str, str]], name: str) -> dict[str, str]:
+    return {key.upper(): value for key, value in categories.get(name, {}).items()}
+
+
+def normalized_metrics(categories: dict[str, dict[str, str]]) -> dict[str, float | int]:
+    passing = category_stats(categories, "Passing")
+    rushing = category_stats(categories, "Rushing")
+    receiving = category_stats(categories, "Receiving")
+    defensive = category_stats(categories, "Defensive") or category_stats(
+        categories, "Defensive Statistics"
+    )
+    punting = category_stats(categories, "Punting")
+    kicking = category_stats(categories, "Kicking")
+    field_goals = category_stats(categories, "Field Goals")
+    scoring = category_stats(categories, "Scoring")
+    returns = category_stats(categories, "Returns")
+    kick_returns = category_stats(categories, "Kickoff Returns")
+    punt_returns = category_stats(categories, "Punt Returns")
+
+    completions = integer(passing.get("COMP"))
+    pass_attempts = integer(passing.get("ATT"))
+    pass_interceptions = integer(passing.get("INT"))
+    if passing.get("CMP-ATT-INT"):
+        parts = [integer(value) for value in passing["CMP-ATT-INT"].split("-")]
+        if len(parts) == 3:
+            completions, pass_attempts, pass_interceptions = parts
+
+    field_goals_made = integer(kicking.get("FGM"))
+    field_goals_attempted = integer(kicking.get("FGA"))
+    if field_goals.get("FGM-FGA"):
+        field_goals_made, field_goals_attempted = pair(field_goals["FGM-FGA"])
+
+    extra_points_made = integer(kicking.get("XPM"))
+    extra_points_attempted = integer(kicking.get("XPA"))
+    if scoring.get("KICK"):
+        extra_points_made, extra_points_attempted = pair(scoring["KICK"])
+
+    kick_return_count = integer(returns.get("KR") or kick_returns.get("NO"))
+    kick_return_yards = integer(returns.get("KR YDS") or kick_returns.get("YDS"))
+    punt_return_count = integer(returns.get("PR") or punt_returns.get("NO"))
+    punt_return_yards = integer(returns.get("PR YDS") or punt_returns.get("YDS"))
+
+    metrics: dict[str, float | int] = {
+        "completions": completions,
+        "pass_attempts": pass_attempts,
+        "pass_interceptions": pass_interceptions,
+        "passing_yards": integer(passing.get("YDS")),
+        "passing_touchdowns": integer(passing.get("TD")),
+        "rushing_attempts": integer(rushing.get("ATT")),
+        "rushing_yards": integer(rushing.get("NET")),
+        "rushing_touchdowns": integer(rushing.get("TD")),
+        "receptions": integer(receiving.get("REC") or receiving.get("NO")),
+        "receiving_yards": integer(receiving.get("YDS")),
+        "receiving_touchdowns": integer(receiving.get("TD")),
+        "solo_tackles": integer(defensive.get("SOLO")),
+        "assisted_tackles": integer(defensive.get("AST") or defensive.get("ASST")),
+        "tackles": number(defensive.get("TOTAL") or defensive.get("TOT")),
+        "tackles_for_loss": number(defensive.get("TFL-YDS")),
+        "sacks": number(defensive.get("SCK-YDS") or defensive.get("SACKS-YDS")),
+        "defensive_interceptions": integer(defensive.get("INT-YDS") or defensive.get("INT")),
+        "pass_breakups": integer(defensive.get("BU")),
+        "forced_fumbles": integer(defensive.get("FF")),
+        "fumble_recoveries": integer(defensive.get("FR-YDS") or defensive.get("FR")),
+        "kick_returns": kick_return_count,
+        "kick_return_yards": kick_return_yards,
+        "kick_return_touchdowns": integer(returns.get("KR TD") or kick_returns.get("TD")),
+        "punt_returns": punt_return_count,
+        "punt_return_yards": punt_return_yards,
+        "punt_return_touchdowns": integer(returns.get("PR TD") or punt_returns.get("TD")),
+        "punt_yards": integer(punting.get("YDS")),
+        "field_goals_made": field_goals_made,
+        "field_goals_attempted": field_goals_attempted,
+        "extra_points_made": extra_points_made,
+        "extra_points_attempted": extra_points_attempted,
+        "points": integer(scoring.get("PTS") or kicking.get("PTS")),
+    }
+    metrics["return_yards"] = kick_return_yards + punt_return_yards
+    metrics["all_purpose_yards"] = (
+        integer(metrics["rushing_yards"])
+        + integer(metrics["receiving_yards"])
+        + integer(metrics["return_yards"])
+    )
+    return metrics
+
+
+def current_player_seasons(
+    players: dict[str, dict[str, object]], appearances: dict[str, list[str]]
+) -> dict[str, dict[str, object]]:
+    result: dict[str, dict[str, object]] = {}
+    for category_name, category in players.items():
+        columns = category["columns"]
+        for row in category["rows"]:
+            player_name = row["player"]
+            profile = result.setdefault(
+                player_name,
+                {
+                    "jersey": row["jersey"],
+                    "games": len(appearances.get(player_name, [])),
+                    "categories": {},
+                },
+            )
+            profile["categories"][category_name] = {
+                column: row.get(column, "-") for column in columns
+            }
+    return result
+
+
+def primary_metric(career: dict[str, float | int]) -> dict[str, str]:
+    if number(career["passing_yards"]) >= 500:
+        return {"key": "passing_yards", "label": "Passing Yards", "short": "Pass Yds"}
+    if number(career["rushing_yards"]) and number(career["receiving_yards"]):
+        return {"key": "all_purpose_yards", "label": "All-Purpose Yards", "short": "AP Yds"}
+    if number(career["rushing_yards"]):
+        return {"key": "rushing_yards", "label": "Rushing Yards", "short": "Rush Yds"}
+    if number(career["receiving_yards"]):
+        return {"key": "receiving_yards", "label": "Receiving Yards", "short": "Rec Yds"}
+    if number(career["tackles"]):
+        return {"key": "tackles", "label": "Total Tackles", "short": "Tackles"}
+    if number(career["return_yards"]):
+        return {"key": "return_yards", "label": "Return Yards", "short": "Ret Yds"}
+    if number(career["punt_yards"]):
+        return {"key": "punt_yards", "label": "Punt Yards", "short": "Punt Yds"}
+    return {"key": "points", "label": "Points", "short": "Points"}
+
+
+def build_player_profiles(
+    players: dict[str, dict[str, object]], appearances: dict[str, list[str]]
+) -> dict[str, dict[str, object]]:
+    history = json.loads(PLAYER_HISTORY.read_text())
+    current = current_player_seasons(players, appearances)
+    profiles: dict[str, dict[str, object]] = {}
+    for player_name, current_season in current.items():
+        seasons = []
+        for season_key, historical_season in history["seasons"].items():
+            historical_player = historical_season["players"].get(player_name)
+            if historical_player:
+                seasons.append(
+                    {
+                        "season": season_key,
+                        "label": historical_season["label"],
+                        "games": historical_player["games"],
+                        "categories": historical_player["categories"],
+                        "metrics": normalized_metrics(historical_player["categories"]),
+                        "source_url": historical_season["source_url"],
+                    }
+                )
+        seasons.append(
+            {
+                "season": "2025",
+                "label": "2025-26",
+                "games": current_season["games"],
+                "categories": current_season["categories"],
+                "metrics": normalized_metrics(current_season["categories"]),
+                "source_url": (
+                    "https://naiastats.prestosports.com/sports/fball/2025-26/"
+                    "conf/Appalachian/teams/pikevilleky?view=lineup"
+                ),
+            }
+        )
+        career: dict[str, float | int] = {"games": sum(season["games"] for season in seasons)}
+        for key in seasons[0]["metrics"]:
+            career[key] = sum(number(season["metrics"][key]) for season in seasons)
+            if all(float(season["metrics"][key]).is_integer() for season in seasons):
+                career[key] = int(career[key])
+        profiles[player_name] = {
+            "seasons": seasons,
+            "career": career,
+            "primary_metric": primary_metric(career),
+            "honors": HONORS.get(player_name, []),
+            "scope": "Verified UPIKE cumulative statistics; transfer-school totals are not included.",
+        }
+    return profiles
+
+
 def main() -> None:
+    players_2025 = parse_players()
+    appearances_2025 = parse_appearances()
     seasons = {
         "2023": {
             "label": "2023-24",
@@ -448,8 +701,8 @@ def main() -> None:
             "team_stats": parse_pipe_table(TEAM_STATS_2025, STAT_HEADERS),
             "game_log": parse_2025_game_log(),
             "schedule": parse_pipe_table(SCHEDULES["2025"], SCHEDULE_HEADERS),
-            "players": parse_players(),
-            "appearances": parse_appearances(),
+            "players": players_2025,
+            "appearances": appearances_2025,
         },
         "2026": {
             "label": "2026-27",
@@ -467,6 +720,7 @@ def main() -> None:
         "conference": "Appalachian Athletic Conference",
         "default_season": "2025",
         "seasons": seasons,
+        "player_profiles": build_player_profiles(players_2025, appearances_2025),
         "sources": [
             {"label": "2025 NAIA team statistics", "path": str(PLAYER_PDF.relative_to(ROOT))},
             *[
@@ -483,6 +737,7 @@ def main() -> None:
                 "label": "NAIA team profile",
                 "url": "https://naiastats.prestosports.com/sports/fball/2025-26/conf/Appalachian/teams/pikevilleky?jsRendering=true",
             },
+            *json.loads(PLAYER_HISTORY.read_text())["sources"],
         ],
     }
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)

@@ -1,0 +1,1044 @@
+{
+  "sources": [
+    {
+      "label": "2022-23",
+      "url": "https://upikebears.com/sports/football/stats/2022"
+    },
+    {
+      "label": "2023-24",
+      "url": "https://upikebears.com/sports/football/stats/2023"
+    },
+    {
+      "label": "2024-25",
+      "url": "https://upikebears.com/sports/football/stats/2024"
+    }
+  ],
+  "seasons": {
+    "2022": {
+      "label": "2022-23",
+      "source_url": "https://upikebears.com/sports/football/stats/2022",
+      "players": {
+        "Ahmante Altman": {
+          "jersey": "94",
+          "games": 1,
+          "categories": {
+            "Defensive": {
+              "GP": "1",
+              "Solo": "0",
+              "ASST": "1",
+              "TOT": "1.0",
+              "TFL-YDS": "0-0",
+              "Sacks-YDS": "0-0",
+              "INT": "0",
+              "BU": "0",
+              "QBH": "0",
+              "FR": "0",
+              "FF": "0",
+              "KICK": "0",
+              "SAF": "0"
+            }
+          }
+        },
+        "Brett Coleman": {
+          "jersey": "10",
+          "games": 10,
+          "categories": {
+            "Receiving": {
+              "GP": "10",
+              "NO": "1",
+              "YDS": "36",
+              "AVG": "36.00",
+              "TD": "0",
+              "Long": "36",
+              "AVG/G": "3.60"
+            },
+            "Defensive": {
+              "GP": "10",
+              "Solo": "29",
+              "ASST": "13",
+              "TOT": "42.0",
+              "TFL-YDS": "0.5-1",
+              "Sacks-YDS": "0-0",
+              "INT": "2",
+              "BU": "1",
+              "QBH": "0",
+              "FR": "0",
+              "FF": "0",
+              "KICK": "0",
+              "SAF": "0"
+            }
+          }
+        },
+        "Xavier Malone": {
+          "jersey": "05",
+          "games": 8,
+          "categories": {
+            "Rushing": {
+              "GP": "8",
+              "ATT": "31",
+              "Gain": "119",
+              "Loss": "53",
+              "Net": "66",
+              "AVG": "2.1",
+              "TD": "2",
+              "Long": "22",
+              "AVG/G": "8.25"
+            },
+            "Passing": {
+              "GP": "8",
+              "Rating": "147.37",
+              "COMP": "114",
+              "ATT": "188",
+              "INT": "4",
+              "%": "60.64%",
+              "YDS": "1565",
+              "TD": "12",
+              "Long": "81",
+              "AVG/G": "195.63"
+            },
+            "Scoring": {
+              "TD": "2",
+              "FG": "0",
+              "SAF": "0",
+              "KICK": "0-0",
+              "RUSH": "0-0",
+              "RCV": "0",
+              "PASS": "2-3",
+              "DXP": "0",
+              "PTS": "12"
+            }
+          }
+        },
+        "Cobe Stribling": {
+          "jersey": "14",
+          "games": 1,
+          "categories": {}
+        }
+      }
+    },
+    "2023": {
+      "label": "2023-24",
+      "source_url": "https://upikebears.com/sports/football/stats/2023",
+      "players": {
+        "Ahmante Altman": {
+          "jersey": "93",
+          "games": 5,
+          "categories": {
+            "Defensive": {
+              "GP": "5",
+              "Solo": "6",
+              "ASST": "3",
+              "TOT": "9.0",
+              "TFL-YDS": "4.0-15",
+              "Sacks-YDS": "1.0-5",
+              "INT": "0",
+              "BU": "0",
+              "QBH": "0",
+              "FR": "0",
+              "FF": "0",
+              "KICK": "0",
+              "SAF": "0"
+            }
+          }
+        },
+        "Najmir Bellegarde": {
+          "jersey": "45",
+          "games": 3,
+          "categories": {
+            "Defensive": {
+              "GP": "3",
+              "Solo": "2",
+              "ASST": "0",
+              "TOT": "2.0",
+              "TFL-YDS": "0-0",
+              "Sacks-YDS": "0-0",
+              "INT": "0",
+              "BU": "0",
+              "QBH": "0",
+              "FR": "0",
+              "FF": "0",
+              "KICK": "0",
+              "SAF": "0"
+            }
+          }
+        },
+        "Quincy Clark": {
+          "jersey": "32",
+          "games": 2,
+          "categories": {
+            "Defensive": {
+              "GP": "2",
+              "Solo": "3",
+              "ASST": "0",
+              "TOT": "3.0",
+              "TFL-YDS": "0-0",
+              "Sacks-YDS": "0-0",
+              "INT": "0",
+              "BU": "0",
+              "QBH": "0",
+              "FR": "0",
+              "FF": "0",
+              "KICK": "0",
+              "SAF": "0"
+            }
+          }
+        },
+        "Brett Coleman": {
+          "jersey": "10",
+          "games": 10,
+          "categories": {
+            "Defensive": {
+              "GP": "11",
+              "Solo": "31",
+              "ASST": "11",
+              "TOT": "42.0",
+              "TFL-YDS": "0.5-1",
+              "Sacks-YDS": "0-0",
+              "INT": "1",
+              "BU": "3",
+              "QBH": "0",
+              "FR": "0",
+              "FF": "0",
+              "KICK": "0",
+              "SAF": "0"
+            }
+          }
+        },
+        "Levi Evans": {
+          "jersey": "40",
+          "games": 10,
+          "categories": {
+            "Defensive": {
+              "GP": "10",
+              "Solo": "43",
+              "ASST": "23",
+              "TOT": "66.0",
+              "TFL-YDS": "4.0-8",
+              "Sacks-YDS": "0-0",
+              "INT": "0",
+              "BU": "0",
+              "QBH": "0",
+              "FR": "0",
+              "FF": "0",
+              "KICK": "0",
+              "SAF": "0"
+            }
+          }
+        },
+        "Xavier Malone": {
+          "jersey": "5",
+          "games": 6,
+          "categories": {
+            "Rushing": {
+              "GP": "6",
+              "ATT": "11",
+              "Gain": "21",
+              "Loss": "34",
+              "Net": "-13",
+              "AVG": "-1.2",
+              "TD": "1",
+              "Long": "8",
+              "AVG/G": "-2.17"
+            },
+            "Passing": {
+              "GP": "6",
+              "Rating": "115.85",
+              "COMP": "44",
+              "ATT": "70",
+              "INT": "4",
+              "%": "62.86%",
+              "YDS": "419",
+              "TD": "3",
+              "Long": "36",
+              "AVG/G": "69.83"
+            },
+            "Receiving": {
+              "GP": "6",
+              "NO": "1",
+              "YDS": "7",
+              "AVG": "7.00",
+              "TD": "0",
+              "Long": "7",
+              "AVG/G": "1.17"
+            },
+            "Scoring": {
+              "TD": "1",
+              "FG": "0",
+              "SAF": "0",
+              "KICK": "0-0",
+              "RUSH": "0-0",
+              "RCV": "0",
+              "PASS": "0-0",
+              "DXP": "0",
+              "PTS": "6"
+            }
+          }
+        },
+        "Dige Savage": {
+          "jersey": "20",
+          "games": 8,
+          "categories": {
+            "Defensive": {
+              "GP": "8",
+              "Solo": "7",
+              "ASST": "1",
+              "TOT": "8.0",
+              "TFL-YDS": "2.0-5",
+              "Sacks-YDS": "0-0",
+              "INT": "1",
+              "BU": "2",
+              "QBH": "0",
+              "FR": "1",
+              "FF": "0",
+              "KICK": "0",
+              "SAF": "0"
+            }
+          }
+        },
+        "Grant Scott": {
+          "jersey": "87",
+          "games": 3,
+          "categories": {
+            "Receiving": {
+              "GP": "3",
+              "NO": "3",
+              "YDS": "54",
+              "AVG": "18.00",
+              "TD": "1",
+              "Long": "30",
+              "AVG/G": "18.00"
+            },
+            "Scoring": {
+              "TD": "1",
+              "FG": "0",
+              "SAF": "0",
+              "KICK": "0-0",
+              "RUSH": "0-0",
+              "RCV": "0",
+              "PASS": "0-0",
+              "DXP": "0",
+              "PTS": "6"
+            }
+          }
+        },
+        "Levi Wheeling": {
+          "jersey": "17",
+          "games": 1,
+          "categories": {}
+        },
+        "Amon Williams": {
+          "jersey": "36",
+          "games": 1,
+          "categories": {}
+        }
+      }
+    },
+    "2024": {
+      "label": "2024-25",
+      "source_url": "https://upikebears.com/sports/football/stats/2024",
+      "players": {
+        "Ahmante Altman": {
+          "jersey": "93",
+          "games": 7,
+          "categories": {
+            "Defensive": {
+              "GP": "7",
+              "Solo": "5",
+              "ASST": "4",
+              "TOT": "9.0",
+              "TFL-YDS": "0.5-1",
+              "Sacks-YDS": "0-0",
+              "INT": "0",
+              "BU": "0",
+              "QBH": "0",
+              "FR": "0",
+              "FF": "0",
+              "KICK": "0",
+              "SAF": "0"
+            },
+            "Kickoff Returns": {
+              "NO": "1",
+              "YDS": "2",
+              "AVG": "2.00",
+              "TD": "0",
+              "Long": "2"
+            }
+          }
+        },
+        "Caleb Anderson": {
+          "jersey": "28",
+          "games": 12,
+          "categories": {
+            "Defensive": {
+              "GP": "12",
+              "Solo": "44",
+              "ASST": "36",
+              "TOT": "80.0",
+              "TFL-YDS": "2.0-4",
+              "Sacks-YDS": "1.0-3",
+              "INT": "0",
+              "BU": "2",
+              "QBH": "0",
+              "FR": "0",
+              "FF": "0",
+              "KICK": "0",
+              "SAF": "0"
+            },
+            "Kickoff Returns": {
+              "NO": "2",
+              "YDS": "9",
+              "AVG": "4.50",
+              "TD": "0",
+              "Long": "9"
+            }
+          }
+        },
+        "Najmir Bellegarde": {
+          "jersey": "15",
+          "games": 12,
+          "categories": {
+            "Defensive": {
+              "GP": "12",
+              "Solo": "41",
+              "ASST": "32",
+              "TOT": "73.0",
+              "TFL-YDS": "8.0-18",
+              "Sacks-YDS": "1.5-7",
+              "INT": "2",
+              "BU": "3",
+              "QBH": "0",
+              "FR": "0",
+              "FF": "1",
+              "KICK": "0",
+              "SAF": "0"
+            }
+          }
+        },
+        "Marshawn Boyden": {
+          "jersey": "27",
+          "games": 4,
+          "categories": {
+            "Defensive": {
+              "GP": "4",
+              "Solo": "2",
+              "ASST": "3",
+              "TOT": "5.0",
+              "TFL-YDS": "0-0",
+              "Sacks-YDS": "0-0",
+              "INT": "1",
+              "BU": "2",
+              "QBH": "0",
+              "FR": "0",
+              "FF": "0",
+              "KICK": "0",
+              "SAF": "0"
+            }
+          }
+        },
+        "Trevor Carter": {
+          "jersey": "7",
+          "games": 12,
+          "categories": {
+            "Defensive": {
+              "GP": "12",
+              "Solo": "27",
+              "ASST": "25",
+              "TOT": "52.0",
+              "TFL-YDS": "5.0-20",
+              "Sacks-YDS": "2.5-14",
+              "INT": "1",
+              "BU": "1",
+              "QBH": "0",
+              "FR": "0",
+              "FF": "2",
+              "KICK": "0",
+              "SAF": "0"
+            },
+            "Kickoff Returns": {
+              "NO": "1",
+              "YDS": "19",
+              "AVG": "19.00",
+              "TD": "0",
+              "Long": "19"
+            }
+          }
+        },
+        "Quincy Clark": {
+          "jersey": "23",
+          "games": 7,
+          "categories": {
+            "Defensive": {
+              "GP": "7",
+              "Solo": "6",
+              "ASST": "1",
+              "TOT": "7.0",
+              "TFL-YDS": "0-0",
+              "Sacks-YDS": "0-0",
+              "INT": "0",
+              "BU": "0",
+              "QBH": "0",
+              "FR": "0",
+              "FF": "0",
+              "KICK": "0",
+              "SAF": "0"
+            },
+            "Kickoff Returns": {
+              "NO": "8",
+              "YDS": "204",
+              "AVG": "25.50",
+              "TD": "0",
+              "Long": "48"
+            }
+          }
+        },
+        "Brett Coleman": {
+          "jersey": "43",
+          "games": 11,
+          "categories": {
+            "Defensive": {
+              "GP": "11",
+              "Solo": "45",
+              "ASST": "21",
+              "TOT": "66.0",
+              "TFL-YDS": "1.0-2",
+              "Sacks-YDS": "0-0",
+              "INT": "1",
+              "BU": "3",
+              "QBH": "0",
+              "FR": "0",
+              "FF": "1",
+              "KICK": "0",
+              "SAF": "0"
+            }
+          }
+        },
+        "Dylan Ferguson": {
+          "jersey": "40",
+          "games": 4,
+          "categories": {
+            "Defensive": {
+              "GP": "4",
+              "Solo": "6",
+              "ASST": "3",
+              "TOT": "9.0",
+              "TFL-YDS": "0-0",
+              "Sacks-YDS": "0-0",
+              "INT": "0",
+              "BU": "0",
+              "QBH": "0",
+              "FR": "0",
+              "FF": "0",
+              "KICK": "0",
+              "SAF": "0"
+            }
+          }
+        },
+        "Jalen Flowers": {
+          "jersey": "94",
+          "games": 4,
+          "categories": {
+            "Defensive": {
+              "GP": "4",
+              "Solo": "2",
+              "ASST": "3",
+              "TOT": "5.0",
+              "TFL-YDS": "0.5-1",
+              "Sacks-YDS": "0-0",
+              "INT": "0",
+              "BU": "0",
+              "QBH": "0",
+              "FR": "0",
+              "FF": "0",
+              "KICK": "0",
+              "SAF": "0"
+            }
+          }
+        },
+        "Jeff Flowers": {
+          "jersey": "44",
+          "games": 9,
+          "categories": {
+            "Defensive": {
+              "GP": "9",
+              "Solo": "15",
+              "ASST": "4",
+              "TOT": "19.0",
+              "TFL-YDS": "3.0-3",
+              "Sacks-YDS": "2.0-2",
+              "INT": "0",
+              "BU": "0",
+              "QBH": "0",
+              "FR": "0",
+              "FF": "1",
+              "KICK": "0",
+              "SAF": "0"
+            }
+          }
+        },
+        "Alex Hatton": {
+          "jersey": "19",
+          "games": 12,
+          "categories": {
+            "Rushing": {
+              "GP": "12",
+              "ATT": "3",
+              "Gain": "0",
+              "Loss": "9",
+              "Net": "-9",
+              "AVG": "-3.0",
+              "TD": "0",
+              "Long": "0",
+              "AVG/G": "-0.75"
+            },
+            "Passing": {
+              "GP": "12",
+              "Rating": "68.56",
+              "COMP": "4",
+              "ATT": "5",
+              "INT": "1",
+              "%": "80.00%",
+              "YDS": "17",
+              "TD": "0",
+              "Long": "11",
+              "AVG/G": "1.42"
+            },
+            "Punting": {
+              "NO": "22",
+              "YDS": "867",
+              "AVG": "39.41",
+              "Long": "53",
+              "TB": "0",
+              "FC": "1",
+              "I20": "7",
+              "50+": "3",
+              "BLK": "0"
+            }
+          }
+        },
+        "Dallas Kelly": {
+          "jersey": "52",
+          "games": 1,
+          "categories": {
+            "Defensive": {
+              "GP": "1",
+              "Solo": "1",
+              "ASST": "1",
+              "TOT": "2.0",
+              "TFL-YDS": "0-0",
+              "Sacks-YDS": "0-0",
+              "INT": "0",
+              "BU": "0",
+              "QBH": "0",
+              "FR": "0",
+              "FF": "0",
+              "KICK": "0",
+              "SAF": "0"
+            }
+          }
+        },
+        "Alex Lindsey": {
+          "jersey": "80",
+          "games": 1,
+          "categories": {
+            "Receiving": {
+              "GP": "1",
+              "NO": "1",
+              "YDS": "-2",
+              "AVG": "-2.00",
+              "TD": "0",
+              "Long": "0",
+              "AVG/G": "-2.00"
+            },
+            "Defensive": {
+              "GP": "1",
+              "Solo": "1",
+              "ASST": "0",
+              "TOT": "1.0",
+              "TFL-YDS": "0-0",
+              "Sacks-YDS": "0-0",
+              "INT": "0",
+              "BU": "0",
+              "QBH": "0",
+              "FR": "0",
+              "FF": "0",
+              "KICK": "0",
+              "SAF": "0"
+            }
+          }
+        },
+        "Zach Morris": {
+          "jersey": "53",
+          "games": 2,
+          "categories": {
+            "Scoring": {
+              "TD": "0",
+              "FG": "0",
+              "SAF": "0",
+              "KICK": "0-0",
+              "RUSH": "1-1",
+              "RCV": "0",
+              "PASS": "0-0",
+              "DXP": "0",
+              "PTS": "2"
+            }
+          }
+        },
+        "Brandon Newton": {
+          "jersey": "17",
+          "games": 11,
+          "categories": {
+            "Receiving": {
+              "GP": "11",
+              "NO": "31",
+              "YDS": "525",
+              "AVG": "16.94",
+              "TD": "8",
+              "Long": "47",
+              "AVG/G": "47.73"
+            },
+            "Defensive": {
+              "GP": "11",
+              "Solo": "3",
+              "ASST": "1",
+              "TOT": "4.0",
+              "TFL-YDS": "0-0",
+              "Sacks-YDS": "0-0",
+              "INT": "0",
+              "BU": "0",
+              "QBH": "0",
+              "FR": "0",
+              "FF": "0",
+              "KICK": "0",
+              "SAF": "0"
+            },
+            "Kickoff Returns": {
+              "NO": "1",
+              "YDS": "20",
+              "AVG": "20.00",
+              "TD": "0",
+              "Long": "20"
+            },
+            "Scoring": {
+              "TD": "8",
+              "FG": "0",
+              "SAF": "0",
+              "KICK": "0-0",
+              "RUSH": "0-0",
+              "RCV": "0",
+              "PASS": "0-0",
+              "DXP": "0",
+              "PTS": "48"
+            }
+          }
+        },
+        "Marcus Nunes": {
+          "jersey": "35",
+          "games": 6,
+          "categories": {
+            "Defensive": {
+              "GP": "6",
+              "Solo": "9",
+              "ASST": "3",
+              "TOT": "12.0",
+              "TFL-YDS": "0.5-0",
+              "Sacks-YDS": "0-0",
+              "INT": "0",
+              "BU": "0",
+              "QBH": "0",
+              "FR": "0",
+              "FF": "0",
+              "KICK": "0",
+              "SAF": "0"
+            }
+          }
+        },
+        "Jayden Pepper": {
+          "jersey": "33",
+          "games": 2,
+          "categories": {
+            "Rushing": {
+              "GP": "2",
+              "ATT": "3",
+              "Gain": "8",
+              "Loss": "0",
+              "Net": "8",
+              "AVG": "2.7",
+              "TD": "0",
+              "Long": "5",
+              "AVG/G": "4.00"
+            },
+            "Receiving": {
+              "GP": "2",
+              "NO": "1",
+              "YDS": "0",
+              "AVG": "0.00",
+              "TD": "0",
+              "Long": "0",
+              "AVG/G": "0.00"
+            }
+          }
+        },
+        "Landon Rowe": {
+          "jersey": "57",
+          "games": 12,
+          "categories": {
+            "Defensive": {
+              "GP": "12",
+              "Solo": "15",
+              "ASST": "14",
+              "TOT": "29.0",
+              "TFL-YDS": "3.0-9",
+              "Sacks-YDS": "1.5-7",
+              "INT": "0",
+              "BU": "0",
+              "QBH": "0",
+              "FR": "0",
+              "FF": "0",
+              "KICK": "0",
+              "SAF": "0"
+            }
+          }
+        },
+        "Hayden Russell": {
+          "jersey": "82",
+          "games": 6,
+          "categories": {
+            "Receiving": {
+              "GP": "6",
+              "NO": "1",
+              "YDS": "40",
+              "AVG": "40.00",
+              "TD": "0",
+              "Long": "40",
+              "AVG/G": "6.67"
+            },
+            "Defensive": {
+              "GP": "6",
+              "Solo": "4",
+              "ASST": "1",
+              "TOT": "5.0",
+              "TFL-YDS": "0-0",
+              "Sacks-YDS": "0-0",
+              "INT": "0",
+              "BU": "0",
+              "QBH": "0",
+              "FR": "0",
+              "FF": "0",
+              "KICK": "0",
+              "SAF": "0"
+            }
+          }
+        },
+        "Dige Savage": {
+          "jersey": "20",
+          "games": 2,
+          "categories": {
+            "Defensive": {
+              "GP": "2",
+              "Solo": "2",
+              "ASST": "0",
+              "TOT": "2.0",
+              "TFL-YDS": "0-0",
+              "Sacks-YDS": "0-0",
+              "INT": "0",
+              "BU": "0",
+              "QBH": "0",
+              "FR": "0",
+              "FF": "0",
+              "KICK": "0",
+              "SAF": "0"
+            }
+          }
+        },
+        "Grant Scott": {
+          "jersey": "87",
+          "games": 12,
+          "categories": {
+            "Receiving": {
+              "GP": "12",
+              "NO": "23",
+              "YDS": "291",
+              "AVG": "12.65",
+              "TD": "1",
+              "Long": "26",
+              "AVG/G": "24.25"
+            },
+            "Kickoff Returns": {
+              "NO": "1",
+              "YDS": "22",
+              "AVG": "22.00",
+              "TD": "0",
+              "Long": "22"
+            },
+            "Scoring": {
+              "TD": "1",
+              "FG": "0",
+              "SAF": "0",
+              "KICK": "0-0",
+              "RUSH": "0-0",
+              "RCV": "1",
+              "PASS": "0-0",
+              "DXP": "0",
+              "PTS": "8"
+            }
+          }
+        },
+        "Tommy Turner": {
+          "jersey": "29",
+          "games": 9,
+          "categories": {
+            "Defensive": {
+              "GP": "9",
+              "Solo": "20",
+              "ASST": "9",
+              "TOT": "29.0",
+              "TFL-YDS": "0-0",
+              "Sacks-YDS": "0-0",
+              "INT": "0",
+              "BU": "4",
+              "QBH": "0",
+              "FR": "0",
+              "FF": "0",
+              "KICK": "0",
+              "SAF": "0"
+            }
+          }
+        },
+        "Damion Watts": {
+          "jersey": "39",
+          "games": 1,
+          "categories": {
+            "Defensive": {
+              "GP": "1",
+              "Solo": "1",
+              "ASST": "1",
+              "TOT": "2.0",
+              "TFL-YDS": "0-0",
+              "Sacks-YDS": "0-0",
+              "INT": "0",
+              "BU": "0",
+              "QBH": "0",
+              "FR": "0",
+              "FF": "0",
+              "KICK": "0",
+              "SAF": "0"
+            }
+          }
+        },
+        "Levi Wheeling": {
+          "jersey": "46",
+          "games": 2,
+          "categories": {
+            "Kickoffs": {
+              "NO": "1",
+              "YDS": "17",
+              "AVG": "17.0",
+              "TB": "0",
+              "OB": "0"
+            }
+          }
+        },
+        "Amon Williams": {
+          "jersey": "5",
+          "games": 11,
+          "categories": {
+            "Rushing": {
+              "GP": "11",
+              "ATT": "193",
+              "Gain": "1314",
+              "Loss": "44",
+              "Net": "1270",
+              "AVG": "6.6",
+              "TD": "15",
+              "Long": "77",
+              "AVG/G": "115.45"
+            },
+            "Receiving": {
+              "GP": "11",
+              "NO": "61",
+              "YDS": "517",
+              "AVG": "8.48",
+              "TD": "4",
+              "Long": "55",
+              "AVG/G": "47.00"
+            },
+            "Defensive": {
+              "GP": "11",
+              "Solo": "2",
+              "ASST": "0",
+              "TOT": "2.0",
+              "TFL-YDS": "0-0",
+              "Sacks-YDS": "0-0",
+              "INT": "0",
+              "BU": "0",
+              "QBH": "0",
+              "FR": "0",
+              "FF": "0",
+              "KICK": "0",
+              "SAF": "0"
+            },
+            "Scoring": {
+              "TD": "19",
+              "FG": "0",
+              "SAF": "0",
+              "KICK": "0-0",
+              "RUSH": "0-0",
+              "RCV": "0",
+              "PASS": "0-0",
+              "DXP": "0",
+              "PTS": "114"
+            }
+          }
+        },
+        "Jordan Williams": {
+          "jersey": "13",
+          "games": 12,
+          "categories": {
+            "Receiving": {
+              "GP": "12",
+              "NO": "70",
+              "YDS": "720",
+              "AVG": "10.29",
+              "TD": "5",
+              "Long": "39",
+              "AVG/G": "60.00"
+            },
+            "Defensive": {
+              "GP": "12",
+              "Solo": "2",
+              "ASST": "1",
+              "TOT": "3.0",
+              "TFL-YDS": "0-0",
+              "Sacks-YDS": "0-0",
+              "INT": "0",
+              "BU": "0",
+              "QBH": "0",
+              "FR": "0",
+              "FF": "0",
+              "KICK": "0",
+              "SAF": "0"
+            },
+            "Kickoff Returns": {
+              "NO": "6",
+              "YDS": "123",
+              "AVG": "20.50",
+              "TD": "0",
+              "Long": "24"
+            },
+            "Scoring": {
+              "TD": "5",
+              "FG": "0",
+              "SAF": "0",
+              "KICK": "0-0",
+              "RUSH": "0-0",
+              "RCV": "0",
+              "PASS": "0-0",
+              "DXP": "0",
+              "PTS": "30"
+            }
+          }
+        }
+      }
+    }
+  }
+}

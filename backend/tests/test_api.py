@@ -49,6 +49,17 @@ def test_stat_board_contains_all_compiled_seasons_and_player_tables() -> None:
     assert payload["seasons"]["2025"]["game_log"][0]["source_url"].endswith(
         "20250830_dizi.xml"
     )
+    assert len(payload["player_profiles"]) == 54
+    assert sum(len(profile["seasons"]) > 1 for profile in payload["player_profiles"].values()) == 29
+    assert sum(len(profile["seasons"]) for profile in payload["player_profiles"].values()) == 94
+    assert payload["player_profiles"]["Xavier Malone"]["career"]["passing_yards"] == 5476
+    assert [
+        season["label"] for season in payload["player_profiles"]["Xavier Malone"]["seasons"]
+    ] == ["2022-23", "2023-24", "2025-26"]
+    assert payload["player_profiles"]["Grant Scott"]["career"]["receiving_yards"] == 823
+    assert payload["player_profiles"]["Xavier Malone"]["seasons"][0]["source_url"] == (
+        "https://upikebears.com/sports/football/stats/2022"
+    )
 
 
 def test_local_loopback_origin_is_allowed() -> None:
