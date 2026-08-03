@@ -65,6 +65,7 @@ export function Dashboard() {
             {Object.entries(board.seasons).map(([key, item]) => (
               <button key={key} onClick={() => selectSeason(key)} className={cn("rounded-md border px-3 py-2 text-xs font-bold tabular-nums transition", seasonKey === key ? "border-orange bg-orange text-[#090b0f]" : "border-white/10 bg-white/[.03] text-slate-400 hover:border-white/25 hover:text-white")}>{item.label}</button>
             ))}
+            <form action="/logout" method="post"><button type="submit" className="rounded-md border border-white/10 bg-white/[.03] px-3 py-2 text-xs font-bold text-slate-500 transition hover:border-orange/40 hover:text-orange">Sign out</button></form>
           </div>
         </div>
       </header>

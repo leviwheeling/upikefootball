@@ -1,7 +1,7 @@
 from functools import lru_cache
 from pathlib import Path
 
-from pydantic import field_validator
+from pydantic import AliasChoices, Field, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -10,6 +10,10 @@ class Settings(BaseSettings):
 
     app_name: str = "UPIKE Football Intelligence API"
     environment: str = "development"
+    site_password: str | None = Field(
+        default=None,
+        validation_alias=AliasChoices("password", "PASSWORD", "SITE_PASSWORD"),
+    )
     database_url: str = "postgresql+psycopg://upike:change-me@postgres:5432/upike_intel"
     redis_url: str = "redis://redis:6379/0"
     api_cors_origins: list[str] = [

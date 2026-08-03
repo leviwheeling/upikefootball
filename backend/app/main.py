@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 from app.api.routes import router
+from app.auth import PasswordProtectionMiddleware
 from app.config import get_settings
 from app.logging import configure_logging
 
@@ -25,6 +26,7 @@ app.add_middleware(
     allow_methods=["GET", "OPTIONS"],
     allow_headers=["*"],
 )
+app.add_middleware(PasswordProtectionMiddleware, settings=settings)
 app.include_router(router)
 
 frontend_dir = Path(__file__).resolve().parent.parent / "static"
