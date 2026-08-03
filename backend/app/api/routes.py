@@ -26,9 +26,11 @@ from app.schemas import (
 router = APIRouter(prefix="/api")
 DBSession = Annotated[Session, Depends(get_db)]
 STAT_BOARD_PATH = Path(__file__).resolve().parents[2] / "data/compiled/upike_stat_board.json"
-PLAY_ANALYTICS_PATH = (
-    Path(__file__).resolve().parents[2] / "data/compiled/upike_play_analytics_2025.json"
-)
+DATA_ROOT = Path(__file__).resolve().parents[2]
+PLAY_ANALYTICS_PATHS = {
+    season: DATA_ROOT / f"data/compiled/upike_play_analytics_{season}.json"
+    for season in ("2024", "2025")
+}
 
 
 @router.get("/health", response_model=HealthRead, tags=["system"])
@@ -43,9 +45,9 @@ def stat_board() -> dict[str, object]:
 
 
 @router.get("/play-analytics", tags=["intelligence"])
-def play_analytics() -> dict[str, object]:
-    """Return source-linked 2025 play, game, situation and player analytics."""
-    return cast(dict[str, object], json.loads(PLAY_ANALYTICS_PATH.read_text()))
+def play_analytics(season: str = Query("2025", pattern="^(2024|2025)$")) -> dict[str, object]:
+    """Return source-linked play, game, situation and player analytics by season."""
+    return cast(dict[str, object], json.loads(PLAY_ANALYTICS_PATHS[season].read_text()))
 
 
 @router.get("/seasons", response_model=SeasonPage, tags=["seasons"])

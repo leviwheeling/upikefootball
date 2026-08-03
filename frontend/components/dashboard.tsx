@@ -49,7 +49,7 @@ export function Dashboard() {
     setSelectedPlayer(null);
     const next = board!.seasons[key];
     if (!next.team_stats?.length) setView("schedule");
-    else if ((view === "players" && !next.players) || (view === "plays" && key !== "2025")) setView("team");
+    else if ((view === "players" && !next.players) || (view === "plays" && !["2024", "2025"].includes(key))) setView("team");
   }
 
   return (
@@ -91,7 +91,7 @@ export function Dashboard() {
           {season.team_stats?.length ? <ViewButton active={view === "team"} onClick={() => setView("team")}>Team Stats <Count>{season.team_stats.length}</Count></ViewButton> : null}
           {season.game_log?.length ? <ViewButton active={view === "games"} onClick={() => setView("games")}>Game Log <Count>{season.game_log.length}</Count></ViewButton> : null}
           {season.players ? <ViewButton active={view === "players"} onClick={() => setView("players")}>Players <Count>{playerCount}</Count></ViewButton> : null}
-          {seasonKey === "2025" ? <ViewButton active={view === "plays"} onClick={() => setView("plays")}>Play Analytics <Count>866</Count></ViewButton> : null}
+          {["2024", "2025"].includes(seasonKey) ? <ViewButton active={view === "plays"} onClick={() => setView("plays")}>Play Analytics <Count>{seasonKey === "2024" ? 959 : 866}</Count></ViewButton> : null}
           <ViewButton active={view === "schedule"} onClick={() => setView("schedule")}>Schedule <Count>{season.schedule.length}</Count></ViewButton>
         </nav>
 
@@ -99,7 +99,7 @@ export function Dashboard() {
           {view === "team" && season.team_stats && <TeamStatsTable season={season} />}
           {view === "games" && season.game_log && <GameLogTable season={season} />}
           {view === "players" && season.players && <PlayersTable categories={season.players} selected={playerCategory} onSelect={setPlayerCategory} onPlayerSelect={setSelectedPlayer} />}
-          {view === "plays" && seasonKey === "2025" && <PlayAnalyticsPanel onPlayerSelect={setSelectedPlayer} />}
+          {view === "plays" && ["2024", "2025"].includes(seasonKey) && <PlayAnalyticsPanel season={seasonKey} onPlayerSelect={setSelectedPlayer} />}
           {view === "schedule" && <ScheduleTable season={season} />}
         </section>
       </div>

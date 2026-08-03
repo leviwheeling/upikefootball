@@ -3,7 +3,7 @@
   "label": "2025-26",
   "generated_from": {
     "coaching_workbook": "INFO/25-26 Play DATA/PlaylistData_2026-08-02.xlsx",
-    "official_gamebooks": "10 NAIA gamebooks in INFO/25-26 Play DATA/Per game",
+    "official_gamebooks": "10 official gamebooks supplied for 2025-26",
     "official_play_by_play": "backend/data/raw/upike_gamebook_plays_2025.json"
   },
   "definitions": {
@@ -4362,6 +4362,108 @@
         "20251101_rdne",
         "20251108_iabb",
         "20251115_cb1j"
+      ],
+      "by_game": [
+        {
+          "game_id": "20250830_dizi",
+          "date": "Aug 30",
+          "opponent": "at Georgetown (Ky.)",
+          "plays": 69,
+          "passing_yards": 373,
+          "rushing_yards": -9,
+          "receiving_yards": 0,
+          "touchdowns": 1
+        },
+        {
+          "game_id": "20250913_kqps",
+          "date": "Sep 13",
+          "opponent": "at Campbellsville (KY)",
+          "plays": 60,
+          "passing_yards": 197,
+          "rushing_yards": 13,
+          "receiving_yards": 0,
+          "touchdowns": 2
+        },
+        {
+          "game_id": "20250920_xzbh",
+          "date": "Sep 20",
+          "opponent": "Cumberland (Tenn.)",
+          "plays": 53,
+          "passing_yards": 217,
+          "rushing_yards": -9,
+          "receiving_yards": 0,
+          "touchdowns": 1
+        },
+        {
+          "game_id": "20250927_uiom",
+          "date": "Sep 27",
+          "opponent": "at Maryville (Tenn.)",
+          "plays": 67,
+          "passing_yards": 384,
+          "rushing_yards": 9,
+          "receiving_yards": 0,
+          "touchdowns": 1
+        },
+        {
+          "game_id": "20251011_j14v",
+          "date": "Oct 11",
+          "opponent": "Rio Grande",
+          "plays": 46,
+          "passing_yards": 340,
+          "rushing_yards": 7,
+          "receiving_yards": 0,
+          "touchdowns": 4
+        },
+        {
+          "game_id": "20251018_1r1b",
+          "date": "Oct 18",
+          "opponent": "Point",
+          "plays": 35,
+          "passing_yards": 331,
+          "rushing_yards": 9,
+          "receiving_yards": 0,
+          "touchdowns": 5
+        },
+        {
+          "game_id": "20251025_nhhj",
+          "date": "Oct 25",
+          "opponent": "at Bluefield (VA)",
+          "plays": 39,
+          "passing_yards": 242,
+          "rushing_yards": -11,
+          "receiving_yards": 0,
+          "touchdowns": 2
+        },
+        {
+          "game_id": "20251101_rdne",
+          "date": "Nov 1",
+          "opponent": "Union Commonwealth",
+          "plays": 65,
+          "passing_yards": 439,
+          "rushing_yards": 17,
+          "receiving_yards": 0,
+          "touchdowns": 8
+        },
+        {
+          "game_id": "20251108_iabb",
+          "date": "Nov 8",
+          "opponent": "Kentucky Christian",
+          "plays": 55,
+          "passing_yards": 196,
+          "rushing_yards": 7,
+          "receiving_yards": 0,
+          "touchdowns": 1
+        },
+        {
+          "game_id": "20251115_cb1j",
+          "date": "Nov 15",
+          "opponent": "at Reinhardt (Ga.)",
+          "plays": 52,
+          "passing_yards": 253,
+          "rushing_yards": 22,
+          "receiving_yards": 0,
+          "touchdowns": 3
+        }
       ]
     },
     {
@@ -4441,6 +4543,98 @@
         "20251025_nhhj",
         "20251108_iabb",
         "20251115_cb1j"
+      ],
+      "by_game": [
+        {
+          "game_id": "20250830_dizi",
+          "date": "Aug 30",
+          "opponent": "at Georgetown (Ky.)",
+          "plays": 39,
+          "passing_yards": 0,
+          "rushing_yards": 68,
+          "receiving_yards": 93,
+          "touchdowns": 1
+        },
+        {
+          "game_id": "20250913_kqps",
+          "date": "Sep 13",
+          "opponent": "at Campbellsville (KY)",
+          "plays": 28,
+          "passing_yards": 0,
+          "rushing_yards": 71,
+          "receiving_yards": 0,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20250920_xzbh",
+          "date": "Sep 20",
+          "opponent": "Cumberland (Tenn.)",
+          "plays": 36,
+          "passing_yards": 0,
+          "rushing_yards": 61,
+          "receiving_yards": 32,
+          "touchdowns": 1
+        },
+        {
+          "game_id": "20250927_uiom",
+          "date": "Sep 27",
+          "opponent": "at Maryville (Tenn.)",
+          "plays": 29,
+          "passing_yards": 0,
+          "rushing_yards": 66,
+          "receiving_yards": 26,
+          "touchdowns": 2
+        },
+        {
+          "game_id": "20251011_j14v",
+          "date": "Oct 11",
+          "opponent": "Rio Grande",
+          "plays": 34,
+          "passing_yards": 0,
+          "rushing_yards": 91,
+          "receiving_yards": 36,
+          "touchdowns": 1
+        },
+        {
+          "game_id": "20251018_1r1b",
+          "date": "Oct 18",
+          "opponent": "Point",
+          "plays": 14,
+          "passing_yards": 0,
+          "rushing_yards": 54,
+          "receiving_yards": 70,
+          "touchdowns": 2
+        },
+        {
+          "game_id": "20251025_nhhj",
+          "date": "Oct 25",
+          "opponent": "at Bluefield (VA)",
+          "plays": 19,
+          "passing_yards": 0,
+          "rushing_yards": 93,
+          "receiving_yards": 18,
+          "touchdowns": 1
+        },
+        {
+          "game_id": "20251108_iabb",
+          "date": "Nov 8",
+          "opponent": "Kentucky Christian",
+          "plays": 27,
+          "passing_yards": 0,
+          "rushing_yards": 83,
+          "receiving_yards": 26,
+          "touchdowns": 2
+        },
+        {
+          "game_id": "20251115_cb1j",
+          "date": "Nov 15",
+          "opponent": "at Reinhardt (Ga.)",
+          "plays": 19,
+          "passing_yards": 0,
+          "rushing_yards": 66,
+          "receiving_yards": 0,
+          "touchdowns": 0
+        }
       ]
     },
     {
@@ -4521,6 +4715,108 @@
         "20251101_rdne",
         "20251108_iabb",
         "20251115_cb1j"
+      ],
+      "by_game": [
+        {
+          "game_id": "20250830_dizi",
+          "date": "Aug 30",
+          "opponent": "at Georgetown (Ky.)",
+          "plays": 16,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 114,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20250913_kqps",
+          "date": "Sep 13",
+          "opponent": "at Campbellsville (KY)",
+          "plays": 14,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 19,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20250920_xzbh",
+          "date": "Sep 20",
+          "opponent": "Cumberland (Tenn.)",
+          "plays": 16,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 93,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20250927_uiom",
+          "date": "Sep 27",
+          "opponent": "at Maryville (Tenn.)",
+          "plays": 15,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 104,
+          "touchdowns": 1
+        },
+        {
+          "game_id": "20251011_j14v",
+          "date": "Oct 11",
+          "opponent": "Rio Grande",
+          "plays": 12,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 126,
+          "touchdowns": 1
+        },
+        {
+          "game_id": "20251018_1r1b",
+          "date": "Oct 18",
+          "opponent": "Point",
+          "plays": 8,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 81,
+          "touchdowns": 1
+        },
+        {
+          "game_id": "20251025_nhhj",
+          "date": "Oct 25",
+          "opponent": "at Bluefield (VA)",
+          "plays": 8,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 49,
+          "touchdowns": 1
+        },
+        {
+          "game_id": "20251101_rdne",
+          "date": "Nov 1",
+          "opponent": "Union Commonwealth",
+          "plays": 16,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 118,
+          "touchdowns": 1
+        },
+        {
+          "game_id": "20251108_iabb",
+          "date": "Nov 8",
+          "opponent": "Kentucky Christian",
+          "plays": 12,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 58,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251115_cb1j",
+          "date": "Nov 15",
+          "opponent": "at Reinhardt (Ga.)",
+          "plays": 11,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 51,
+          "touchdowns": 0
+        }
       ]
     },
     {
@@ -4589,6 +4885,98 @@
         "20251025_nhhj",
         "20251101_rdne",
         "20251108_iabb"
+      ],
+      "by_game": [
+        {
+          "game_id": "20250830_dizi",
+          "date": "Aug 30",
+          "opponent": "at Georgetown (Ky.)",
+          "plays": 7,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 17,
+          "touchdowns": 1
+        },
+        {
+          "game_id": "20250913_kqps",
+          "date": "Sep 13",
+          "opponent": "at Campbellsville (KY)",
+          "plays": 14,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 61,
+          "touchdowns": 1
+        },
+        {
+          "game_id": "20250920_xzbh",
+          "date": "Sep 20",
+          "opponent": "Cumberland (Tenn.)",
+          "plays": 9,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 33,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20250927_uiom",
+          "date": "Sep 27",
+          "opponent": "at Maryville (Tenn.)",
+          "plays": 16,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 80,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251011_j14v",
+          "date": "Oct 11",
+          "opponent": "Rio Grande",
+          "plays": 7,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 61,
+          "touchdowns": 1
+        },
+        {
+          "game_id": "20251018_1r1b",
+          "date": "Oct 18",
+          "opponent": "Point",
+          "plays": 7,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 49,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251025_nhhj",
+          "date": "Oct 25",
+          "opponent": "at Bluefield (VA)",
+          "plays": 10,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 140,
+          "touchdowns": 1
+        },
+        {
+          "game_id": "20251101_rdne",
+          "date": "Nov 1",
+          "opponent": "Union Commonwealth",
+          "plays": 13,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 151,
+          "touchdowns": 3
+        },
+        {
+          "game_id": "20251108_iabb",
+          "date": "Nov 8",
+          "opponent": "Kentucky Christian",
+          "plays": 2,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 0,
+          "touchdowns": 0
+        }
       ]
     },
     {
@@ -4668,6 +5056,98 @@
         "20251101_rdne",
         "20251108_iabb",
         "20251115_cb1j"
+      ],
+      "by_game": [
+        {
+          "game_id": "20250830_dizi",
+          "date": "Aug 30",
+          "opponent": "at Georgetown (Ky.)",
+          "plays": 1,
+          "passing_yards": 0,
+          "rushing_yards": -1,
+          "receiving_yards": 0,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20250920_xzbh",
+          "date": "Sep 20",
+          "opponent": "Cumberland (Tenn.)",
+          "plays": 3,
+          "passing_yards": 0,
+          "rushing_yards": -4,
+          "receiving_yards": 12,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20250927_uiom",
+          "date": "Sep 27",
+          "opponent": "at Maryville (Tenn.)",
+          "plays": 6,
+          "passing_yards": 0,
+          "rushing_yards": 39,
+          "receiving_yards": 7,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251011_j14v",
+          "date": "Oct 11",
+          "opponent": "Rio Grande",
+          "plays": 15,
+          "passing_yards": 0,
+          "rushing_yards": 85,
+          "receiving_yards": 15,
+          "touchdowns": 1
+        },
+        {
+          "game_id": "20251018_1r1b",
+          "date": "Oct 18",
+          "opponent": "Point",
+          "plays": 8,
+          "passing_yards": 0,
+          "rushing_yards": 42,
+          "receiving_yards": 0,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251025_nhhj",
+          "date": "Oct 25",
+          "opponent": "at Bluefield (VA)",
+          "plays": 9,
+          "passing_yards": 0,
+          "rushing_yards": 75,
+          "receiving_yards": 7,
+          "touchdowns": 2
+        },
+        {
+          "game_id": "20251101_rdne",
+          "date": "Nov 1",
+          "opponent": "Union Commonwealth",
+          "plays": 23,
+          "passing_yards": 0,
+          "rushing_yards": 7,
+          "receiving_yards": 74,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251108_iabb",
+          "date": "Nov 8",
+          "opponent": "Kentucky Christian",
+          "plays": 9,
+          "passing_yards": 0,
+          "rushing_yards": 8,
+          "receiving_yards": -5,
+          "touchdowns": 2
+        },
+        {
+          "game_id": "20251115_cb1j",
+          "date": "Nov 15",
+          "opponent": "at Reinhardt (Ga.)",
+          "plays": 5,
+          "passing_yards": 0,
+          "rushing_yards": 9,
+          "receiving_yards": -1,
+          "touchdowns": 0
+        }
       ]
     },
     {
@@ -4736,6 +5216,108 @@
         "20251101_rdne",
         "20251108_iabb",
         "20251115_cb1j"
+      ],
+      "by_game": [
+        {
+          "game_id": "20250830_dizi",
+          "date": "Aug 30",
+          "opponent": "at Georgetown (Ky.)",
+          "plays": 5,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 59,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20250913_kqps",
+          "date": "Sep 13",
+          "opponent": "at Campbellsville (KY)",
+          "plays": 7,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 45,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20250920_xzbh",
+          "date": "Sep 20",
+          "opponent": "Cumberland (Tenn.)",
+          "plays": 5,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 17,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20250927_uiom",
+          "date": "Sep 27",
+          "opponent": "at Maryville (Tenn.)",
+          "plays": 8,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 116,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251011_j14v",
+          "date": "Oct 11",
+          "opponent": "Rio Grande",
+          "plays": 7,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 31,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251018_1r1b",
+          "date": "Oct 18",
+          "opponent": "Point",
+          "plays": 3,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 33,
+          "touchdowns": 1
+        },
+        {
+          "game_id": "20251025_nhhj",
+          "date": "Oct 25",
+          "opponent": "at Bluefield (VA)",
+          "plays": 4,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 23,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251101_rdne",
+          "date": "Nov 1",
+          "opponent": "Union Commonwealth",
+          "plays": 3,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 46,
+          "touchdowns": 2
+        },
+        {
+          "game_id": "20251108_iabb",
+          "date": "Nov 8",
+          "opponent": "Kentucky Christian",
+          "plays": 6,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 34,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251115_cb1j",
+          "date": "Nov 15",
+          "opponent": "at Reinhardt (Ga.)",
+          "plays": 5,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 16,
+          "touchdowns": 0
+        }
       ]
     },
     {
@@ -4815,6 +5397,88 @@
         "20251101_rdne",
         "20251108_iabb",
         "20251115_cb1j"
+      ],
+      "by_game": [
+        {
+          "game_id": "20250920_xzbh",
+          "date": "Sep 20",
+          "opponent": "Cumberland (Tenn.)",
+          "plays": 5,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 30,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20250927_uiom",
+          "date": "Sep 27",
+          "opponent": "at Maryville (Tenn.)",
+          "plays": 10,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 51,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251011_j14v",
+          "date": "Oct 11",
+          "opponent": "Rio Grande",
+          "plays": 4,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 49,
+          "touchdowns": 2
+        },
+        {
+          "game_id": "20251018_1r1b",
+          "date": "Oct 18",
+          "opponent": "Point",
+          "plays": 4,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 62,
+          "touchdowns": 1
+        },
+        {
+          "game_id": "20251025_nhhj",
+          "date": "Oct 25",
+          "opponent": "at Bluefield (VA)",
+          "plays": 4,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 0,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251101_rdne",
+          "date": "Nov 1",
+          "opponent": "Union Commonwealth",
+          "plays": 6,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 13,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251108_iabb",
+          "date": "Nov 8",
+          "opponent": "Kentucky Christian",
+          "plays": 5,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 56,
+          "touchdowns": 1
+        },
+        {
+          "game_id": "20251115_cb1j",
+          "date": "Nov 15",
+          "opponent": "at Reinhardt (Ga.)",
+          "plays": 4,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 45,
+          "touchdowns": 0
+        }
       ]
     },
     {
@@ -4867,6 +5531,68 @@
         "20251101_rdne",
         "20251108_iabb",
         "20251115_cb1j"
+      ],
+      "by_game": [
+        {
+          "game_id": "20251011_j14v",
+          "date": "Oct 11",
+          "opponent": "Rio Grande",
+          "plays": 3,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 5,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251018_1r1b",
+          "date": "Oct 18",
+          "opponent": "Point",
+          "plays": 4,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 36,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251025_nhhj",
+          "date": "Oct 25",
+          "opponent": "at Bluefield (VA)",
+          "plays": 2,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 5,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251101_rdne",
+          "date": "Nov 1",
+          "opponent": "Union Commonwealth",
+          "plays": 10,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 39,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251108_iabb",
+          "date": "Nov 8",
+          "opponent": "Kentucky Christian",
+          "plays": 3,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 7,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251115_cb1j",
+          "date": "Nov 15",
+          "opponent": "at Reinhardt (Ga.)",
+          "plays": 2,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 35,
+          "touchdowns": 0
+        }
       ]
     },
     {
@@ -4914,6 +5640,28 @@
       "game_ids": [
         "20250830_dizi",
         "20250913_kqps"
+      ],
+      "by_game": [
+        {
+          "game_id": "20250830_dizi",
+          "date": "Aug 30",
+          "opponent": "at Georgetown (Ky.)",
+          "plays": 11,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 90,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20250913_kqps",
+          "date": "Sep 13",
+          "opponent": "at Campbellsville (KY)",
+          "plays": 12,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 72,
+          "touchdowns": 0
+        }
       ]
     },
     {
@@ -4962,6 +5710,28 @@
       "game_ids": [
         "20251108_iabb",
         "20251115_cb1j"
+      ],
+      "by_game": [
+        {
+          "game_id": "20251108_iabb",
+          "date": "Nov 8",
+          "opponent": "Kentucky Christian",
+          "plays": 7,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 20,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251115_cb1j",
+          "date": "Nov 15",
+          "opponent": "at Reinhardt (Ga.)",
+          "plays": 16,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 107,
+          "touchdowns": 3
+        }
       ]
     },
     {
@@ -5019,6 +5789,48 @@
         "20251011_j14v",
         "20251018_1r1b",
         "20251101_rdne"
+      ],
+      "by_game": [
+        {
+          "game_id": "20250913_kqps",
+          "date": "Sep 13",
+          "opponent": "at Campbellsville (KY)",
+          "plays": 1,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 0,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251011_j14v",
+          "date": "Oct 11",
+          "opponent": "Rio Grande",
+          "plays": 2,
+          "passing_yards": 5,
+          "rushing_yards": 0,
+          "receiving_yards": 0,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251018_1r1b",
+          "date": "Oct 18",
+          "opponent": "Point",
+          "plays": 5,
+          "passing_yards": 5,
+          "rushing_yards": 0,
+          "receiving_yards": 0,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251101_rdne",
+          "date": "Nov 1",
+          "opponent": "Union Commonwealth",
+          "plays": 9,
+          "passing_yards": 35,
+          "rushing_yards": 3,
+          "receiving_yards": 0,
+          "touchdowns": 0
+        }
       ]
     },
     {
@@ -5064,6 +5876,28 @@
       "game_ids": [
         "20251011_j14v",
         "20251018_1r1b"
+      ],
+      "by_game": [
+        {
+          "game_id": "20251011_j14v",
+          "date": "Oct 11",
+          "opponent": "Rio Grande",
+          "plays": 6,
+          "passing_yards": 45,
+          "rushing_yards": 0,
+          "receiving_yards": 0,
+          "touchdowns": 1
+        },
+        {
+          "game_id": "20251018_1r1b",
+          "date": "Oct 18",
+          "opponent": "Point",
+          "plays": 9,
+          "passing_yards": 71,
+          "rushing_yards": -4,
+          "receiving_yards": 0,
+          "touchdowns": 1
+        }
       ]
     },
     {
@@ -5111,6 +5945,28 @@
       "game_ids": [
         "20251011_j14v",
         "20251018_1r1b"
+      ],
+      "by_game": [
+        {
+          "game_id": "20251011_j14v",
+          "date": "Oct 11",
+          "opponent": "Rio Grande",
+          "plays": 7,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 41,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251018_1r1b",
+          "date": "Oct 18",
+          "opponent": "Point",
+          "plays": 3,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 23,
+          "touchdowns": 0
+        }
       ]
     },
     {
@@ -5174,6 +6030,58 @@
         "20251101_rdne",
         "20251108_iabb",
         "20251115_cb1j"
+      ],
+      "by_game": [
+        {
+          "game_id": "20250920_xzbh",
+          "date": "Sep 20",
+          "opponent": "Cumberland (Tenn.)",
+          "plays": 1,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 0,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251018_1r1b",
+          "date": "Oct 18",
+          "opponent": "Point",
+          "plays": 2,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 28,
+          "touchdowns": 1
+        },
+        {
+          "game_id": "20251101_rdne",
+          "date": "Nov 1",
+          "opponent": "Union Commonwealth",
+          "plays": 3,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 5,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251108_iabb",
+          "date": "Nov 8",
+          "opponent": "Kentucky Christian",
+          "plays": 1,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 0,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251115_cb1j",
+          "date": "Nov 15",
+          "opponent": "at Reinhardt (Ga.)",
+          "plays": 1,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 0,
+          "touchdowns": 0
+        }
       ]
     },
     {
@@ -5234,6 +6142,38 @@
         "20251011_j14v",
         "20251018_1r1b",
         "20251101_rdne"
+      ],
+      "by_game": [
+        {
+          "game_id": "20251011_j14v",
+          "date": "Oct 11",
+          "opponent": "Rio Grande",
+          "plays": 2,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 0,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251018_1r1b",
+          "date": "Oct 18",
+          "opponent": "Point",
+          "plays": 1,
+          "passing_yards": 0,
+          "rushing_yards": 2,
+          "receiving_yards": 0,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251101_rdne",
+          "date": "Nov 1",
+          "opponent": "Union Commonwealth",
+          "plays": 5,
+          "passing_yards": 0,
+          "rushing_yards": -2,
+          "receiving_yards": 18,
+          "touchdowns": 0
+        }
       ]
     },
     {
@@ -5283,6 +6223,38 @@
         "20250830_dizi",
         "20251011_j14v",
         "20251018_1r1b"
+      ],
+      "by_game": [
+        {
+          "game_id": "20250830_dizi",
+          "date": "Aug 30",
+          "opponent": "at Georgetown (Ky.)",
+          "plays": 1,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 0,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251011_j14v",
+          "date": "Oct 11",
+          "opponent": "Rio Grande",
+          "plays": 2,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 21,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251018_1r1b",
+          "date": "Oct 18",
+          "opponent": "Point",
+          "plays": 2,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 15,
+          "touchdowns": 0
+        }
       ]
     },
     {
@@ -5331,6 +6303,28 @@
       "game_ids": [
         "20251011_j14v",
         "20251101_rdne"
+      ],
+      "by_game": [
+        {
+          "game_id": "20251011_j14v",
+          "date": "Oct 11",
+          "opponent": "Rio Grande",
+          "plays": 1,
+          "passing_yards": 0,
+          "rushing_yards": 2,
+          "receiving_yards": 0,
+          "touchdowns": 0
+        },
+        {
+          "game_id": "20251101_rdne",
+          "date": "Nov 1",
+          "opponent": "Union Commonwealth",
+          "plays": 3,
+          "passing_yards": 0,
+          "rushing_yards": 1,
+          "receiving_yards": -5,
+          "touchdowns": 0
+        }
       ]
     },
     {
@@ -5378,6 +6372,18 @@
       },
       "game_ids": [
         "20251018_1r1b"
+      ],
+      "by_game": [
+        {
+          "game_id": "20251018_1r1b",
+          "date": "Oct 18",
+          "opponent": "Point",
+          "plays": 2,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 10,
+          "touchdowns": 0
+        }
       ]
     },
     {
@@ -5415,6 +6421,18 @@
       },
       "game_ids": [
         "20251025_nhhj"
+      ],
+      "by_game": [
+        {
+          "game_id": "20251025_nhhj",
+          "date": "Oct 25",
+          "opponent": "at Bluefield (VA)",
+          "plays": 2,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 0,
+          "touchdowns": 0
+        }
       ]
     },
     {
@@ -5462,6 +6480,18 @@
       },
       "game_ids": [
         "20251101_rdne"
+      ],
+      "by_game": [
+        {
+          "game_id": "20251101_rdne",
+          "date": "Nov 1",
+          "opponent": "Union Commonwealth",
+          "plays": 1,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 15,
+          "touchdowns": 0
+        }
       ]
     },
     {
@@ -5521,6 +6551,18 @@
       },
       "game_ids": [
         "20251011_j14v"
+      ],
+      "by_game": [
+        {
+          "game_id": "20251011_j14v",
+          "date": "Oct 11",
+          "opponent": "Rio Grande",
+          "plays": 1,
+          "passing_yards": 0,
+          "rushing_yards": 0,
+          "receiving_yards": 5,
+          "touchdowns": 0
+        }
       ]
     },
     {
@@ -5556,7 +6598,8 @@
           "BLK": "-"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Ahmad Fisher",
@@ -5604,7 +6647,8 @@
           "BLK": "0"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Ahmante Altman",
@@ -5639,7 +6683,8 @@
           "BLK": "0"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Andre Thompson",
@@ -5674,7 +6719,8 @@
           "BLK": "0"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Brett Coleman",
@@ -5709,7 +6755,8 @@
           "BLK": "1"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Caleb Anderson",
@@ -5744,7 +6791,8 @@
           "BLK": "-"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "D'Vyne Cowan-Bazley",
@@ -5779,7 +6827,8 @@
           "BLK": "0"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Dallas Kelly",
@@ -5826,7 +6875,8 @@
           "BLK": "0"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Damion Watts",
@@ -5861,7 +6911,8 @@
           "BLK": "0"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Dige Savage",
@@ -5908,7 +6959,8 @@
           "BLK": "0"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Dylan Ferguson",
@@ -5943,7 +6995,8 @@
           "BLK": "-"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Elijah Roseburgh",
@@ -5978,7 +7031,8 @@
           "BLK": "-"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Ethan Garn",
@@ -6025,7 +7079,8 @@
           "BLK": "-"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Gabe Marshall",
@@ -6060,7 +7115,8 @@
           "BLK": "-"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Guillermo Valadez",
@@ -6094,7 +7150,8 @@
           "PR LONG": "-"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Ian McCarty",
@@ -6129,7 +7186,8 @@
           "BLK": "-"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Isaac Smith",
@@ -6188,7 +7246,8 @@
           "BLK": "0"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Jalen Flowers",
@@ -6223,7 +7282,8 @@
           "BLK": "-"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Jeff Flowers",
@@ -6258,7 +7318,8 @@
           "BLK": "0"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Jonathan Besharatpour",
@@ -6314,7 +7375,8 @@
           "BLK": "-"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Kylan Ware",
@@ -6349,7 +7411,8 @@
           "BLK": "-"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "LaCharles Woodruff",
@@ -6384,7 +7447,8 @@
           "BLK": "0"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Landon Rowe",
@@ -6419,7 +7483,8 @@
           "BLK": "1"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Levi Evans",
@@ -6467,7 +7532,8 @@
           "BLK": "4"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Levi Wheeling",
@@ -6513,7 +7579,8 @@
           "2PT": "0"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Marcus Nunes",
@@ -6560,7 +7627,8 @@
           "BLK": "-"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Marshawn Boyden",
@@ -6607,7 +7675,8 @@
           "BLK": "0"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Najmir Bellegarde",
@@ -6642,7 +7711,8 @@
           "BLK": "0"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Quentin Cremeans",
@@ -6677,7 +7747,8 @@
           "BLK": "-"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Quincy Clark",
@@ -6724,7 +7795,8 @@
           "BLK": "0"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Tommy Turner",
@@ -6759,7 +7831,8 @@
           "BLK": "0"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Trevor Carter",
@@ -6794,7 +7867,8 @@
           "BLK": "0"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     },
     {
       "player": "Zach Morris",
@@ -6829,7 +7903,8 @@
           "BLK": "-"
         }
       },
-      "game_ids": []
+      "game_ids": [],
+      "by_game": []
     }
   ],
   "snaps": [

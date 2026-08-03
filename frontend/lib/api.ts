@@ -219,6 +219,16 @@ export type PlayAnalyticsPlayer = {
   successful_plays: number;
   official_season_stats: Record<string, Record<string, string>>;
   game_ids: string[];
+  by_game: Array<{
+    game_id: string;
+    date: string;
+    opponent: string;
+    plays: number;
+    passing_yards: number;
+    rushing_yards: number;
+    receiving_yards: number;
+    touchdowns: number;
+  }>;
 };
 export type PlayAnalytics = {
   season: string;
@@ -279,5 +289,5 @@ export const api = {
   leaders: () => get<Page<LeaderEntry>>("/api/leaders?season=2025&page_size=200"),
   gamebooks: () => get<Page<Gamebook>>("/api/gamebooks?season=2025&page_size=10"),
   statBoard: () => get<StatBoard>("/api/stat-board"),
-  playAnalytics: () => get<PlayAnalytics>("/api/play-analytics"),
+  playAnalytics: (season = "2025") => get<PlayAnalytics>(`/api/play-analytics?season=${season}`),
 };

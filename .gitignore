@@ -11,6 +11,8 @@ backend/htmlcov/
 backend/data/raw/*
 !backend/data/raw/.gitkeep
 !backend/data/raw/upike_gamebook_plays_2025.json
+/INFO/24-25 Data/
+/INFO/25-26 Play DATA/
 frontend/node_modules/
 frontend/.next/
 frontend/out/

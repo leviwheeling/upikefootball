@@ -35,15 +35,24 @@ const VIEWS: Array<[AnalyticsView, string]> = [
   ["snaps", "All Snaps"],
 ];
 
-export function PlayAnalyticsPanel({ onPlayerSelect }: { onPlayerSelect: (player: string) => void }) {
-  const query = useQuery({ queryKey: ["play-analytics"], queryFn: api.playAnalytics });
+export function PlayAnalyticsPanel({ season = "2025", onPlayerSelect }: { season?: string; onPlayerSelect: (player: string) => void }) {
+  const query = useQuery({ queryKey: ["play-analytics", season], queryFn: () => api.playAnalytics(season) });
   const [view, setView] = useState<AnalyticsView>("overview");
   const [filters, setFilters] = useState<Filters>({});
   const [selectedSnap, setSelectedSnap] = useState<PlayAnalyticsSnap | null>(null);
+  const [selectedAnalyticsPlayer, setSelectedAnalyticsPlayer] = useState<PlayAnalyticsPlayer | null>(null);
 
   if (query.isLoading) return <AnalyticsLoading />;
   if (query.error || !query.data) return <AnalyticsError />;
   const data = query.data;
+
+  function openPlayer(player: string) {
+    if (season === "2024") {
+      setSelectedAnalyticsPlayer(data.players.find((item) => item.player === player) ?? null);
+    } else {
+      onPlayerSelect(player);
+    }
+  }
 
   function drill(next: Filters) {
     setFilters(next);
@@ -70,11 +79,12 @@ export function PlayAnalyticsPanel({ onPlayerSelect }: { onPlayerSelect: (player
     {view === "calls" && <Calls data={data} onDrill={drill} />}
     {view === "situations" && <Situations data={data} onDrill={drill} />}
     {view === "games" && <Games data={data} onDrill={drill} />}
-    {view === "players" && <Players data={data} onDrill={drill} onPlayerSelect={onPlayerSelect} />}
+    {view === "players" && <Players data={data} onDrill={drill} onPlayerSelect={openPlayer} />}
     {view === "snaps" && <Snaps data={data} filters={filters} setFilters={setFilters} onSnap={setSelectedSnap} />}
 
     <Definitions data={data} />
-    {selectedSnap && <SnapDrawer snap={selectedSnap} onClose={() => setSelectedSnap(null)} onPlayer={(player) => { setSelectedSnap(null); onPlayerSelect(player); }} />}
+    {selectedSnap && <SnapDrawer snap={selectedSnap} onClose={() => setSelectedSnap(null)} onPlayer={(player) => { setSelectedSnap(null); openPlayer(player); }} />}
+    {selectedAnalyticsPlayer && <AnalyticsPlayerDrawer player={selectedAnalyticsPlayer} onClose={() => setSelectedAnalyticsPlayer(null)} onDrill={(player) => { setSelectedAnalyticsPlayer(null); drill({ player }); }} />}
   </div>;
 }
 
@@ -240,6 +250,24 @@ function SnapDrawer({ snap, onClose, onPlayer }: { snap: PlayAnalyticsSnap; onCl
       <section><div className="drawer-section-title"><h3>Situation</h3><span>{snap.context ?? "Coaching tags only"}</span></div><div className="career-total-grid mt-3"><DrawerMetric label="Quarter" value={snap.quarter ?? "-"} /><DrawerMetric label="Down" value={snap.down ?? "-"} /><DrawerMetric label="Distance" value={snap.distance ?? "-"} /><DrawerMetric label="Spot" value={spotLabel(snap.yard_line)} /><DrawerMetric label="Gain" value={snap.gain ?? "-"} /><DrawerMetric label="Result" value={snap.result} /></div></section>
       <section><div className="drawer-section-title"><h3>Coaching Tags</h3><span>Excel row {snap.season_snap}</span></div><div className="drawer-stat-grid mt-3"><DrawerMetric label="Formation" value={snap.formation ?? "-"} /><DrawerMetric label="Play Call" value={snap.off_play ?? "-"} /><DrawerMetric label="Shift" value={snap.shift ?? "-"} /><DrawerMetric label="Motion" value={snap.motion ?? "-"} /><DrawerMetric label="Front" value={snap.def_front ?? "-"} /><DrawerMetric label="Blitz" value={snap.blitz ?? "-"} /><DrawerMetric label="Coverage" value={snap.coverage ?? "-"} /><DrawerMetric label="Field Zone" value={snap.field_zone} /></div></section>
       <section><div className="drawer-section-title"><h3>Players</h3><span>{snap.players.length} attributed</span></div><div className="mt-3 flex flex-wrap gap-2">{snap.players.length ? snap.players.map((player) => <button key={player} onClick={() => onPlayer(player)} className="rounded-md border border-white/10 bg-white/[.03] px-3 py-2 text-xs font-bold hover:border-orange/40 hover:text-orange">{player}</button>) : <span className="text-xs text-slate-600">No player identity linked.</span>}</div></section>
+    </div>
+  </aside></div>;
+}
+
+function AnalyticsPlayerDrawer({ player, onClose, onDrill }: { player: PlayAnalyticsPlayer; onClose: () => void; onDrill: (player: string) => void }) {
+  const chart = player.by_game.map((game) => ({
+    ...game,
+    opponent: compactOpponent(game.opponent),
+    totalYards: game.passing_yards + game.rushing_yards + game.receiving_yards,
+  }));
+  return <div className="player-drawer-layer" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) onClose(); }}><aside className="player-drawer" role="dialog" aria-modal="true" aria-label={`${player.player} 2024-25 play analytics`}>
+    <header className="player-drawer-header"><div><p className="text-[10px] font-black uppercase tracking-[.18em] text-orange">2024-25 / HUDL + official gamebooks</p><h2 className="mt-1 text-3xl font-black">{player.player}</h2></div><button onClick={onClose} className="player-drawer-close" aria-label="Close player analytics">×</button></header>
+    <div className="player-drawer-body space-y-7">
+      <section><div className="drawer-section-title"><h3>Official Gamebook Totals</h3><span>{player.games} games / {player.plays} HUDL-linked snaps</span></div><div className="career-total-grid mt-3"><DrawerMetric label="Passing Yards" value={player.passing_yards} /><DrawerMetric label="Pass TD" value={player.passing_touchdowns} /><DrawerMetric label="Rushing Yards" value={player.rushing_yards} /><DrawerMetric label="Rush TD" value={player.rushing_touchdowns} /><DrawerMetric label="Receiving Yards" value={player.receiving_yards} /><DrawerMetric label="Rec TD" value={player.receiving_touchdowns} /><DrawerMetric label="HUDL Explosives" value={player.explosives} /><DrawerMetric label="HUDL Successful" value={player.successful_plays} /></div></section>
+      <section><div className="drawer-section-title"><h3>Game Trend</h3><span>Official per-game player tables</span></div><div className="mt-3 h-64"><ResponsiveContainer width="100%" height="100%"><LineChart data={chart} margin={{ top: 12, right: 16, left: -18, bottom: 42 }}><CartesianGrid stroke="rgba(148,163,184,.12)" vertical={false} /><XAxis dataKey="opponent" angle={-28} textAnchor="end" interval={0} stroke="#64748b" tick={{ fontSize: 9 }} /><YAxis stroke="#64748b" tick={{ fontSize: 9 }} /><Tooltip contentStyle={tooltipStyle} /><Line dataKey="totalYards" name="Official yards" stroke="#ff6a32" strokeWidth={3} dot={{ r: 3 }} /></LineChart></ResponsiveContainer></div></section>
+      <section><div className="drawer-section-title"><h3>Game Splits</h3><span>{chart.length} linked games</span></div><div className="mt-3 overflow-hidden rounded-lg border border-white/10">{chart.map((game) => <div key={game.game_id} className="grid grid-cols-[60px_1fr_repeat(4,54px)] items-center gap-2 border-b border-white/10 px-3 py-2 text-xs last:border-0"><span className="text-slate-600">{game.date}</span><strong>{game.opponent}</strong><span title="Passing yards">P {game.passing_yards}</span><span title="Rushing yards">R {game.rushing_yards}</span><span title="Receiving yards">C {game.receiving_yards}</span><span title="Touchdowns">TD {game.touchdowns}</span></div>)}</div></section>
+      <button onClick={() => onDrill(player.player)} className="w-full rounded-md bg-orange px-4 py-3 text-xs font-black uppercase tracking-wider text-[#070a0f]">Open all linked snaps</button>
+      <p className="text-[10px] leading-5 text-slate-600">Passing, rushing, receiving, touchdowns, and the game trend are summed from the individual tables in all supplied official gamebooks. Explosives, successful plays, and linked snaps come from the HUDL-to-play-by-play alignment.</p>
     </div>
   </aside></div>;
 }

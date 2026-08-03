@@ -1,4 +1,4 @@
-"""Compile the 2025 UPIKE coaching export and official gamebooks into analytics JSON.
+"""Compile a UPIKE coaching export and official gamebooks into analytics JSON.
 
 The Excel export supplies coaching tags (formation, call, motion, result and gain).
 Official NAIA gamebook rows supply opponent, game context, play descriptions and
@@ -12,6 +12,7 @@ import json
 import math
 import re
 import statistics
+import sys
 import zipfile
 from collections import defaultdict
 from collections.abc import Iterable
@@ -20,10 +21,21 @@ from typing import Any
 from xml.etree import ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[2]
-WORKBOOK_PATH = ROOT / "INFO/25-26 Play DATA/PlaylistData_2026-08-02.xlsx"
-GAMEBOOK_PATH = ROOT / "backend/data/raw/upike_gamebook_plays_2025.json"
+SEASON = sys.argv[1] if len(sys.argv) > 1 else "2025"
+if SEASON not in {"2024", "2025"}:
+    raise SystemExit("Season must be 2024 or 2025")
+LABEL = {"2024": "2024-25", "2025": "2025-26"}[SEASON]
+WORKBOOK_PATH = ROOT / (
+    "INFO/24-25 Data/FROM HUDL play by play.xlsx"
+    if SEASON == "2024"
+    else "INFO/25-26 Play DATA/PlaylistData_2026-08-02.xlsx"
+)
+GAMEBOOK_PATH = ROOT / f"backend/data/raw/upike_gamebook_plays_{SEASON}.json"
 BOARD_PATH = ROOT / "backend/data/compiled/upike_stat_board.json"
-OUTPUT_PATH = ROOT / "backend/data/compiled/upike_play_analytics_2025.json"
+OUTPUT_PATH = ROOT / f"backend/data/compiled/upike_play_analytics_{SEASON}.json"
+OFFICIAL_2024_GAME_LOG = (
+    "https://naiastats.prestosports.com/sports/fball/2024-25/teams/pikevilleky?view=gamelog"
+)
 NS = {"m": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
 PDF_BY_GAME = {
     "20250830_dizi": "Football at Georgetown Edited xml 9-2.pdf",
@@ -284,7 +296,12 @@ def normalize_name(value: str) -> str:
 NAME_ALIASES = {
     "Deajuan McDougle": ("deajuanmcdougl",),
     "Demarcus Calhoun": ("demarcuscalhou",),
+    "D'Andre Stafford": ("dandrestaffor",),
+    "Jalen Royal-Eiland": ("jalenroyaleil",),
+    "Kenyon Slaughter": ("kenyonslaughte",),
     "Miguel Hernandez": ("miguelhernande", "mhernandez"),
+    "Tayden Carpenter": ("taydencarpente",),
+    "Tyrese Christian": ("tyresechristia",),
 }
 
 
@@ -437,7 +454,7 @@ def aggregate(rows: list[dict[str, Any]], key: str, min_plays: int = 1) -> list[
 
 def official_player_stats(board: dict[str, Any], player: str) -> dict[str, dict[str, str]]:
     result: dict[str, dict[str, str]] = {}
-    for category_name, category in board["seasons"]["2025"].get("players", {}).items():
+    for category_name, category in board["seasons"][SEASON].get("players", {}).items():
         for row in category["rows"]:
             if row.get("player") == player:
                 result[category_name] = {
@@ -446,35 +463,155 @@ def official_player_stats(board: dict[str, Any], player: str) -> dict[str, dict[
     return result
 
 
+CANONICAL_2024_NAMES = {
+    "BAKER Lee Kirkland": "Lee Kirkland",
+    "D'Andre Staffor": "D'Andre Stafford",
+    "Jalen Royal-Eil": "Jalen Royal-Eiland",
+    "Kenyon Slaughte": "Kenyon Slaughter",
+    "Tayden Carpente": "Tayden Carpenter",
+    "Tyrese Christia": "Tyrese Christian",
+    "ST. Lee Kirkland": "Lee Kirkland",
+}
+
+
+def discover_offensive_players(plays: Iterable[dict[str, Any]]) -> list[str]:
+    """Recover 2024 offensive identities from official play descriptions."""
+    names: set[str] = set()
+    for play in plays:
+        description = str(play.get("description", ""))
+        actor = re.match(r"^(.+?) (?:pass|rush|sacked)\b", description, re.I)
+        if actor:
+            names.add(actor.group(1).strip())
+        target = re.search(
+            r"\bto ([A-Z][A-Za-z'’.-]+(?: [A-Z][A-Za-z'’.-]+){1,3})(?: for|\s*\(|,|\.)", description
+        )
+        if target:
+            names.add(target.group(1).strip())
+    cleaned = {
+        CANONICAL_2024_NAMES.get(name, name)
+        for name in names
+        if name.casefold() != "team" and not re.search(r"\d|yardline", name, re.I)
+    }
+    return sorted(cleaned)
+
+
+def supplied_player_stats(
+    gamebooks: list[dict[str, Any]],
+) -> dict[str, dict[str, dict[str, Any]]]:
+    """Index exact per-game individual tables extracted from supplied PDFs."""
+    output: dict[str, dict[str, dict[str, Any]]] = defaultdict(dict)
+    for game in gamebooks:
+        for category, rows in game.get("player_stats", {}).items():
+            for row in rows:
+                player = str(row["player"])
+                entry = output[player].setdefault(
+                    game["game_id"],
+                    {
+                        "game_id": game["game_id"],
+                        "date": game["date"],
+                        "opponent": game["opponent"],
+                        "categories": {},
+                    },
+                )
+                entry["categories"][category] = row
+    return output
+
+
+def supplied_total(games: dict[str, dict[str, Any]], category: str, metric: str) -> int:
+    return round(
+        sum(float(game["categories"].get(category, {}).get(metric, 0)) for game in games.values())
+    )
+
+
 def main() -> None:
     workbook = read_xlsx(WORKBOOK_PATH)
     gamebooks = json.loads(GAMEBOOK_PATH.read_text())
+    if SEASON == "2024":
+        for game in gamebooks:
+            game["url"] = OFFICIAL_2024_GAME_LOG
     board = json.loads(BOARD_PATH.read_text())
-    player_names = sorted(board.get("player_profiles", {}))
     official: list[dict[str, Any]] = []
     for game_index, game in enumerate(gamebooks):
         game["plays"] = extract_offense(game)
         for play_index, item in enumerate(game["plays"]):
             official.append({**item, "game_index": game_index, "game_play_index": play_index})
+    gamebook_player_stats = supplied_player_stats(gamebooks)
+    player_names = sorted(
+        set(board.get("player_profiles", {}))
+        | set(gamebook_player_stats)
+        | (set(discover_offensive_players(official)) if SEASON == "2024" else set())
+    )
 
-    matches = align(workbook, official)
-    by_workbook = {
-        workbook_index: (official_index, cost) for workbook_index, official_index, cost in matches
-    }
-    first_match: dict[int, int] = {}
-    for workbook_index, official_index, _ in matches:
-        first_match.setdefault(official[official_index]["game_index"], workbook_index)
-    starts = [first_match.get(game_index, 0) for game_index in range(len(gamebooks))]
-    starts[0] = 0
-    boundaries = [*starts, len(workbook)]
+    by_workbook: dict[int, tuple[dict[str, Any], float]] = {}
+    game_index_by_workbook: dict[int, int] = {}
+    game_snap_by_workbook: dict[int, int] = {}
+    if SEASON == "2024":
+        # The supplied HUDL playlist is grouped by game, but is not chronological and
+        # omits St. Andrews. PLAY # drops identify the 11 source-game boundaries.
+        segment_starts = [0]
+        for index in range(1, len(workbook)):
+            previous = workbook[index - 1].get("PLAY #")
+            current = workbook[index].get("PLAY #")
+            if (
+                isinstance(previous, (int, float))
+                and isinstance(current, (int, float))
+                and current < previous
+            ):
+                segment_starts.append(index)
+        segment_bounds = [*segment_starts, len(workbook)]
+        candidates: list[tuple[float, int, int, list[tuple[int, int, float]]]] = []
+        for segment_index, (start, end) in enumerate(
+            zip(segment_bounds[:-1], segment_bounds[1:], strict=True)
+        ):
+            for game_index, game in enumerate(gamebooks):
+                matches = align(workbook[start:end], game["plays"])
+                average_cost = sum(cost for _, _, cost in matches) / max(len(matches), 1)
+                candidates.append((average_cost, segment_index, game_index, matches))
+        assigned_segments: set[int] = set()
+        assigned_games: set[int] = set()
+        for _, segment_index, game_index, matches in sorted(candidates):
+            if segment_index in assigned_segments or game_index in assigned_games:
+                continue
+            assigned_segments.add(segment_index)
+            assigned_games.add(game_index)
+            start, end = segment_bounds[segment_index : segment_index + 2]
+            for local_index in range(end - start):
+                workbook_index = start + local_index
+                game_index_by_workbook[workbook_index] = game_index
+                game_snap_by_workbook[workbook_index] = local_index + 1
+            for workbook_local, official_local, cost in matches:
+                by_workbook[start + workbook_local] = (
+                    gamebooks[game_index]["plays"][official_local],
+                    cost,
+                )
+    else:
+        matches = align(workbook, official)
+        by_workbook = {
+            workbook_index: (official[official_index], cost)
+            for workbook_index, official_index, cost in matches
+        }
+        first_match: dict[int, int] = {}
+        for workbook_index, official_index, _ in matches:
+            first_match.setdefault(official[official_index]["game_index"], workbook_index)
+        starts = [first_match.get(game_index, 0) for game_index in range(len(gamebooks))]
+        starts[0] = 0
+        boundaries = [*starts, len(workbook)]
+        for workbook_index in range(len(workbook)):
+            game_index = max(index for index, start in enumerate(starts) if start <= workbook_index)
+            game_index_by_workbook[workbook_index] = game_index
+            game_snap_by_workbook[workbook_index] = workbook_index - boundaries[game_index] + 1
 
-    game_log = {row.get("game_id"): row for row in board["seasons"]["2025"].get("game_log", [])}
+    board_game_log = board["seasons"][SEASON].get("game_log", [])
+    for index, row in enumerate(board_game_log):
+        if not row.get("game_id") and index < len(gamebooks):
+            row["game_id"] = gamebooks[index]["game_id"]
+    game_log = {row.get("game_id"): row for row in board_game_log}
     snaps: list[dict[str, Any]] = []
     for workbook_index, raw in enumerate(workbook):
-        game_index = max(index for index, start in enumerate(starts) if start <= workbook_index)
+        game_index = game_index_by_workbook[workbook_index]
         game = gamebooks[game_index]
         match = by_workbook.get(workbook_index)
-        official_row = official[match[0]] if match else None
+        official_row = match[0] if match else None
         cost = match[1] if match else None
         result = str(raw.get("RESULT") or "None")
         gain_value = raw.get("GN/LS")
@@ -503,10 +640,10 @@ def main() -> None:
             else "low"
         )
         snap = {
-            "id": f"{game['game_id']}-{workbook_index - boundaries[game_index] + 1:03d}",
-            "season": "2025",
+            "id": f"{game['game_id']}-{game_snap_by_workbook[workbook_index]:03d}",
+            "season": SEASON,
             "game_id": game["game_id"],
-            "game_snap": workbook_index - boundaries[game_index] + 1,
+            "game_snap": game_snap_by_workbook[workbook_index],
             "season_snap": workbook_index + 1,
             "source_play_number": raw.get("PLAY #"),
             "date": game["date"],
@@ -597,7 +734,8 @@ def main() -> None:
                 if upike_score is not None and opponent_score is not None
                 else None,
                 "source_url": game["url"],
-                "source_pdf": str(
+                "source_pdf": game.get("source_pdf")
+                or str(
                     (
                         ROOT / "INFO/25-26 Play DATA/Per game" / PDF_BY_GAME[game["game_id"]]
                     ).relative_to(ROOT)
@@ -646,65 +784,147 @@ def main() -> None:
     player_rows = []
     for player in player_names:
         items = [row for row in snaps if player in row["players"]]
-        if not items and not official_player_stats(board, player):
+        supplied_games = gamebook_player_stats.get(player, {})
+        board_stats = official_player_stats(board, player)
+        if not items and not board_stats and not supplied_games:
             continue
         passing = [row for row in items if row["passer"] == player]
         rushing = [row for row in items if row["rusher"] == player]
         targets = [row for row in items if row["target"] == player]
-        player_rows.append(
+        pass_attempts = sum(
+            row["result"]
+            in {
+                "Complete",
+                "Complete, TD",
+                "Complete, Fumble",
+                "Incomplete",
+                "Interception",
+                "Interception, Def TD",
+            }
+            for row in passing
+        )
+        completions = sum(str(row["result"]).startswith("Complete") for row in passing)
+        passing_yards = round(
+            sum(row["gain"] or 0 for row in passing if str(row["result"]).startswith("Complete"))
+        )
+        passing_touchdowns = sum(row["passer"] == player and row["touchdown"] for row in passing)
+        interceptions = sum(str(row["result"]).startswith("Interception") for row in passing)
+        rush_attempts = len([row for row in rushing if row["result"] not in {"Penalty", "None"}])
+        rushing_yards = round(sum(row["gain"] or 0 for row in rushing))
+        rushing_touchdowns = sum(row["rusher"] == player and row["touchdown"] for row in rushing)
+        receptions = sum(str(row["result"]).startswith("Complete") for row in targets)
+        receiving_yards = round(
+            sum(row["gain"] or 0 for row in targets if str(row["result"]).startswith("Complete"))
+        )
+        receiving_touchdowns = sum(row["target"] == player and row["touchdown"] for row in targets)
+        by_game = [
             {
-                "player": player,
-                "games": len({row["game_id"] for row in items}),
-                "plays": len(items),
-                "pass_attempts": sum(
-                    row["result"]
-                    in {
-                        "Complete",
-                        "Complete, TD",
-                        "Complete, Fumble",
-                        "Incomplete",
-                        "Interception",
-                        "Interception, Def TD",
-                    }
-                    for row in passing
-                ),
-                "completions": sum(str(row["result"]).startswith("Complete") for row in passing),
+                "game_id": game["game_id"],
+                "date": game["date"],
+                "opponent": game["opponent"],
+                "plays": len(game_items),
                 "passing_yards": round(
                     sum(
                         row["gain"] or 0
-                        for row in passing
-                        if str(row["result"]).startswith("Complete")
+                        for row in game_items
+                        if row["passer"] == player and str(row["result"]).startswith("Complete")
                     )
                 ),
-                "passing_touchdowns": sum(
-                    row["passer"] == player and row["touchdown"] for row in passing
+                "rushing_yards": round(
+                    sum(row["gain"] or 0 for row in game_items if row["rusher"] == player)
                 ),
-                "interceptions": sum(
-                    str(row["result"]).startswith("Interception") for row in passing
-                ),
-                "rush_attempts": len(
-                    [row for row in rushing if row["result"] not in {"Penalty", "None"}]
-                ),
-                "rushing_yards": round(sum(row["gain"] or 0 for row in rushing)),
-                "rushing_touchdowns": sum(
-                    row["rusher"] == player and row["touchdown"] for row in rushing
-                ),
-                "targets": len(targets),
-                "receptions": sum(str(row["result"]).startswith("Complete") for row in targets),
                 "receiving_yards": round(
                     sum(
                         row["gain"] or 0
-                        for row in targets
-                        if str(row["result"]).startswith("Complete")
+                        for row in game_items
+                        if row["target"] == player and str(row["result"]).startswith("Complete")
                     )
                 ),
-                "receiving_touchdowns": sum(
-                    row["target"] == player and row["touchdown"] for row in targets
+                "touchdowns": sum(
+                    row["touchdown"] and player in {row["passer"], row["rusher"], row["target"]}
+                    for row in game_items
                 ),
+            }
+            for game in gamebooks
+            if (game_items := [row for row in items if row["game_id"] == game["game_id"]])
+        ]
+        games = len({row["game_id"] for row in items})
+        official_stats = board_stats
+        if supplied_games:
+            pass_attempts = supplied_total(supplied_games, "Passing", "attempts")
+            completions = supplied_total(supplied_games, "Passing", "completions")
+            passing_yards = supplied_total(supplied_games, "Passing", "yards")
+            passing_touchdowns = supplied_total(supplied_games, "Passing", "touchdowns")
+            interceptions = supplied_total(supplied_games, "Passing", "interceptions")
+            rush_attempts = supplied_total(supplied_games, "Rushing", "attempts")
+            rushing_yards = supplied_total(supplied_games, "Rushing", "yards")
+            rushing_touchdowns = supplied_total(supplied_games, "Rushing", "touchdowns")
+            receptions = supplied_total(supplied_games, "Receiving", "receptions")
+            receiving_yards = supplied_total(supplied_games, "Receiving", "yards")
+            receiving_touchdowns = supplied_total(supplied_games, "Receiving", "touchdowns")
+            games = len(supplied_games)
+            official_stats = {
+                "Passing": {
+                    "CMP": str(completions),
+                    "ATT": str(pass_attempts),
+                    "YDS": str(passing_yards),
+                    "TD": str(passing_touchdowns),
+                    "INT": str(interceptions),
+                },
+                "Rushing": {
+                    "ATT": str(rush_attempts),
+                    "YDS": str(rushing_yards),
+                    "TD": str(rushing_touchdowns),
+                },
+                "Receiving": {
+                    "REC": str(receptions),
+                    "YDS": str(receiving_yards),
+                    "TD": str(receiving_touchdowns),
+                },
+            }
+            by_game = []
+            for game in gamebooks:
+                supplied = supplied_games.get(game["game_id"])
+                if not supplied:
+                    continue
+                categories = supplied["categories"]
+                by_game.append(
+                    {
+                        "game_id": game["game_id"],
+                        "date": game["date"],
+                        "opponent": game["opponent"],
+                        "plays": sum(row["game_id"] == game["game_id"] for row in items),
+                        "passing_yards": categories.get("Passing", {}).get("yards", 0),
+                        "rushing_yards": categories.get("Rushing", {}).get("yards", 0),
+                        "receiving_yards": categories.get("Receiving", {}).get("yards", 0),
+                        "touchdowns": sum(
+                            categories.get(category, {}).get("touchdowns", 0)
+                            for category in ("Passing", "Rushing", "Receiving")
+                        ),
+                    }
+                )
+        player_rows.append(
+            {
+                "player": player,
+                "games": games,
+                "plays": len(items),
+                "pass_attempts": pass_attempts,
+                "completions": completions,
+                "passing_yards": passing_yards,
+                "passing_touchdowns": passing_touchdowns,
+                "interceptions": interceptions,
+                "rush_attempts": rush_attempts,
+                "rushing_yards": rushing_yards,
+                "rushing_touchdowns": rushing_touchdowns,
+                "targets": len(targets),
+                "receptions": receptions,
+                "receiving_yards": receiving_yards,
+                "receiving_touchdowns": receiving_touchdowns,
                 "explosives": sum(row["explosive"] for row in items),
                 "successful_plays": sum(row["success"] is True for row in items),
-                "official_season_stats": official_player_stats(board, player),
-                "game_ids": sorted({row["game_id"] for row in items}),
+                "official_season_stats": official_stats,
+                "game_ids": [item["game_id"] for item in by_game],
+                "by_game": by_game,
             }
         )
     player_rows.sort(key=lambda item: (-item["plays"], item["player"]))
@@ -809,12 +1029,12 @@ def main() -> None:
         )
 
     output = {
-        "season": "2025",
-        "label": "2025-26",
+        "season": SEASON,
+        "label": LABEL,
         "generated_from": {
             "coaching_workbook": str(WORKBOOK_PATH.relative_to(ROOT)),
-            "official_gamebooks": "10 NAIA gamebooks in INFO/25-26 Play DATA/Per game",
-            "official_play_by_play": "backend/data/raw/upike_gamebook_plays_2025.json",
+            "official_gamebooks": f"{len(gamebooks)} official gamebooks supplied for {LABEL}",
+            "official_play_by_play": str(GAMEBOOK_PATH.relative_to(ROOT)),
         },
         "definitions": {
             "success": (

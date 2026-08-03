@@ -49,9 +49,7 @@ def test_stat_board_contains_all_compiled_seasons_and_player_tables() -> None:
     assert len(payload["seasons"]["2025"]["appearances"]) == 54
     assert len(payload["seasons"]["2025"]["appearances"]["Xavier Malone"]) == 10
     assert payload["seasons"]["2025"]["game_log"][0]["game_id"] == "20250830_dizi"
-    assert payload["seasons"]["2025"]["game_log"][0]["source_url"].endswith(
-        "20250830_dizi.xml"
-    )
+    assert payload["seasons"]["2025"]["game_log"][0]["source_url"].endswith("20250830_dizi.xml")
     assert len(payload["player_profiles"]) == 54
     assert sum(len(profile["seasons"]) > 1 for profile in payload["player_profiles"].values()) == 29
     assert sum(len(profile["seasons"]) for profile in payload["player_profiles"].values()) == 94
@@ -78,10 +76,43 @@ def test_play_analytics_has_full_snap_and_game_coverage() -> None:
     assert len(payload["players"]) == 54
     assert payload["games"][0]["point_margin"] == -17
     assert payload["games"][-1]["point_margin"] == -41
-    assert any(
-        row["description"] and row["passer"] == "Xavier Malone"
-        for row in payload["snaps"]
+    assert any(row["description"] and row["passer"] == "Xavier Malone" for row in payload["snaps"])
+
+
+def test_2024_play_analytics_aligns_hudl_rows_to_all_supplied_gamebooks() -> None:
+    response = TestClient(app).get("/api/play-analytics?season=2024")
+
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["season"] == "2024"
+    assert payload["coverage"]["tagged_rows"] == 959
+    assert payload["coverage"]["linked_pct"] >= 90
+    assert len(payload["games"]) == 12
+    assert len(payload["snaps"]) == 959
+    assert sum(game["tagged_rows"] for game in payload["games"]) == 959
+    assert (
+        next(game for game in payload["games"] if game["game_id"] == "20241116_st_andrews")[
+            "tagged_rows"
+        ]
+        == 0
     )
+    assert any(row["passer"] == "Lee Kirkland" for row in payload["snaps"])
+    assert all("by_game" in player for player in payload["players"])
+    kirkland = next(player for player in payload["players"] if player["player"] == "Lee Kirkland")
+    assert (kirkland["completions"], kirkland["pass_attempts"], kirkland["passing_yards"]) == (
+        368,
+        556,
+        3962,
+    )
+    assert kirkland["games"] == 12
+    assert len(kirkland["by_game"]) == 12
+
+    assert payload["snaps"][0]["source_url"].startswith("https://naiastats.prestosports.com/")
+
+
+def test_play_analytics_rejects_unknown_season() -> None:
+    response = TestClient(app).get("/api/play-analytics?season=2023")
+    assert response.status_code == 422
 
 
 def test_local_loopback_origin_is_allowed() -> None:
