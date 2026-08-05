@@ -1,7 +1,7 @@
 import uuid
-from datetime import datetime
+from datetime import date, datetime
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 
 class PageMeta(BaseModel):
@@ -133,3 +133,101 @@ class ErrorDetail(BaseModel):
     code: str
     message: str
     fields: dict[str, str] = Field(default_factory=dict)
+
+
+class PracticeCreate(BaseModel):
+    season_year: int = Field(default=2026, ge=2026, le=2100)
+    title: str = Field(min_length=1, max_length=160)
+    practice_date: date | None = None
+    practice_type: str = Field(default="Quarterbacks", min_length=1, max_length=48)
+    notes: str | None = Field(default=None, max_length=4000)
+    source_label: str | None = Field(default=None, max_length=160)
+
+
+class PracticeUpdate(BaseModel):
+    title: str | None = Field(default=None, min_length=1, max_length=160)
+    practice_date: date | None = None
+    practice_type: str | None = Field(default=None, min_length=1, max_length=48)
+    notes: str | None = Field(default=None, max_length=4000)
+
+
+class PracticePlayCreate(BaseModel):
+    sequence: int = Field(ge=1, le=10000)
+    quarterback_number: str | None = Field(default=None, max_length=12)
+    quarterback_name: str | None = Field(default=None, max_length=160)
+    intended_receiver: str | None = Field(default=None, max_length=160)
+    result: str = Field(default="INCOMPLETE", min_length=1, max_length=24)
+    notes: str | None = Field(default=None, max_length=4000)
+
+    @field_validator("result")
+    @classmethod
+    def normalize_result(cls, value: str) -> str:
+        return value.strip().upper()
+
+
+class PracticePlayUpdate(BaseModel):
+    sequence: int | None = Field(default=None, ge=1, le=10000)
+    quarterback_number: str | None = Field(default=None, max_length=12)
+    quarterback_name: str | None = Field(default=None, max_length=160)
+    intended_receiver: str | None = Field(default=None, max_length=160)
+    result: str | None = Field(default=None, min_length=1, max_length=24)
+    notes: str | None = Field(default=None, max_length=4000)
+
+    @field_validator("result")
+    @classmethod
+    def normalize_result(cls, value: str | None) -> str | None:
+        return value.strip().upper() if value is not None else None
+
+
+class PracticeSummary(BaseModel):
+    plays: int
+    attempts: int
+    completions: int
+    incompletions: int
+    completion_pct: float | None
+    on_target: int
+    positive_reads: int
+    negative_reads: int
+    positive_timing: int
+    negative_timing: int
+    receiver_drops: int
+    checkdowns: int
+
+
+class PracticePlayRead(BaseModel):
+    id: uuid.UUID
+    sequence: int
+    quarterback_number: str | None
+    quarterback_name: str | None
+    intended_receiver: str | None
+    result: str
+    notes: str | None
+    tags: list[str]
+
+
+class PracticeRead(BaseModel):
+    id: uuid.UUID
+    season_year: int
+    title: str
+    practice_date: date | None
+    practice_type: str
+    notes: str | None
+    source_label: str | None
+    created_at: datetime
+    updated_at: datetime
+    summary: PracticeSummary
+    plays: list[PracticePlayRead]
+
+
+class PracticeQuarterbackSummary(PracticeSummary):
+    key: str
+    display_name: str
+    quarterback_number: str | None
+    practices: int
+
+
+class PracticeDashboardRead(BaseModel):
+    season_year: int
+    overview: PracticeSummary
+    practices: list[PracticeRead]
+    quarterbacks: list[PracticeQuarterbackSummary]

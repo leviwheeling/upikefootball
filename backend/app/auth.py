@@ -16,7 +16,7 @@ from starlette.types import ASGIApp
 from app.config import Settings
 
 COOKIE_NAME: Final = "upike_access"
-SESSION_SECONDS: Final = 60 * 60 * 24 * 7
+SESSION_SECONDS: Final = 60 * 60 * 2
 
 
 def _signature(password: str, issued_at: str) -> str:
@@ -41,7 +41,7 @@ def valid_session_token(
         return False
     current_time = now if now is not None else int(time.time())
     age = current_time - int(issued_at)
-    if age < 0 or age > SESSION_SECONDS:
+    if age < 0 or age >= SESSION_SECONDS:
         return False
     return hmac.compare_digest(supplied_signature, _signature(password, issued_at))
 
@@ -107,7 +107,7 @@ def _login_page(next_path: str, *, error: bool = False, setup_required: bool = F
     <header><div class="mark">UP</div><div><h1>UPIKE Football</h1>
       <p>Restricted analytics</p></div></header>
     <form method="post" action="/login">
-      {f'<p class="error">{html.escape(message)}</p>' if message else ''}
+      {f'<p class="error">{html.escape(message)}</p>' if message else ""}
       <input type="hidden" name="next" value="{html.escape(next_path, quote=True)}">
       <label for="password">Password</label>
       <input id="password" name="password" type="password" maxlength="256"
@@ -144,9 +144,7 @@ class PasswordProtectionMiddleware(BaseHTTPMiddleware):
         if path == "/login":
             if request.method == "GET":
                 next_path = _safe_next(request.query_params.get("next"))
-                return HTMLResponse(
-                    _login_page(next_path), headers={"Cache-Control": "no-store"}
-                )
+                return HTMLResponse(_login_page(next_path), headers={"Cache-Control": "no-store"})
             if request.method == "POST":
                 body = (await request.body()).decode("utf-8", errors="replace")
                 fields = parse_qs(body, keep_blank_values=True)

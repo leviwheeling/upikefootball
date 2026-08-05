@@ -270,16 +270,92 @@ export type PlayAnalytics = {
   players: PlayAnalyticsPlayer[];
   snaps: PlayAnalyticsSnap[];
 };
+export type PracticeSummary = {
+  plays: number;
+  attempts: number;
+  completions: number;
+  incompletions: number;
+  completion_pct: number | null;
+  on_target: number;
+  positive_reads: number;
+  negative_reads: number;
+  positive_timing: number;
+  negative_timing: number;
+  receiver_drops: number;
+  checkdowns: number;
+};
+export type PracticePlay = {
+  id: string;
+  sequence: number;
+  quarterback_number: string | null;
+  quarterback_name: string | null;
+  intended_receiver: string | null;
+  result: string;
+  notes: string | null;
+  tags: string[];
+};
+export type Practice = {
+  id: string;
+  season_year: number;
+  title: string;
+  practice_date: string | null;
+  practice_type: string;
+  notes: string | null;
+  source_label: string | null;
+  created_at: string;
+  updated_at: string;
+  summary: PracticeSummary;
+  plays: PracticePlay[];
+};
+export type PracticeQuarterback = PracticeSummary & {
+  key: string;
+  display_name: string;
+  quarterback_number: string | null;
+  practices: number;
+};
+export type PracticeDashboard = {
+  season_year: number;
+  overview: PracticeSummary;
+  practices: Practice[];
+  quarterbacks: PracticeQuarterback[];
+};
+export type PracticeInput = {
+  season_year?: number;
+  title: string;
+  practice_date?: string | null;
+  practice_type?: string;
+  notes?: string | null;
+  source_label?: string | null;
+};
+export type PracticePlayInput = {
+  sequence: number;
+  quarterback_number?: string | null;
+  quarterback_name?: string | null;
+  intended_receiver?: string | null;
+  result: string;
+  notes?: string | null;
+};
 export type Page<T> = { data: T[]; meta: PageMeta };
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL
   ?? (process.env.NODE_ENV === "development" ? "http://localhost:8000" : "");
 
-async function get<T>(path: string): Promise<T> {
-  const response = await fetch(`${API_URL}${path}`, { headers: { Accept: "application/json" } });
+async function request<T>(path: string, init?: RequestInit): Promise<T> {
+  const response = await fetch(`${API_URL}${path}`, {
+    ...init,
+    credentials: "include",
+    headers: {
+      Accept: "application/json",
+      ...(init?.body ? { "Content-Type": "application/json" } : {}),
+      ...init?.headers,
+    },
+  });
   if (!response.ok) throw new Error(`API request failed (${response.status})`);
+  if (response.status === 204) return undefined as T;
   return response.json() as Promise<T>;
 }
+
+const get = <T>(path: string) => request<T>(path);
 
 export const api = {
   seasons: () => get<Page<Season>>("/api/seasons"),
@@ -290,4 +366,11 @@ export const api = {
   gamebooks: () => get<Page<Gamebook>>("/api/gamebooks?season=2025&page_size=10"),
   statBoard: () => get<StatBoard>("/api/stat-board"),
   playAnalytics: (season = "2025") => get<PlayAnalytics>(`/api/play-analytics?season=${season}`),
+  practiceDashboard: (season = 2026) => get<PracticeDashboard>(`/api/practice-dashboard?season=${season}`),
+  createPractice: (payload: PracticeInput) => request<Practice>("/api/practices", { method: "POST", body: JSON.stringify(payload) }),
+  updatePractice: (id: string, payload: Partial<PracticeInput>) => request<Practice>(`/api/practices/${id}`, { method: "PATCH", body: JSON.stringify(payload) }),
+  deletePractice: (id: string) => request<void>(`/api/practices/${id}`, { method: "DELETE" }),
+  createPracticePlay: (practiceId: string, payload: PracticePlayInput) => request<PracticePlay>(`/api/practices/${practiceId}/plays`, { method: "POST", body: JSON.stringify(payload) }),
+  updatePracticePlay: (id: string, payload: Partial<PracticePlayInput>) => request<PracticePlay>(`/api/practice-plays/${id}`, { method: "PATCH", body: JSON.stringify(payload) }),
+  deletePracticePlay: (id: string) => request<void>(`/api/practice-plays/${id}`, { method: "DELETE" }),
 };

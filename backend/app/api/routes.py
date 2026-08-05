@@ -5,10 +5,20 @@ from typing import Annotated, cast
 
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy import func, select
-from sqlalchemy.orm import Session
+from sqlalchemy.exc import IntegrityError
+from sqlalchemy.orm import Session, selectinload
 
 from app.database import get_db
-from app.models import ConferenceStanding, Game, Gamebook, LeaderEntry, Player, Season
+from app.models import (
+    ConferenceStanding,
+    Game,
+    Gamebook,
+    LeaderEntry,
+    Player,
+    Practice,
+    PracticePlay,
+    Season,
+)
 from app.schemas import (
     ConferenceStandingPage,
     GamebookPage,
@@ -20,8 +30,16 @@ from app.schemas import (
     PageMeta,
     PlayerPage,
     PlayerRead,
+    PracticeCreate,
+    PracticeDashboardRead,
+    PracticePlayCreate,
+    PracticePlayRead,
+    PracticePlayUpdate,
+    PracticeRead,
+    PracticeUpdate,
     SeasonPage,
 )
+from app.services.practice_analytics import practice_dashboard, practice_play_tags, practice_to_dict
 
 router = APIRouter(prefix="/api")
 DBSession = Annotated[Session, Depends(get_db)]
@@ -127,6 +145,135 @@ def get_player(player_id: uuid.UUID, db: DBSession) -> Player:
     if player is None:
         raise HTTPException(status_code=404, detail={"code": "player_not_found"})
     return player
+
+
+def _practice_or_404(practice_id: uuid.UUID, db: Session) -> Practice:
+    practice = db.scalar(
+        select(Practice).where(Practice.id == practice_id).options(selectinload(Practice.plays))
+    )
+    if practice is None:
+        raise HTTPException(status_code=404, detail={"code": "practice_not_found"})
+    return practice
+
+
+@router.get("/practice-dashboard", response_model=PracticeDashboardRead, tags=["practices"])
+def get_practice_dashboard(
+    db: DBSession,
+    season: int = Query(2026, ge=2026, le=2100),
+) -> dict[str, object]:
+    practices = list(
+        db.scalars(
+            select(Practice)
+            .where(Practice.season_year == season)
+            .options(selectinload(Practice.plays))
+            .order_by(Practice.created_at.desc())
+        )
+    )
+    return cast(dict[str, object], practice_dashboard(practices, season))
+
+
+@router.post("/practices", response_model=PracticeRead, status_code=201, tags=["practices"])
+def create_practice(payload: PracticeCreate, db: DBSession) -> dict[str, object]:
+    practice = Practice(**payload.model_dump())
+    db.add(practice)
+    db.commit()
+    return cast(dict[str, object], practice_to_dict(_practice_or_404(practice.id, db)))
+
+
+@router.patch("/practices/{practice_id}", response_model=PracticeRead, tags=["practices"])
+def update_practice(
+    practice_id: uuid.UUID,
+    payload: PracticeUpdate,
+    db: DBSession,
+) -> dict[str, object]:
+    practice = _practice_or_404(practice_id, db)
+    for field, value in payload.model_dump(exclude_unset=True).items():
+        setattr(practice, field, value)
+    db.commit()
+    return cast(dict[str, object], practice_to_dict(_practice_or_404(practice.id, db)))
+
+
+@router.delete("/practices/{practice_id}", status_code=204, tags=["practices"])
+def delete_practice(practice_id: uuid.UUID, db: DBSession) -> None:
+    practice = _practice_or_404(practice_id, db)
+    db.delete(practice)
+    db.commit()
+
+
+@router.post(
+    "/practices/{practice_id}/plays",
+    response_model=PracticePlayRead,
+    status_code=201,
+    tags=["practices"],
+)
+def create_practice_play(
+    practice_id: uuid.UUID,
+    payload: PracticePlayCreate,
+    db: DBSession,
+) -> dict[str, object]:
+    _practice_or_404(practice_id, db)
+    play = PracticePlay(practice_id=practice_id, **payload.model_dump())
+    db.add(play)
+    try:
+        db.commit()
+    except IntegrityError as exc:
+        db.rollback()
+        raise HTTPException(
+            status_code=409,
+            detail={"code": "practice_play_sequence_exists"},
+        ) from exc
+    db.refresh(play)
+    return {
+        "id": play.id,
+        "sequence": play.sequence,
+        "quarterback_number": play.quarterback_number,
+        "quarterback_name": play.quarterback_name,
+        "intended_receiver": play.intended_receiver,
+        "result": play.result,
+        "notes": play.notes,
+        "tags": practice_play_tags(play),
+    }
+
+
+@router.patch("/practice-plays/{play_id}", response_model=PracticePlayRead, tags=["practices"])
+def update_practice_play(
+    play_id: uuid.UUID,
+    payload: PracticePlayUpdate,
+    db: DBSession,
+) -> dict[str, object]:
+    play = db.get(PracticePlay, play_id)
+    if play is None:
+        raise HTTPException(status_code=404, detail={"code": "practice_play_not_found"})
+    for field, value in payload.model_dump(exclude_unset=True).items():
+        setattr(play, field, value)
+    try:
+        db.commit()
+    except IntegrityError as exc:
+        db.rollback()
+        raise HTTPException(
+            status_code=409,
+            detail={"code": "practice_play_sequence_exists"},
+        ) from exc
+    db.refresh(play)
+    return {
+        "id": play.id,
+        "sequence": play.sequence,
+        "quarterback_number": play.quarterback_number,
+        "quarterback_name": play.quarterback_name,
+        "intended_receiver": play.intended_receiver,
+        "result": play.result,
+        "notes": play.notes,
+        "tags": practice_play_tags(play),
+    }
+
+
+@router.delete("/practice-plays/{play_id}", status_code=204, tags=["practices"])
+def delete_practice_play(play_id: uuid.UUID, db: DBSession) -> None:
+    play = db.get(PracticePlay, play_id)
+    if play is None:
+        raise HTTPException(status_code=404, detail={"code": "practice_play_not_found"})
+    db.delete(play)
+    db.commit()
 
 
 @router.get("/standings", response_model=ConferenceStandingPage, tags=["intelligence"])

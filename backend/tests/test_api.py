@@ -115,6 +115,86 @@ def test_play_analytics_rejects_unknown_season() -> None:
     assert response.status_code == 422
 
 
+def test_practice_stats_are_editable_and_aggregated(db: Session) -> None:
+    def override_db():  # type: ignore[no-untyped-def]
+        yield db
+
+    app.dependency_overrides[get_db] = override_db
+    client = TestClient(app)
+    try:
+        created = client.post(
+            "/api/practices",
+            json={
+                "season_year": 2026,
+                "title": "QB Practice",
+                "practice_type": "Quarterbacks",
+                "source_label": "QBS.xlsx",
+            },
+        )
+        assert created.status_code == 201
+        practice_id = created.json()["id"]
+
+        rows = [
+            {
+                "sequence": 1,
+                "quarterback_number": "7",
+                "result": "INCOMPLETE",
+                "notes": "Overthrow, incorrect read",
+            },
+            {
+                "sequence": 2,
+                "quarterback_number": "7",
+                "result": "COMPLETE",
+                "notes": "Checkdown, on target, reciver drop",
+            },
+            {
+                "sequence": 3,
+                "quarterback_number": "6",
+                "quarterback_name": "Test QB",
+                "result": "COMPLETE",
+                "notes": "Great read, proper timing",
+            },
+        ]
+        responses = [client.post(f"/api/practices/{practice_id}/plays", json=row) for row in rows]
+        assert all(response.status_code == 201 for response in responses)
+        assert client.post(f"/api/practices/{practice_id}/plays", json=rows[0]).status_code == 409
+
+        dashboard = client.get("/api/practice-dashboard?season=2026")
+        assert dashboard.status_code == 200
+        payload = dashboard.json()
+        assert payload["overview"]["attempts"] == 3
+        assert payload["overview"]["completions"] == 2
+        assert payload["overview"]["completion_pct"] == 66.7
+        assert payload["overview"]["on_target"] == 1
+        assert payload["overview"]["positive_reads"] == 1
+        assert payload["overview"]["negative_reads"] == 1
+        assert payload["overview"]["positive_timing"] == 1
+        assert payload["overview"]["receiver_drops"] == 1
+        assert payload["overview"]["checkdowns"] == 1
+        assert len(payload["quarterbacks"]) == 2
+        assert payload["practices"][0]["plays"][0]["tags"] == [
+            "Negative read",
+            "Overthrow",
+        ]
+
+        play_id = responses[0].json()["id"]
+        updated = client.patch(
+            f"/api/practice-plays/{play_id}",
+            json={"result": "COMPLETE", "notes": "Good read, on target"},
+        )
+        assert updated.status_code == 200
+        assert updated.json()["tags"] == ["On target", "Positive read"]
+        assert (
+            client.patch(
+                f"/api/practices/{practice_id}",
+                json={"practice_date": "2026-08-05"},
+            ).status_code
+            == 200
+        )
+    finally:
+        app.dependency_overrides.clear()
+
+
 def test_local_loopback_origin_is_allowed() -> None:
     response = TestClient(app).get("/api/health", headers={"Origin": "http://127.0.0.1:3000"})
     assert response.status_code == 200

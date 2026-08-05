@@ -20,12 +20,17 @@ class Settings(BaseSettings):
         "http://localhost:3000",
         "http://127.0.0.1:3000",
     ]
-    scraper_user_agent: str = (
-        "UPIKEFootballIntel/0.1 (research; contact: your-email@example.com)"
-    )
+    scraper_user_agent: str = "UPIKEFootballIntel/0.1 (research; contact: your-email@example.com)"
     scraper_min_delay_seconds: float = 10.0
     scraper_timeout_seconds: float = 30.0
     raw_document_root: Path = Path("data/raw")
+
+    @field_validator("database_url", mode="before")
+    @classmethod
+    def use_psycopg_driver(cls, value: object) -> object:
+        if isinstance(value, str) and value.startswith("postgresql://"):
+            return value.replace("postgresql://", "postgresql+psycopg://", 1)
+        return value
 
     @field_validator("api_cors_origins", mode="before")
     @classmethod

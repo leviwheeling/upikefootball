@@ -8,8 +8,9 @@ def test_session_token_is_signed_and_expires() -> None:
     token = create_session_token("coach-secret", now=1_000)
 
     assert valid_session_token(token, "coach-secret", now=1_001)
+    assert valid_session_token(token, "coach-secret", now=1_000 + SESSION_SECONDS - 1)
     assert not valid_session_token(token, "wrong-secret", now=1_001)
-    assert not valid_session_token(token, "coach-secret", now=1_000 + SESSION_SECONDS + 1)
+    assert not valid_session_token(token, "coach-secret", now=1_000 + SESSION_SECONDS)
     assert not valid_session_token("broken", "coach-secret", now=1_001)
 
 
@@ -42,6 +43,7 @@ def test_password_protects_pages_and_api(monkeypatch) -> None:  # type: ignore[n
     assert login.headers["location"] == "/api/stat-board"
     assert "HttpOnly" in login.headers["set-cookie"]
     assert "SameSite=lax" in login.headers["set-cookie"]
+    assert f"Max-Age={SESSION_SECONDS}" in login.headers["set-cookie"]
     assert authenticated.status_code == 200
 
 

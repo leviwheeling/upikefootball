@@ -1,8 +1,19 @@
 import uuid
-from datetime import datetime
+from datetime import date, datetime
 
-from sqlalchemy import JSON, DateTime, Float, ForeignKey, Index, String, Text, UniqueConstraint
+from sqlalchemy import (
+    JSON,
+    Date,
+    DateTime,
+    Float,
+    ForeignKey,
+    Index,
+    String,
+    Text,
+    UniqueConstraint,
+)
 from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy.sql import func
 
 from app.database import Base
 
@@ -162,3 +173,47 @@ class GameDrive(Base):
     yards: Mapped[int]
     result: Mapped[str] = mapped_column(String(16))
     gamebook: Mapped[Gamebook] = relationship(back_populates="drives")
+
+
+class Practice(Base):
+    __tablename__ = "practices"
+
+    id: Mapped[uuid.UUID] = mapped_column(primary_key=True, default=uuid.uuid4)
+    season_year: Mapped[int] = mapped_column(index=True)
+    title: Mapped[str] = mapped_column(String(160))
+    practice_date: Mapped[date | None] = mapped_column(Date())
+    practice_type: Mapped[str] = mapped_column(String(48), default="Quarterbacks")
+    notes: Mapped[str | None] = mapped_column(Text)
+    source_label: Mapped[str | None] = mapped_column(String(160))
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), server_default=func.now(), onupdate=func.now()
+    )
+    plays: Mapped[list["PracticePlay"]] = relationship(
+        back_populates="practice",
+        cascade="all, delete-orphan",
+        order_by="PracticePlay.sequence",
+    )
+
+
+class PracticePlay(Base):
+    __tablename__ = "practice_plays"
+    __table_args__ = (
+        UniqueConstraint("practice_id", "sequence", name="uq_practice_play_sequence"),
+    )
+
+    id: Mapped[uuid.UUID] = mapped_column(primary_key=True, default=uuid.uuid4)
+    practice_id: Mapped[uuid.UUID] = mapped_column(
+        ForeignKey("practices.id", ondelete="CASCADE"), index=True
+    )
+    sequence: Mapped[int]
+    quarterback_number: Mapped[str | None] = mapped_column(String(12))
+    quarterback_name: Mapped[str | None] = mapped_column(String(160))
+    intended_receiver: Mapped[str | None] = mapped_column(String(160))
+    result: Mapped[str] = mapped_column(String(24))
+    notes: Mapped[str | None] = mapped_column(Text)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), server_default=func.now(), onupdate=func.now()
+    )
+    practice: Mapped[Practice] = relationship(back_populates="plays")

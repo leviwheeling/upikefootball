@@ -7,8 +7,9 @@ import { Bar, CartesianGrid, ComposedChart, Line, ResponsiveContainer, Tooltip, 
 import { api, type PlayerCategory, type PlayerProfile, type StatBoardSeason } from "@/lib/api";
 import { cn } from "@/lib/utils";
 import { PlayAnalyticsPanel } from "@/components/play-analytics";
+import { PracticeStatsPanel } from "@/components/practice-stats";
 
-type BoardView = "team" | "games" | "players" | "plays" | "schedule";
+type BoardView = "team" | "games" | "players" | "plays" | "practice" | "schedule";
 
 const recordFields = [
   ["Overall", "record"], ["AAC", "conference_record"], ["Region", "region_record"],
@@ -33,8 +34,10 @@ export function Dashboard() {
   const season = board?.seasons[seasonKey];
 
   useEffect(() => {
-    if (season && !season.team_stats?.length && view !== "schedule") setView("schedule");
-  }, [season, view]);
+    if (!season || season.team_stats?.length) return;
+    if (seasonKey === "2026" && !["practice", "schedule"].includes(view)) setView("practice");
+    else if (seasonKey !== "2026" && view !== "schedule") setView("schedule");
+  }, [season, seasonKey, view]);
 
   if (boardQuery.isLoading) return <BoardLoading />;
   if (boardQuery.error || !board || !season) return <BoardError />;
@@ -48,8 +51,13 @@ export function Dashboard() {
     setSeasonKey(key);
     setSelectedPlayer(null);
     const next = board!.seasons[key];
-    if (!next.team_stats?.length) setView("schedule");
-    else if ((view === "players" && !next.players) || (view === "plays" && !["2024", "2025"].includes(key))) setView("team");
+    if (key === "2026") setView("practice");
+    else if (!next.team_stats?.length) setView("schedule");
+    else if (
+      (view === "players" && !next.players)
+      || (view === "plays" && !["2024", "2025"].includes(key))
+      || view === "practice"
+    ) setView("team");
   }
 
   return (
@@ -79,7 +87,7 @@ export function Dashboard() {
           </div>
         </section>
 
-        <section className="mt-4 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-4 xl:grid-cols-7">
+        <section className="mt-4 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-4 xl:auto-cols-fr xl:grid-flow-col xl:grid-cols-none">
           {recordFields.map(([label, field]) => season[field] !== undefined && <RecordCell key={field} label={label} value={String(season[field])} />)}
         </section>
 
@@ -92,6 +100,7 @@ export function Dashboard() {
           {season.game_log?.length ? <ViewButton active={view === "games"} onClick={() => setView("games")}>Game Log <Count>{season.game_log.length}</Count></ViewButton> : null}
           {season.players ? <ViewButton active={view === "players"} onClick={() => setView("players")}>Players <Count>{playerCount}</Count></ViewButton> : null}
           {["2024", "2025"].includes(seasonKey) ? <ViewButton active={view === "plays"} onClick={() => setView("plays")}>Play Analytics <Count>{seasonKey === "2024" ? 959 : 866}</Count></ViewButton> : null}
+          {seasonKey === "2026" ? <ViewButton active={view === "practice"} onClick={() => setView("practice")}>Practice Stats</ViewButton> : null}
           <ViewButton active={view === "schedule"} onClick={() => setView("schedule")}>Schedule <Count>{season.schedule.length}</Count></ViewButton>
         </nav>
 
@@ -100,6 +109,7 @@ export function Dashboard() {
           {view === "games" && season.game_log && <GameLogTable season={season} />}
           {view === "players" && season.players && <PlayersTable categories={season.players} selected={playerCategory} onSelect={setPlayerCategory} onPlayerSelect={setSelectedPlayer} />}
           {view === "plays" && ["2024", "2025"].includes(seasonKey) && <PlayAnalyticsPanel season={seasonKey} onPlayerSelect={setSelectedPlayer} />}
+          {view === "practice" && seasonKey === "2026" && <PracticeStatsPanel season={2026} />}
           {view === "schedule" && <ScheduleTable season={season} />}
         </section>
       </div>

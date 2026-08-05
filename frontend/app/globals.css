@@ -259,6 +259,45 @@ body {
 .field-marker.ungraded { background: #64748b; }
 .legend-dot { width: 7px; height: 7px; border-radius: 999px; }
 
+.practice-input,
+.practice-table input,
+.practice-table select,
+.practice-table textarea {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 6px;
+  background: #05080e;
+  padding: 9px 10px;
+  color: #e2e8f0;
+  font-size: 11px;
+  outline: none;
+}
+.practice-input:focus,
+.practice-table input:focus,
+.practice-table select:focus,
+.practice-table textarea:focus {
+  border-color: #ff6a32;
+  box-shadow: 0 0 0 2px rgba(255, 106, 50, .1);
+}
+.practice-table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.practice-table th { background: #0c131f; padding: 10px; color: #64748b; font-size: 9px; font-weight: 850; letter-spacing: .12em; text-align: left; text-transform: uppercase; white-space: nowrap; }
+.practice-table td { border-top: 1px solid rgba(255, 255, 255, .06); padding: 8px; vertical-align: middle; }
+.practice-table td:nth-child(1) { width: 76px; }
+.practice-table td:nth-child(2) { width: 82px; }
+.practice-table td:nth-child(3), .practice-table td:nth-child(4) { width: 155px; }
+.practice-table td:nth-child(5) { width: 135px; }
+.practice-table td:nth-child(6) { min-width: 330px; }
+.practice-table td:nth-child(8) { width: 150px; }
+.practice-table textarea { min-height: 52px; resize: vertical; line-height: 1.35; }
+.new-practice-row td { background: rgba(255, 106, 50, .025); }
+.practice-save, .practice-delete { border-radius: 5px; padding: 8px 10px; font-size: 9px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+.practice-save { background: #ff6a32; color: #070a0f; }
+.practice-delete { border: 1px solid rgba(251, 113, 133, .25); color: #fda4af; }
+.practice-save:disabled, .practice-delete:disabled { cursor: wait; opacity: .45; }
+.practice-tag { border-radius: 999px; padding: 4px 7px; font-size: 8px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
+.practice-tag.positive { background: rgba(52, 211, 153, .1); color: #6ee7b7; }
+.practice-tag.negative { background: rgba(251, 113, 133, .1); color: #fda4af; }
+
 @keyframes player-drawer-in { from { opacity: 0; transform: translateX(28px); } to { opacity: 1; transform: translateX(0); } }
 
 @media (max-width: 640px) {
